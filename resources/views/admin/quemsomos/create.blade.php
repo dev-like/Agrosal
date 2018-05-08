@@ -11,10 +11,9 @@
 @section('script-bottom')
 <link href="{{ asset('template/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('template/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css') }}" rel="stylesheet" type="text/css" />
-</script>
 @endsection
-
 @section('content')
+
 <div class="col-12">
   <div class="card-box">
     {{ Form::open(['route' => 'quemsomos.store']) }}
@@ -35,20 +34,6 @@
         <div class="col-md-3">
           {{ Form::label('ie', 'Inscrição Estadual') }}
           {{ Form::text('ie', null, array('class' => 'form-control')) }}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          {{ Form::label('missao', 'Missão') }}
-          {{ Form::text('missao', null, array('class' => 'form-control')) }}
-        </div>
-        <div class="col-md-4">
-          {{ Form::label('visao', 'Visão') }}
-          {{ Form::text('visao', null, array('class' => 'form-control')) }}
-        </div>
-        <div class="col-md-4">
-          {{ Form::label('valores', 'Valores') }}
-          {{ Form::text('valores', null, array('class' => 'form-control')) }}
         </div>
       </div>
       <div class="row">
@@ -135,11 +120,30 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
-          {{ Form::label('quemsomos', 'Quem Somos') }}
-          {{ Form::textarea('quemsomos', null, array('class' => 'form-control', 'style' => 'height:150px')) }}
+        <div class="col-md-12" style="margin-top: 20px">
+          {!! Form::label('missao', 'Missão') !!}
+          {!! Form::textarea('missao', null, array('class' => 'form-control')) !!}
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 20px">
+          {!! Form::label('visao', 'Visão') !!}
+          {!! Form::textarea('visao', null, array('class' => 'form-control')) !!}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 20px">
+          {!! Form::label('valores', 'Valores') !!}
+          {!! Form::textarea('valores', null, array('class' => 'form-control')) !!}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 20px">
+          {!! Form::label('quemsomos', 'Quem Somos') !!}
+          {!! Form::textarea ('quemsomos', null, array('class' => 'form-control', 'style' => 'min-height:500px')) !!}
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-4 offset-md-4" style="margin-top: 15px">
           <div class="col-6 col-md-6" style="float: left">
@@ -161,16 +165,46 @@
 @endsection
 
 @section('scripts')
+<script src="{{ asset('template/plugins/select2/js/select2.full.min.js') }}"></script>
+<script src="{{ asset('template/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js') }}"></script>
+<script src="{{ asset('template/js/pages/form_elements.js') }}"></script>
+<script src="{{ asset('template/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+
 <script>
 jQuery(function($){
-$("#cnpj").mask("99.999.999/9999-99");
-$("#telefone").mask("(99) 99999-9999");
-$("#cep").mask("99.999-999");
+  $('.js-example-basic-single').select2();
+  $("#cnpj").mask("99.999.999/9999-99");
+  $("#telefone").mask("(99) 99999-9999");
+  $("#cep").mask("99.999-999");
 });
 </script>
 
+<script type="text/javascript">
+  $(document).ready(function () {
+    if($("#quemsomos").length > 0){
+      tinymce.init({
+        selector: "textarea",
+        theme: "modern",
+        height:200,
+        plugins: [
+          "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+          "save table contextmenu directionality emoticons template paste textcolor"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+        style_formats: [
+          {title: 'Bold text', inline: 'b'},
+          {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+          {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+          {title: 'Example 1', inline: 'span', classes: 'example1'},
+          {title: 'Example 2', inline: 'span', classes: 'example2'},
+          {title: 'Table styles'},
+          {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+        ]
+      });
+    }
+  });
+</script>
 
-
-<script src="{{ asset('template/plugins/select2/js/select2.full.min.js') }}"></script>
-<script src="{{ asset('template/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js') }}"></script>
 @endsection
