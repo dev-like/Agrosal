@@ -22,6 +22,7 @@ class CreateProdutosTable extends Migration
             $table->integer('linhas_id')->unsigned();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

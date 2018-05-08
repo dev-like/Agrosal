@@ -37,6 +37,7 @@ class CreateQuemsomosTable extends Migration
             $table->string('youtube', 255);
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

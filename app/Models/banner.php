@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class banners extends Model
+class Banner extends Model
 {
     use SoftDeletes, CascadeSoftDeletes;
 

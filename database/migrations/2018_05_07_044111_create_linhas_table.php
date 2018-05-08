@@ -19,6 +19,7 @@ class CreateLinhasTable extends Migration
             $table->text('descricao');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

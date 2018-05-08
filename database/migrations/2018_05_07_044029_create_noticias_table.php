@@ -22,6 +22,7 @@ class CreateNoticiasTable extends Migration
             $table->string('palavraschave', 255);
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

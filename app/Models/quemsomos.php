@@ -1,10 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class quemsomos extends Model
+class Quemsomos extends Model
 {
-    use SoftDeletes, CascadeSoftDeletes;
+    protected $table = 'quemsomos';
+    protected $fillable = ['id','razaosocial', 'nomefantasia', 'cnpj', 'ie', 'missao',
+    'visao', 'valores', 'quemsomos', 'email', 'telefone', 'fax', 'sac','endereco','bairro',
+    'cidade','estado','cep','facebook','instagram','youtube'];
+
+    use SoftDeletes;
 }
