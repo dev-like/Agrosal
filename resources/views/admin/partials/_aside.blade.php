@@ -11,6 +11,11 @@
                     <i class="fa fa-users"></i> <span> Quem somos </span>
                   </a>
                 </li>
+                <li>
+                  <a href="{{ route('noticias.index') }}">
+                    <i class="fa fa-newspaper-o"></i> <span> Notícias </span>
+                  </a>
+                </li>
                 @if(Auth::User()->nivel == 1)
                 <li>
                   <a href="{{ route('usuario.index') }}">

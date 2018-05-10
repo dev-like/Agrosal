@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('template/images/favicon.ico') }}">
-
+    <link rel="shortcut icon" href="{{ asset('template/images/logo.ico') }}">
     <!-- App css -->
     <link href="{{ asset('template/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/css/icons.css') }}" rel="stylesheet" type="text/css" />
@@ -17,6 +16,5 @@
 
     <!-- Hint css -->
     <link href="{{ asset('css/hint.min.css') }}" rel="stylesheet" type="text/css" />
-
     <script src="{{ asset('template/js/modernizr.min.js') }}"></script>
 </head>

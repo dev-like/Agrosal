@@ -30,52 +30,52 @@
       @endif
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('razaosocial', 'Razão Social') }}
           {{ Form::text('razaosocial', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('nomefantasia', 'Nome Fantasia') }}
           {{ Form::text('nomefantasia', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('cnpj', 'CNPJ') }}
           {{ Form::text('cnpj', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('ie', 'Inscrição Estadual') }}
           {{ Form::text('ie', null, array('class' => 'form-control')) }}
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('email', 'E-mail') }}
           {{ Form::text('email', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('telefone', 'Telefone') }}
           {{ Form::text('telefone', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('fax', 'FAX') }}
           {{ Form::text('fax', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('sac', 'SAC') }}
           {{ Form::text('sac', null, array('class' => 'form-control')) }}
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('endereco', 'Endereço') }}
           {{ Form::text('endereco', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('bairro', 'Bairro') }}
           {{ Form::text('bairro', null, array('class' => 'form-control')) }}
         </div>
 
-        <div class="col-md-3 ">
+        <div class="form-group col-md-3 ">
           {{ Form::label('estado', 'Estado') }}
           <br>
           <select class="js-example-basic-single" name="estado">
@@ -108,61 +108,59 @@
             <option value="TO" {{ ($quemsomos->estado=="TO")?'selected':''}}>Tocantins</option>
           </select>
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('cidade', 'Cidade') }}
           {{ Form::text('cidade', null, array('class' => 'form-control')) }}
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('cep', 'CEP') }}
           {{ Form::text('cep', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('facebook', 'Facebook') }}
           {{ Form::text('facebook', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('instagram', 'Instagram') }}
           {{ Form::text('instagram', null, array('class' => 'form-control')) }}
         </div>
-        <div class="col-md-3">
+        <div class="form-group col-md-3">
           {{ Form::label('youtube', 'YouTube') }}
           {{ Form::text('youtube', null, array('class' => 'form-control')) }}
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12" style="margin-top: 20px">
+        <div class="form-group col-md-12" style="margin-top: 20px">
           {!! Form::label('missao', 'Missão') !!}
           {!! Form::textarea('missao', null, array('class' => 'form-control')) !!}
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12" style="margin-top: 20px">
+        <div class="form-group col-md-12" style="margin-top: 20px">
           {!! Form::label('visao', 'Visão') !!}
           {!! Form::textarea('visao', null, array('class' => 'form-control')) !!}
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12" style="margin-top: 20px">
+        <div class="form-group col-md-12" style="margin-top: 20px">
           {!! Form::label('valores', 'Valores') !!}
           {!! Form::textarea('valores', null, array('class' => 'form-control')) !!}
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12" style="margin-top: 20px">
+        <div class="form-group col-md-12" style="margin-top: 20px">
           {!! Form::label('quemsomos', 'Quem Somos') !!}
-          {!! Form::textarea ('quemsomos', null, array('class' => 'form-control', 'style' => 'min-height:500px')) !!}
+          {!! Form::textarea ('quemsomos', null, array('class' => 'form-control')) !!}
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-4 offset-md-4" style="margin-top: 15px">
-          <div class="col-6 col-md-6" style="float: left">
-            <button class="btn btn-success btn-block" type="submit" value="Salvar"><i class="fa fa-save m-r-5"></i>&ensp;Atualizar</button>
-          </div>
-          <div class="col-6 col-md-6" style="float: left">
-            <a href="{{ route('quemsomos.index') }}" class="btn btn-danger btn-block"><i class="fa fa-window-close m-r-5"></i>&ensp;Cancelar</a>
+      <div class="row" style="margin-top: 20px">
+        <div class="col-12">
+          <div class="text-center">
+            <button class="btn btn-success" type="submit" value="Salvar"><i class="fa fa-save m-r-5"></i> Salvar</button>
+            <a href="{{ route('quemsomos.index') }}" class="btn btn-danger"><i class="fa fa-window-close m-r-5"></i> Cancelar</a>
           </div>
         </div>
       </div>
@@ -211,7 +209,7 @@ jQuery(function($){
       tinymce.init({
         selector: "textarea",
         theme: "modern",
-        height:200,
+        height:180,
         plugins: [
           "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
           "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",

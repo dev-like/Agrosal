@@ -20,7 +20,8 @@ class CreateNoticiasTable extends Migration
             $table->text('conteudo');
             $table->string('slug')->unique();
             $table->string('palavraschave', 255);
-
+            $table->string('capa', 255);
+            $table->date("datapublicacao")->now('');
             $table->timestamps();
             $table->softDeletes();
         });

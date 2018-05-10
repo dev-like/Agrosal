@@ -41,6 +41,10 @@ class quemsomosController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, array(
+      'nomefantasia'        => 'required|max:225',
+      'email'               => 'required|max:225',
+      ));
         $requestData = $request->all();
         $quemsomos = quemsomos::create($requestData);
         return redirect('admin/quemsomos')->with('flash_message', 'quemsomos added!');
