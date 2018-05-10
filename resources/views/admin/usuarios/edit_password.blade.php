@@ -26,12 +26,12 @@
                 </div>
             </div>
             <div class="row">
-              <div class="col-md-4 offset-md-4" style="margin-top: 15px">
-                <div class="col-6 col-md-6" style="float: left">
-                  {{ Html::linkRoute('usuario.index', 'Cancelar', null, ['class' => 'btn btn-danger btn-block']) }}
-                </div>
+              <div class="col-md-4 offset-md-4" style="margin-top: 15px">                
                 <div class="col-6 col-md-6" style="float: left">
                   {{ Form::submit('Enviar', array('class' => 'btn btn-success btn-block')) }}
+                </div>
+                <div class="col-6 col-md-6" style="float: left">
+                  {{ Html::linkRoute('usuario.index', 'Cancelar', null, ['class' => 'btn btn-danger btn-block']) }}
                 </div>
               </div>
             </div>

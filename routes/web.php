@@ -18,11 +18,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
     Route::get('/', 'HomeController@index')->name('admin.home');
 
-    // Route::resource('quemsomos', 'QuemSomosController');
-
     Route::resource('quemsomos', 'QuemsomosController');
-    Route::post('quemsomos/{id}', 'QuemsomosController@destroy')->name('quemsomos.destroy');
-
 
     Route::resource('cliente', 'ClienteController');
     Route::post('cliente/{id}', 'ClienteController@destroy')->name('cliente.destroy');

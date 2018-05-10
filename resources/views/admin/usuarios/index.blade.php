@@ -20,7 +20,7 @@
             <div class="modal-body">
                <h6>Confirme sua senha de usuário para efetuar a exclusão</h6>
                <div class="row">
-                 <div class="col-md-6 offset-md-3">
+                 <div class="col-md-12">
                    <input type="password" name="senhaUsuarioLogado" class="form-control">
                    <input type="hidden" name="idUsuario" id="idUsuario">
                  </div>
@@ -57,12 +57,10 @@
                 <td>{{ $usuario->id }}</td>
                 <td>{{ $usuario->nome }}</td>
                 <td>{{ $usuario->email }}</td>
-                <td>
-                   <!-- Form::model($example, ['route' => ['example.destroy', $example->id], 'method' => 'DELETE'])  -->
+                <td width="15%">
                     <span class="hint--top" aria-label="Editar usuario"><a href="{{ route('usuario.edit', $usuario->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
                     <span class="hint--top" aria-label="Mudar senha de usuario"><a href="{{ route('usuario.editar_senha', $usuario->id) }}" style="border-radius: 50%" class="btn btn-secondary waves-effect"> <i class="fa fa-edit m-r-5"></i></a></span>
                     <span class="hint--top" aria-label="Deletar usuario"><button type="button" style="border-radius: 50%" onclick="$('#idUsuario').val({{$usuario->id}})" class="btn btn-danger waves-effect" data-toggle="modal" data-target="#myModal"> <i class="fa fa-trash m-r-5"></i></button></span>
-                   <!-- Form::close()  -->
                 </td>
             </tr>
           @empty
@@ -74,21 +72,18 @@
     </table>
     {{ $usuarios->links() }}
   </div>
-
 </div>
 
 @endsection
 
 @section('scripts')
 
-  <script>
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-  </script>
+<script>
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+</script>
 
 @endsection

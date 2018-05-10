@@ -18,6 +18,19 @@
   <div class="card-box">
     {{ Form::open(['route' => 'quemsomos.store']) }}
 
+        @if(!isset($quemsomos->id))
+        <p id="req-cad">
+          As informações da empresa ainda não foram cadastradas,
+          <a id="cad" class="text-success" href="#">Realizar Cadastro</a>
+        </p>
+        <div id="form-cad" class="col-sm-12 col-xs-12" style="display:none">
+          <form method="post" action="{{ action('QuemSomosController@store') }}">
+            @else
+            <div id="form-cad" class="col-sm-12 col-xs-12">
+              <form method="post" action="{{ action('QuemSomosController@update',['id'=>$quemsomos->id]) }}">
+                {{ method_field('PUT') }}
+                @endif
+
       <div class="row">
         <div class="col-md-3">
           {{ Form::label('razaosocial', 'Razão Social') }}
@@ -76,7 +89,7 @@
             <option value="DF">Distrito Federal</option>
             <option value="ES">Espírito Santo</option>
             <option value="GO">Goiás</option>
-            <option selected value="MA">Maranhão</option>
+            <option value="MA">Maranhão</option>
             <option value="MT">Mato Grosso</option>
             <option value="MS">Mato Grosso do Sul</option>
             <option value="MG">Minas Gerais</option>
@@ -154,12 +167,9 @@
           </div>
         </div>
       </div>
-
   </div>
 </div>
-
     {{ Form::close() }}
-
   </div>
 </div>
 @endsection

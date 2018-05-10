@@ -14,24 +14,14 @@ class quemsomosController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index(Request $request)
+    public function index()
     {
-        $keyword = $request->get('search');
-        $perPage = 25;
-
-        if (!empty($keyword)) {
-            $quemsomos = quemsomos::paginate($perPage);
-        } else {
-            $quemsomos = quemsomos::paginate($perPage);
-        }
-    
-        $data = array(
-           'quemsomos'=>$quemsomos
-       );
-        return view('admin.quemsomos.index', compact('quemsomos'))->with($data);
-        ;
+        $quemsomos = QuemSomos::get();
+        $quemsomos = count($quemsomos) ? $quemsomos[0] : new QuemSomos();
+        return view('admin.quemsomos.index', [
+        'quemsomos' => $quemsomos
+      ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +29,7 @@ class quemsomosController extends Controller
      */
     public function create()
     {
-        return view('admin.quemsomos.create');
+        return view('admin.quemsomos.index');
     }
 
     /**
@@ -52,19 +42,7 @@ class quemsomosController extends Controller
     public function store(Request $request)
     {
         $requestData = $request->all();
-
         $quemsomos = quemsomos::create($requestData);
-
-        //
-        // foreach (explode(",", $request->email) as $key => $value) {
-        //     $quemsomos->email()->create([ 'email' => $value, 'quemsomos_id' => $quemsomos->id ]);
-        // }
-        // foreach (explode(",", $request->telefone) as $key => $value) {
-        //     $quemsomos->telefone()->create([ 'telefone' => $value, 'quemsomos_id' => $quemsomos->id ]);
-        // }
-
-
-        // $quemsomos->telefone()->create([ 'telefone' => $telefone, 'quemsomos_id' => $id ]);
         return redirect('admin/quemsomos')->with('flash_message', 'quemsomos added!');
     }
 
@@ -78,8 +56,6 @@ class quemsomosController extends Controller
     public function show($id)
     {
         $quemsomos = quemsomos::find($id);
-
-
         return view('admin.quemsomos.show', compact('quemsomos'));
     }
 
@@ -93,7 +69,6 @@ class quemsomosController extends Controller
     public function edit($id)
     {
         $quemsomos = quemsomos::findOrFail($id);
-
         return view('admin.quemsomos.edit', compact('quemsomos'));
     }
 
@@ -108,11 +83,10 @@ class quemsomosController extends Controller
     public function update(Request $request, $id)
     {
         $requestData = $request->all();
-
         $quemsomos = quemsomos::findOrFail($id);
         $quemsomos->update($requestData);
 
-        return redirect('admin/quemsomos')->with('flash_message', 'quemsomos updated!');
+        return redirect('admin/quemsomos')->with('flash_message', 'Quem somos alterado com sucesso !');
     }
 
     /**
@@ -124,14 +98,8 @@ class quemsomosController extends Controller
      */
     public function destroy($id)
     {
-        //  quemsomos::destroy($id);
         $quemsomos = quemsomos::find($id);
         $quemsomos->delete();
-        //  $request->session()->flash('success', "$nomeUsuario Deletado com sucesso");
         return [response()->json("Sucesso"), redirect('admin/quemsomos')];
-
-        //  $quemsomos->flash('success', 'Registro Excluído com sucesso!');
-
-        //    return redirect()->route('noticia.show', $noticia->id);
     }
 }

@@ -164,7 +164,7 @@ File: Main Css File
 
 .button-menu-mobile {
   border: none;
-  color: #3369c2;
+  color: #ab2929;
   display: inline-block;
   height: 70px;
   width: 60px;
@@ -222,7 +222,7 @@ File: Main Css File
     text-align: center;
     vertical-align: middle;
     width: 20px;
-    color: #3369c2}
+    color: #ab2929}
   #sidebar-menu ul li a .drop-arrow {
     float: right; }
     #sidebar-menu ul li a .drop-arrow i {
@@ -400,7 +400,7 @@ File: Main Css File
 .page-title-box {
   padding: 15px 20px;
   margin: 0 -25px 30px -25px;
-  background-color: #3369c2;
+  background-color: #ab2929;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02); }
   .page-title-box .breadcrumb {
     margin-bottom: 0;
@@ -2398,7 +2398,7 @@ textarea.form-control {
 
  }
   .bootstrap-tagsinput .label-info {
-    background-color: #3369c2;
+    background-color: #ab2929;
     display: inline-block;
     padding: 4px 8px;
     font-size: 14px;
