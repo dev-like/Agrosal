@@ -12,7 +12,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="{{ route('noticias.index') }}">
+                  <a href="{{ route('noticia.index') }}">
                     <i class="fa fa-newspaper-o"></i> <span> Notícias </span>
                   </a>
                 </li>

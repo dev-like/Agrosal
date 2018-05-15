@@ -12,7 +12,7 @@
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <a href="{{ route('noticias.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
+    <a href="{{ route('noticia.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
     <h4 class="m-t-0 header-title">Listagem de notícias</h4>
 
     <table class="table table-striped">
@@ -27,13 +27,13 @@
         <tbody>
           @forelse($noticias as $noticia)
             <tr>
-                <td>{{ $noticias->id }}</td>
-                <td>{{ substr(strip_tags($noticias->titulo), 0, 25) }}{{ (strlen(strip_tags($noticia->titulo)) > 25 ? "..." : "") }}</td>
+                <td>{{ $noticia->id }}</td>
+                <td>{{ substr(strip_tags($noticia->titulo), 0, 35) }}{{ (strlen(strip_tags($noticia->titulo)) > 25 ? "..." : "") }}</td>
                 <td>{{ date('d/m/y g:ia', strtotime($noticia->datapublicacao)) }}</td>
-                <td>
-                    <span class="hint--top" aria-label="Editar notícia"><a href="{{ route('noticias.edit', $noticia->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
-                    <span class="hint--top" aria-label="Visualizar notícia"><a href="{{ route('noticias.show', $noticia->id) }}" style="border-radius: 50%" class="btn btn-info waves-effect hint--bottom" aria-label="Thank you!" > <i class="fa fa-sticky-note-o m-r-5"></i></a></span>
-                    <span class="hint--top" aria-label="Deletar noticia"><button type="button" onclick="goswet({{$noticias->id}}, '{{$noticias->titulo}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
+                <td width="14%">
+                    <span class="hint--top" aria-label="Editar notícia"><a href="{{ route('noticia.edit', $noticia->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
+                    <span class="hint--top" aria-label="Visualizar notícia"><a href="{{ route('noticia.show', $noticia->slug) }}" style="border-radius: 50%" class="btn btn-info waves-effect hint--bottom" aria-label="Thank you!" > <i class="fa fa-sticky-note-o m-r-5"></i></a></span>
+                    <span class="hint--top" aria-label="Deletar noticia"><button type="button" onclick="goswet({{$noticia->id}}, '{{$noticia->titulo}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
                 </td>
             </tr>
           @empty
@@ -92,7 +92,7 @@
         function(){
           $.ajax({
             type: "DELETE",
-            url: "{{ url('admin/noticias') }}/"+id,
+            url: "{{ url('admin/noticia') }}/"+id,
             data: {'id': id},
             success: function(data){
               swal({
@@ -104,7 +104,7 @@
                function () {
                },
                function(){
-                 window.location = "{{ route('noticias.index') }}";
+                 window.location = "{{ route('noticia.index') }}";
                }
              );
             },

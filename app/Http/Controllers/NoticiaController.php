@@ -1,13 +1,15 @@
 <?php
+
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Models\noticia;
 use Illuminate\Http\Request;
-use App\Models\Noticias;
 use Image;
 use Storage;
-use App\User;
 
-class NoticiasController extends Controller
+class NoticiaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +18,9 @@ class NoticiasController extends Controller
      */
     public function index()
     {
-        $noticia = Noticias::paginate();
+        $noticias = Noticia::paginate();
         return view('admin.noticias.index', [
-            'noticias' => $noticia
+            'noticias' => $noticias
         ]);
     }
 
@@ -41,36 +43,34 @@ class NoticiasController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-        'título'              => 'required|max:225',
-        'descrição'           => 'max:400',
-        'data_de_publicação'  => 'required|date',
-        'conteúdo'            => 'required',
+        'titulo'              => 'required|max:225',
+        'conteudo'            => 'required',
+        'descricao'           => 'required',
+        'datapublicacao'      => 'required|date',
         'capa'                => 'sometimes|image',
       ));
 
-        $slug = Self::tirarAcentos(str_replace(" ", "-", $request->titulo)."-".time());
+        $slug = Self::tirarAcentos(str_replace(" ", "-", $request->titulo));
 
         $noticia = new Noticia;
-        $noticia->titulo          = $request->título;
-        $noticia->descricao       = $request->descrição;
-        $noticia->data_publicacao = $request->data_de_publicação;
+        $noticia->titulo          = $request->titulo;
+        $noticia->datapublicacao  = $request->datapublicacao;
+        $noticia->palavraschave   = $request->palavraschave;
+        $noticia->descricao       = $request->descricao;
+        $noticia->conteudo        = $request->conteudo;
         $noticia->slug            = $slug;
-        $noticia->conteudo        = $request->conteúdo;
 
         if ($request->hasFile('capa')) {
             $image = $request->file('capa');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('noticias/imagens/' . $filename);
             Image::make($image)->resize(800, 400)->save($location);
-
             $noticia->capa = $filename;
         }
 
         $noticia->save();
         $request->session()->flash('success', 'Notícia adicionada com sucesso');
-
-        // return redirect()->route('noticia.show', $noticia->id);
-        return redirect()->route('noticias.index', $noticia->id);
+        return redirect()->route('noticia.index');
     }
 
     /**
@@ -81,10 +81,8 @@ class NoticiasController extends Controller
      */
     public function show($id)
     {
-        $noticia = Noticias::find($id);
-        return view('admin.noticias.show', [
-          'noticia' => $noticia
-      ]);
+        $noticia = Noticia::where('slug', '=', $id)->first();
+        return view('admin.noticias.show')->with('noticia', $noticia);
     }
 
     public function tirarAcentos($string)
@@ -94,12 +92,9 @@ class NoticiasController extends Controller
 
     public function getSingle($slug)
     {
-        $noticia = Noticias::where('slug', '=', $slug)->first();
-        return view('admin.noticias.slug', [
-          'noticia' => $noticia
-        ]);
+        $noticia = Noticia::where('slug', '=', $slug)->first();
+        return view('admin.noticias.show')->with('noticia', $noticia);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -108,7 +103,7 @@ class NoticiasController extends Controller
      */
     public function edit($id)
     {
-        $noticia = Noticias::find($id);
+        $noticia = Noticia::find($id);
         return view('admin.noticias.edit', [
             'noticia' => $noticia
         ]);
@@ -124,21 +119,12 @@ class NoticiasController extends Controller
     {
         $noticia = Noticia::find($id);
 
-        $this->validate($request, array(
-        'título'              => 'required|max:225',
-        'descrição'           => 'max:400',
-        'data_de_publicação'  => 'required|date',
-        'conteúdo'            => 'required',
-        'capa'                => 'sometimes|image',
-      ));
-
-        $slug = Self::tirarAcentos(str_replace(" ", "-", $request->título)."-".time());
-
+        $slug = Self::tirarAcentos(str_replace(" ", "-", $request->título));
         $noticia->titulo          = $request->título;
-        $noticia->descricao       = $request->descrição;
-        $noticia->data_publicacao = $request->data_de_publicação;
+        $noticia->descricao       = $request->descricao;
+        $noticia->palavraschave   = $request->palavraschave;
+        $noticia->conteudo        = $request->conteudo;
         $noticia->slug            = $slug;
-        $noticia->conteudo        = $request->conteúdo;
 
         if ($request->hasFile('capa')) {
             $image = $request->file('capa');
@@ -150,15 +136,13 @@ class NoticiasController extends Controller
                 $oldFilename = $noticia->capa;
                 Storage::delete('noticias/imagens/'.$oldFilename);
             }
-
             $noticia->capa = $filename;
         }
 
         $noticia->save();
-
         $request->session()->flash('success', 'O texto foi modificado com sucesso');
-
-        return redirect()->route('noticia.show', $noticia->id);
+        return redirect()->route('noticia.index');
+        // return redirect()->route('noticia.show', $noticia->id); Depois da alteração mostra a tela show
     }
 
     /**
@@ -169,7 +153,7 @@ class NoticiasController extends Controller
      */
     public function destroy($id)
     {
-        $noticia = Noticias::find($id);
+        $noticia = Noticia::find($id);
         if ($noticia->capa) {
             Storage::delete('noticias/imagens/'.$noticia->capa);
         }

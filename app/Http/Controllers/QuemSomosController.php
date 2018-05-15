@@ -47,6 +47,8 @@ class quemsomosController extends Controller
       ));
         $requestData = $request->all();
         $quemsomos = quemsomos::create($requestData);
+
+        $request->session()->flash('success', 'Quem Somos adicionado com sucesso');
         return redirect('admin/quemsomos')->with('flash_message', 'quemsomos added!');
     }
 
@@ -90,6 +92,7 @@ class quemsomosController extends Controller
         $quemsomos = quemsomos::findOrFail($id);
         $quemsomos->update($requestData);
 
+        $request->session()->flash('success', 'O texto foi modificado com sucesso');
         return redirect('admin/quemsomos')->with('flash_message', 'Quem somos alterado com sucesso !');
     }
 

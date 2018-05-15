@@ -14,7 +14,7 @@
   <div class="card-box">
     <h4 class="m-t-0 header-title"><b>Cadastro de notícias</b></h4>
 
-      {{ Form::open(['route' => 'noticias.store', 'files' => true]) }}
+      {{ Form::open(['route' => 'noticia.store', 'files' => true]) }}
         <div class="row">
           <div class="form-group col-md-8">
             {!! Form::label('titulo', 'Titulo:') !!}
@@ -37,7 +37,7 @@
         </div>
         <div class="row">
           <div class="form-group col-md-12">
-            {!! Form::label('descicao', 'Descrição:') !!}
+            {!! Form::label('descricao', 'Descrição:') !!}
             {!! Form::textarea('descricao', null, array('class' => 'form-control')) !!}
           </div>
         </div>

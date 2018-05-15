@@ -15,12 +15,12 @@ class CreateNoticiasTable extends Migration
     {
         Schema::create('noticias', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo', 255)->nullable;
-            $table->string('descricao', 500);
+            $table->string('titulo', 255);
+            $table->string('descricao', 500)->nullable();
             $table->text('conteudo');
             $table->string('slug')->unique();
-            $table->string('palavraschave', 255);
-            $table->string('capa', 255);
+            $table->string('palavraschave', 255)->nullable();
+            $table->string('capa', 255)->nullable();
             $table->date("datapublicacao")->now('');
             $table->timestamps();
             $table->softDeletes();
