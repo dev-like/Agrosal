@@ -42,8 +42,8 @@ class quemsomosController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-      'nomefantasia'        => 'required|max:225',
-      'email'               => 'required|max:225',
+        'nomefantasia'        => 'required|max:225',
+        'email'               => 'required|max:225',
       ));
         $requestData = $request->all();
         $quemsomos = quemsomos::create($requestData);

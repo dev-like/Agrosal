@@ -30,9 +30,9 @@
                 <td>{{ $noticia->id }}</td>
                 <td>{{ substr(strip_tags($noticia->titulo), 0, 35) }}{{ (strlen(strip_tags($noticia->titulo)) > 25 ? "..." : "") }}</td>
                 <td>{{ date('d/m/y g:ia', strtotime($noticia->datapublicacao)) }}</td>
-                <td width="14%">
+                <td width="18%">
                     <span class="hint--top" aria-label="Editar notícia"><a href="{{ route('noticia.edit', $noticia->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
-                    <span class="hint--top" aria-label="Visualizar notícia"><a href="{{ route('noticia.show', $noticia->slug) }}" style="border-radius: 50%" class="btn btn-info waves-effect hint--bottom" aria-label="Thank you!" > <i class="fa fa-sticky-note-o m-r-5"></i></a></span>
+                    <span class="hint--top" aria-label="Visualizar notícia"><a href="{{ route('noticia.show', $noticia->slug) }}" style="border-radius: 50%" class="btn btn-info waves-effect hint--bottom" aria-label="Thank you!" > <i class="fa fa-eye"></i></a></span>
                     <span class="hint--top" aria-label="Deletar noticia"><button type="button" onclick="goswet({{$noticia->id}}, '{{$noticia->titulo}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
                 </td>
             </tr>
