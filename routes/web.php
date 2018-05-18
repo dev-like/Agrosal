@@ -20,9 +20,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
 
     Route::resource('quemsomos', 'QuemsomosController');
 
+    Route::resource('linha', 'LinhaController');
+
     Route::resource('noticia', 'NoticiaController');
-    // Route::get('noticia/{slug}', ['as' => 'noticia.single', 'uses' => 'NoticiaController@getSingleNoticia'])->where('slug', '[\w\d\-\_]+');
-    // Route::get('noticia/{slug}', 'NoticiaController@getSingle')->name('noticia.getSingle');
+    
 
     Route::resource('cliente', 'ClienteController');
     Route::post('cliente/{id}', 'ClienteController@destroy')->name('cliente.destroy');

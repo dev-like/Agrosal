@@ -142,7 +142,6 @@ class NoticiaController extends Controller
         $noticia->save();
         $request->session()->flash('success', 'O texto foi modificado com sucesso');
         return redirect()->route('noticia.index');
-        // return redirect()->route('noticia.show', $noticia->id); Depois da alteração mostra a tela show
     }
 
     /**

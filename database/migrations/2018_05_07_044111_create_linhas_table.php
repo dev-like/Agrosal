@@ -17,6 +17,7 @@ class CreateLinhasTable extends Migration
             $table->increments('id');
             $table->string('nome', 255)->nullable;
             $table->text('descricao');
+            $table->string('slug')->unique();
 
             $table->timestamps();
             $table->softDeletes();

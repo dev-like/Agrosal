@@ -16,6 +16,17 @@
                     <i class="fa fa-newspaper-o"></i> <span> Notícias </span>
                   </a>
                 </li>
+                <li>
+                  <a href="{{ route('noticia.index') }}">
+                    <i class="fa fa-newspaper-o"></i> <span> Produtos </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ route('linha.index') }}">
+                    <i class="fa fa-tags"></i> <span> Linhas </span>
+                  </a>
+                </li>
+
                 @if(Auth::User()->nivel == 1)
                 <li>
                   <a href="{{ route('usuario.index') }}">
