@@ -1,7 +1,11 @@
 @extends('admin.main')
 
-@section('page-title')
+@section('page-caminho')
   Usuários
+@endsection
+
+@section('page-title')
+  Edição
 @endsection
 
 @section('content')

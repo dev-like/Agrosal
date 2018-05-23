@@ -1,11 +1,15 @@
 @extends('admin.main')
 
-@section('styles')
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+@section('page-caminho')
+  Usuários
 @endsection
 
 @section('page-title')
-  Usuários
+  Listagem
+@endsection
+
+@section('styles')
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 @section('content')
