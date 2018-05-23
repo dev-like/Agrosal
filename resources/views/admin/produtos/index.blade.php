@@ -34,7 +34,6 @@
                 <td>{{ $produto -> linha->nome }}</td>
                 <td width="10%">
                     <span class="hint--top" aria-label="Editar produto"><a href="{{ route('produto.edit', $produto->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
-                    <!-- <span class="hint--top" aria-label="Visualizar produto"><a href="{{ route('produto.show', $produto->slug) }}" style="border-radius: 50%" class="btn btn-info waves-effect hint--bottom" aria-label="Thank you!" > <i class="fa fa-eye"></i></a></span> -->
                     <span class="hint--top" aria-label="Deletar produto"><button type="button" onclick="goswet({{$produto->id}}, '{{$produto->nome}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
                 </td>
             </tr>

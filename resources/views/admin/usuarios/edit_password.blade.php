@@ -25,13 +25,11 @@
                   {{ Form::password('password_user', ['class' => 'form-control']) }}
                 </div>
             </div>
-            <div class="row">
-              <div class="col-md-4 offset-md-4" style="margin-top: 15px">                
-                <div class="col-6 col-md-6" style="float: left">
-                  {{ Form::submit('Enviar', array('class' => 'btn btn-success btn-block')) }}
-                </div>
-                <div class="col-6 col-md-6" style="float: left">
-                  {{ Html::linkRoute('usuario.index', 'Cancelar', null, ['class' => 'btn btn-danger btn-block']) }}
+            <div class="row" style="margin-top: 20px">
+              <div class="form-group col-12">
+                <div class="text-center">
+                  <button class="btn btn-success" type="submit" value="Salvar"><i class="fa fa-save m-r-5"></i> Salvar</button>
+                  <a href="{{ route('usuario.index') }}" class="btn btn-danger"><i class="fa fa-window-close m-r-5"></i> Cancelar</a>
                 </div>
               </div>
             </div>

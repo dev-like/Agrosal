@@ -22,9 +22,8 @@
             <div class="row">
               <div class="form-group col-md-4">
                   {{ Form::label('nome', 'Nome') }}
-                  {{ Form::text('nome', null, array('class' => 'form-control', 'maxlength' => '255')) }}
+                  {{ Form::text('nome', null, array('class' => 'form-control','maxlength' => '255','required')) }}
               </div>
-
               <div class="form-group col-md-4" >
                 {{ Form::label('linha', 'Linha') }}
                 <select class="js-example-basic-multiple" data-style="form-control" name="linha_id" id="linha" required="required">
@@ -35,10 +34,9 @@
                   @endforelse
                 </select>
               </div>
-
               <div class="form-group col-md-4" >
                 {!! Form::label('imagem', 'Imagem') !!}
-                <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
+                <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light" required="required">
               </div>
             </div>
             <div class="row">

@@ -20,15 +20,10 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        $keyword = $request->get('search');
-        $perPage = 25;
-
-        if (!empty($keyword)) {
-            $produto = Produto::paginate($perPage);
-        } else {
-            $produto = Produto::paginate($perPage);
-        }
-        return view('admin.produtos.index', compact('produto'));
+        $produto = Produto::paginate(15);
+        return view('admin.produtos.index', [
+          'produto' => $produto
+      ]);
     }
 
     /**
@@ -147,7 +142,7 @@ class ProdutoController extends Controller
         }
 
         $produto->save();
-        $request->session()->flash('success', 'Produto alterado com sucesso');
+        $request->session()->flash('Sucesso', 'Produto alterado com sucesso');
         return redirect()->route('produto.index');
     }
 

@@ -13,7 +13,7 @@
         <div class="row">
           <div class="form-group col-md-12">
               {{ Form::label('nome', 'Nome') }}
-              {{ Form::text('nome', null, array('class' => 'nome form-control')) }}
+              {{ Form::text('nome', null, array('class' => 'nome form-control','maxlength' => '255','required')) }}
           </div>
         </div>
         <div class="row">
@@ -22,7 +22,7 @@
               {{ Form::textarea('descricao', null, array('class' => 'nome form-control')) }}
           </div>
         </div>
-        
+
         <div class="row" style="margin-top: 20px">
           <div class="form-group col-12">
             <div class="text-center">

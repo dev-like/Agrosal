@@ -32,47 +32,47 @@
       <div class="row">
         <div class="form-group col-md-3">
           {{ Form::label('razaosocial', 'Razão Social') }}
-          {{ Form::text('razaosocial', null, array('class' => 'form-control')) }}
+          {{ Form::text('razaosocial', null, array('class' => 'form-control','maxlength' => '255')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('nomefantasia', 'Nome Fantasia') }}
-          {{ Form::text('nomefantasia', null, array('class' => 'form-control')) }}
+          {{ Form::text('nomefantasia', null, array('class' => 'form-control','maxlength' => '255','required')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('cnpj', 'CNPJ') }}
-          {{ Form::text('cnpj', null, array('class' => 'form-control')) }}
+          {{ Form::text('cnpj', null, array('class' => 'form-control','maxlength' => '18')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('ie', 'Inscrição Estadual') }}
-          {{ Form::text('ie', null, array('class' => 'form-control')) }}
+          {{ Form::text('ie', null, array('class' => 'form-control','maxlength' => '45')) }}
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-3">
           {{ Form::label('email', 'E-mail') }}
-          {{ Form::text('email', null, array('class' => 'form-control')) }}
+          {{ Form::email('email', null, array('class' => 'form-control','maxlength' => '255')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('telefone', 'Telefone') }}
-          {{ Form::text('telefone', null, array('class' => 'form-control')) }}
+          {{ Form::text('telefone', null, array('class' => 'form-control','maxlength' => '20')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('fax', 'FAX') }}
-          {{ Form::text('fax', null, array('class' => 'form-control')) }}
+          {{ Form::text('fax', null, array('class' => 'form-control','maxlength' => '20')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('sac', 'SAC') }}
-          {{ Form::text('sac', null, array('class' => 'form-control')) }}
+          {{ Form::text('sac', null, array('class' => 'form-control','maxlength' => '20')) }}
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-3">
           {{ Form::label('endereco', 'Endereço') }}
-          {{ Form::text('endereco', null, array('class' => 'form-control')) }}
+          {{ Form::text('endereco', null, array('class' => 'form-control','maxlength' => '255')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('bairro', 'Bairro') }}
-          {{ Form::text('bairro', null, array('class' => 'form-control')) }}
+          {{ Form::text('bairro', null, array('class' => 'form-control','maxlength' => '255')) }}
         </div>
 
         <div class="form-group col-md-3 ">
@@ -110,43 +110,43 @@
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('cidade', 'Cidade') }}
-          {{ Form::text('cidade', null, array('class' => 'form-control')) }}
+          {{ Form::text('cidade', null, array('class' => 'form-control','maxlength' => '255')) }}
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-3">
           {{ Form::label('cep', 'CEP') }}
-          {{ Form::text('cep', null, array('class' => 'form-control')) }}
+          {{ Form::text('cep', null, array('class' => 'form-control','maxlength' => '10')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('facebook', 'Facebook') }}
-          {{ Form::text('facebook', null, array('class' => 'form-control')) }}
+          {{ Form::text('facebook', null, array('class' => 'form-control','maxlength' => '255')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('instagram', 'Instagram') }}
-          {{ Form::text('instagram', null, array('class' => 'form-control')) }}
+          {{ Form::text('instagram', null, array('class' => 'form-control','maxlength' => '255')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('youtube', 'YouTube') }}
-          {{ Form::text('youtube', null, array('class' => 'form-control')) }}
+          {{ Form::text('youtube', null, array('class' => 'form-control','maxlength' => '255')) }}
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-12" style="margin-top: 20px">
           {!! Form::label('missao', 'Missão') !!}
-          {!! Form::textarea('missao', null, array('class' => 'form-control')) !!}
+          {!! Form::textarea('missao', null, array('class' => 'form-control','maxlength' => '2500')) !!}
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-12" style="margin-top: 20px">
           {!! Form::label('visao', 'Visão') !!}
-          {!! Form::textarea('visao', null, array('class' => 'form-control')) !!}
+          {!! Form::textarea('visao', null, array('class' => 'form-control','maxlength' => '2500')) !!}
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-12" style="margin-top: 20px">
           {!! Form::label('valores', 'Valores') !!}
-          {!! Form::textarea('valores', null, array('class' => 'form-control')) !!}
+          {!! Form::textarea('valores', null, array('class' => 'form-control','maxlength' => '2500')) !!}
         </div>
       </div>
       <div class="row">
@@ -186,7 +186,6 @@ jQuery(function($){
   $("#cnpj").mask("99.999.999/9999-99");
   $("#telefone").mask("(99) 99999-9999");
   $("#fax").mask("(99) 99999-9999");
-  $("#sac").mask("(99) 99999-9999");
   $("#cep").mask("99.999-999");
 });
 </script>

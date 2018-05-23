@@ -20,7 +20,7 @@
         <div class="row">
           <div class="form-group col-md-4">
               {{ Form::label('nome', 'Nome') }}
-              {{ Form::text('nome', null, array('class' => 'form-control', 'maxlength' => '255')) }}
+              {{ Form::text('nome', null, array('class' => 'form-control', 'maxlength' => '255','required')) }}
           </div>
           <div class="form-group col-md-4" >
             {{ Form::label('linha', 'Linha') }}
@@ -34,7 +34,7 @@
           </div>
           <div class="form-group col-md-4">
             {!! Form::label('imagem', 'Enviar Imagem') !!}
-            <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
+            <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light" required="required">
           </div>
         </div>
         <div class="row">

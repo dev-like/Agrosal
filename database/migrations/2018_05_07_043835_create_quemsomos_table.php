@@ -15,26 +15,26 @@ class CreateQuemsomosTable extends Migration
     {
         Schema::create('quemsomos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('razaosocial', 191);
-            $table->string('nomefantasia', 191)->nullable();
-            $table->string('cnpj', 18);
-            $table->string('ie', 45);
-            $table->string('missao', 2500);
-            $table->string('visao', 2500);
-            $table->string('valores', 2500);
-            $table->text('quemsomos');
-            $table->string('email', 255)->nullable();
-            $table->string('telefone', 20);
-            $table->string('fax', 20);
-            $table->string('sac', 20);
-            $table->string('endereco', 255);
-            $table->string('bairro', 255);
-            $table->string('cidade', 255);
-            $table->string('estado', 255);
-            $table->string('cep', 10);
-            $table->string('facebook', 255);
-            $table->string('instagram', 255);
-            $table->string('youtube', 255);
+            $table->string('razaosocial', 191)->nullable();
+            $table->string('nomefantasia', 191);
+            $table->string('cnpj', 18)->nullable();
+            $table->string('ie', 45)->nullable();
+            $table->string('missao', 2500)->nullable();
+            $table->string('visao', 2500)->nullable();
+            $table->string('valores', 2500)->nullable();
+            $table->text('quemsomos')->nullable();
+            $table->string('email', 255);
+            $table->string('telefone', 20)->nullable();
+            $table->string('fax', 20)->nullable();
+            $table->string('sac', 20)->nullable();
+            $table->string('endereco', 255)->nullable();
+            $table->string('bairro', 255)->nullable();
+            $table->string('cidade', 255)->nullable();
+            $table->string('estado', 255)->nullable();
+            $table->string('cep', 10)->nullable();
+            $table->string('facebook', 255)->nullable();
+            $table->string('instagram', 255)->nullable();
+            $table->string('youtube', 255)->nullable();
 
             $table->timestamps();
             $table->softDeletes();

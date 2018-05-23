@@ -27,17 +27,17 @@
     <div class="row">
       <div class="form-group col-md-8">
         {!! Form::label('titulo', 'Titulo:') !!}
-        {!! Form::text('título', $noticia->titulo, array('class' => 'form-control')) !!}
+        {!! Form::text('título', $noticia->titulo, array('class' => 'form-control','maxlength' => '255','required')) !!}
       </div>
       <div class="form-group col-md-4">
         {!! Form::label('datapublicacao', 'Data de publicação:') !!}
-        {!! Form::date('datapublicação', $noticia->datapublicacao, array('class' => 'form-control')) !!}
+        {!! Form::date('datapublicação', $noticia->datapublicacao, array('class' => 'form-control','required')) !!}
       </div>
     </div>
     <div class="row">
       <div class="form-group col-md-6">
         {{ Form::label('palavraschave', 'Palavras Chave') }}
-        {!! Form::text('palavraschave', $noticia->palavraschave, array('class' => 'form-control', 'data-role' => 'tagsinput')) !!}
+        {!! Form::text('palavraschave', $noticia->palavraschave, array('class' => 'form-control','maxlength' => '255', 'data-role' => 'tagsinput')) !!}
       </div>
       <div class="form-group col-md-6">
         {!! Form::label('capa', 'Enviar Imagem') !!}
@@ -53,7 +53,7 @@
     <div class="row">
       <div class="col-12" style="margin-top: 20px">
         {!! Form::label('conteudo', 'Conteudo:') !!}
-        {{ Form::textarea('conteudo', $noticia->conteudo, array('class' => 'form-control standard-top-spacing', 'style' => 'height:400px')) }}
+        {{ Form::textarea('conteudo', $noticia->conteudo, array('class' => 'form-control standard-top-spacing','maxlength' => '500', 'style' => 'height:400px','required')) }}
       </div>
     </div>
 

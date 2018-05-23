@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-3">
           {{ Form::label('nomefantasia', 'Nome Fantasia') }}
-          {{ Form::text('nomefantasia', null, array('class' => 'form-control')) }}
+          {{ Form::text('nomefantasia', null, array('class' => 'form-control','required')) }}
         </div>
         <div class="col-md-3">
           {{ Form::label('cnpj', 'CNPJ') }}
@@ -52,7 +52,7 @@
       <div class="row">
         <div class="col-md-3">
           {{ Form::label('email', 'E-mail') }}
-          {{ Form::text('missao', null, array('class' => 'form-control')) }}
+          {{ Form::email('email', null, array('class' => 'form-control','required')) }}
         </div>
         <div class="col-md-3">
           {{ Form::label('telefone', 'Telefone') }}

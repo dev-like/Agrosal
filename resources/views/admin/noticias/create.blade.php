@@ -18,11 +18,11 @@
         <div class="row">
           <div class="form-group col-md-8">
             {!! Form::label('titulo', 'Titulo:') !!}
-            {!! Form::text('titulo', null, array('class' => 'form-control')) !!}
+            {!! Form::text('titulo', null, array('class' => 'form-control','maxlength' => '255','required')) !!}
           </div>
           <div class="form-group col-md-4">
             {!! Form::label('datapublicacao', 'Data de publicação:') !!}
-            {!! Form::date('datapublicacao', null, array('class' => 'form-control')) !!}
+            {!! Form::date('datapublicacao', null, array('class' => 'form-control','required')) !!}
           </div>
         </div>
         <div class="row">
@@ -32,19 +32,19 @@
           </div>
           <div class="form-group col-md-6">
             {{ Form::label('palavraschave', 'Palavras Chave') }}
-            {{ Form::text('palavraschave', null, array('class' => 'palavraschave form-control', 'data-role' => 'tagsinput')) }}
+            {{ Form::text('palavraschave', null, array('class' => 'palavraschave form-control','maxlength' => '255', 'data-role' => 'tagsinput')) }}
           </div>
         </div>
         <div class="row">
           <div class="form-group col-md-12">
             {!! Form::label('descricao', 'Descrição:') !!}
-            {!! Form::textarea('descricao', null, array('class' => 'form-control')) !!}
+            {!! Form::textarea('descricao', null, array('class' => 'form-control','maxlength' => '500')) !!}
           </div>
         </div>
         <div class="row">
           <div class="form-group col-md-12" style="margin-top: 20px">
             {!! Form::label('conteudo', 'Conteudo') !!}
-            {!! Form::textarea ('conteudo', null, array('class' => 'form-control')) !!}
+            {!! Form::textarea('conteudo', null, array('class' => 'form-control')) !!}
           </div>
         </div>
         <div class="row" style="margin-top: 20px">
@@ -63,7 +63,6 @@
 @section('scripts')
 <script src="{{ asset('template/plugins/select2/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('template/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js') }}"></script>
-<script src="{{ asset('template/js/pages/form_elements.js') }}"></script>
 <script src="{{ asset('template/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 

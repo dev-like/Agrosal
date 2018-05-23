@@ -18,7 +18,7 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = Noticia::paginate();
+        $noticias = Noticia::paginate(15);
         return view('admin.noticias.index', [
             'noticias' => $noticias
         ]);
@@ -45,9 +45,7 @@ class NoticiaController extends Controller
         $this->validate($request, array(
         'titulo'              => 'required|max:225',
         'conteudo'            => 'required',
-        'descricao'           => 'required',
         'datapublicacao'      => 'required|date',
-        'capa'                => 'sometimes|image',
       ));
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->titulo));
@@ -69,7 +67,7 @@ class NoticiaController extends Controller
         }
 
         $noticia->save();
-        $request->session()->flash('success', 'Notícia adicionada com sucesso');
+        $request->session()->flash('Sucesso', 'Notícia adicionada com sucesso');
         return redirect()->route('noticia.index');
     }
 

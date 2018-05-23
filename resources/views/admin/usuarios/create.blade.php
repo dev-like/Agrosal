@@ -13,11 +13,11 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                   {{ Form::label('nome', 'Nome do usuário') }}
-                  {{ Form::text('nome', null, array('class' => 'form-control')) }}
+                  {{ Form::text('nome', null, array('class' => 'form-control','maxlength' => '255','required')) }}
                 </div>
                 <div class="col-md-6 offset-md-3">
                   {{ Form::label('email', 'Email do usuário') }}
-                  {{ Form::text('email', null, array('class' => 'form-control')) }}
+                  {{ Form::email('email', null, array('class' => 'form-control','maxlength' => '255','required')) }}
                 </div>
                 <div class="col-md-6 offset-md-3">
                   {{ Form::label('nivel', 'Usuário administrador?') }}
@@ -31,20 +31,18 @@
                 </div>
                 <div class="col-md-6 offset-md-3">
                   {{ Form::label('password', 'Senha') }}
-                  {{ Form::password('password', array('class' => 'form-control')) }}
+                  {{ Form::password('password', array('class' => 'form-control','maxlength' => '255','required')) }}
                 </div>
                 <div class="col-md-6 offset-md-3">
                   {{ Form::label('password_confirmation', 'Confirmar senha:') }}
-                  {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
+                  {{ Form::password('password_confirmation', array('class' => 'form-control','maxlength' => '255','required')) }}
                 </div>
             </div>
-            <div class="row">
-              <div class="col-md-4 offset-md-4" style="margin-top: 15px">
-                <div class="col-6 col-md-6" style="float: left">
-                  {{ Form::submit('Salvar', array('class' => 'btn btn-success btn-block')) }}
-                </div>
-                <div class="col-6 col-md-6" style="float: left">
-                  {{ Html::linkRoute('usuario.index', 'Cancelar', null, ['class' => 'btn btn-danger btn-block']) }}
+            <div class="row" style="margin-top: 20px">
+              <div class="form-group col-12">
+                <div class="text-center">
+                  <button class="btn btn-success" type="submit" value="Salvar"><i class="fa fa-save m-r-5"></i> Salvar</button>
+                  <a href="{{ route('usuario.index') }}" class="btn btn-danger"><i class="fa fa-window-close m-r-5"></i> Cancelar</a>
                 </div>
               </div>
             </div>

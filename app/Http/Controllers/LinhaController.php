@@ -17,15 +17,10 @@ class LinhaController extends Controller
      */
     public function index(Request $request)
     {
-        $keyword = $request->get('search');
-        $perPage = 25;
-
-        if (!empty($keyword)) {
-            $linha = linha::paginate($perPage);
-        } else {
-            $linha = linha::paginate($perPage);
-        }
-        return view('admin.linhas.index', compact('linha'));
+        $linha = Linha::paginate(15);
+        return view('admin.linhas.index', [
+          'linha' => $linha
+      ]);
     }
 
     /**
@@ -58,7 +53,7 @@ class LinhaController extends Controller
         $linha->slug            = $slug;
 
         $linha->save();
-        $request->session()->flash('success', 'Linha adicionada com sucesso');
+        $request->session()->flash('Sucesso', 'Linha adicionada com sucesso');
         return redirect()->route('linha.index');
     }
 
@@ -116,10 +111,10 @@ class LinhaController extends Controller
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->nome));
         $linha->nome          = $request->nome;
         $linha->descricao     = $request->descricao;
-        $linha->slug            = $slug;
+        $linha->slug          = $slug;
 
         $linha->save();
-        $request->session()->flash('success', 'Linha adicionada com sucesso');
+        $request->session()->flash('Sucesso', 'Linha adicionada com sucesso');
         return redirect()->route('linha.index');
     }
 

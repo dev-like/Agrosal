@@ -13,7 +13,6 @@
 @section('content')
 
 <div class="col-12">
-
   <div class="card-box">
     <a href="{{ route('linha.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
       <h4 class="m-t-0 header-title">Cadastro de Linhas</h4>
@@ -44,7 +43,8 @@
           @endforelse
         </tbody>
     </table>
-
+  </div>
+</div>
 @endsection
 
 @section('scripts')
