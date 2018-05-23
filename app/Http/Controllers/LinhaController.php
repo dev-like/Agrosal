@@ -55,7 +55,6 @@ class LinhaController extends Controller
 
         $linha = new Linha;
         $linha->nome          = $request->nome;
-        $linha->descricao     = $request->descricao;
         $linha->slug            = $slug;
 
         $linha->save();

@@ -17,8 +17,8 @@
                   </a>
                 </li>
                 <li>
-                  <a href="{{ route('noticia.index') }}">
-                    <i class="fa fa-newspaper-o"></i> <span> Produtos </span>
+                  <a href="{{ route('produto.index') }}">
+                    <i class="fa fa-shopping-basket"></i> <span> Produtos </span>
                   </a>
                 </li>
                 <li>

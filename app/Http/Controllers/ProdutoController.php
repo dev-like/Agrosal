@@ -1,0 +1,167 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Models\Produto;
+use App\Models\Linha;
+use Illuminate\Http\Request;
+use DB;
+use Image;
+use Storage;
+
+class ProdutoController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function index(Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 25;
+
+        if (!empty($keyword)) {
+            $produto = Produto::paginate($perPage);
+        } else {
+            $produto = Produto::paginate($perPage);
+        }
+        return view('admin.produtos.index', compact('produto'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function create()
+    {
+        $linhas = Linha::all();
+
+        return view('admin.produtos.create', ['linhas' => $linhas]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, array(
+          'nome'          => 'required|max:225',
+          'imagem'        => 'image',
+          'linha_id'      => 'required|integer',
+    ));
+
+        $slug = Self::tirarAcentos(str_replace(" ", "-", $request->nome));
+
+        $produto = new Produto;
+        $produto->fill($request->all());
+        $produto->slug          = $slug;
+
+        if ($request->hasFile('imagem')) {
+            $image = $request->file('imagem');
+            $filename = time() . '.' . $image->getClientOriginalName();
+            $location = public_path('produtos/imagens/' . $filename);
+            Image::make($image)->resize(800, 400)->save($location);
+            $produto->imagem = $filename;
+        }
+
+        $produto->save();
+        $request->session()->flash('success', 'produto adicionada com sucesso');
+        return redirect()->route('produto.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $produto = produto::where('slug', '=', $id)->first();
+        return view('admin.produtos.show')->with('produto', $produto);
+    }
+
+    public function tirarAcentos($string)
+    {
+        return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $string);
+    }
+
+    public function getSingle($slug)
+    {
+        $produto = produto::where('slug', '=', $slug)->first();
+        return view('admin.produtos.show')->with('produto', $produto);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function edit(Produto $produto)
+    {
+        return view('admin.produtos.edit', [
+         'produto' => $produto,
+         'linhas' => Linha::all()
+      ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update(Request $request, $id)
+    {
+        $produto = Produto::find($id);
+
+        $slug = Self::tirarAcentos(str_replace(" ", "-", $request->nome));
+
+        $produto->fill($request->all());
+        $produto->slug          = $slug;
+
+        if ($request->hasFile('imagem')) {
+            $image = $request->file('imagem');
+            $filename = time() . '.' . $image->getClientOriginalName();
+            $location = public_path('produtos/imagens/' . $filename);
+            Image::make($image)->resize(800, 400)->save($location);
+
+            if ($produto->imagem) {
+                $oldFilename = $produto->imagem;
+                Storage::delete('produtos/imagens/'.$oldFilename);
+            }
+            $produto->imagem = $filename;
+        }
+
+        $produto->save();
+        $request->session()->flash('success', 'Produto alterado com sucesso');
+        return redirect()->route('produto.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function destroy($id)
+    {
+        $produto = produto::find($id);
+        $produto->delete();
+        return [response()->json("Sucesso"), redirect('admin/produto')];
+    }
+}
