@@ -63,12 +63,12 @@ class ProdutoController extends Controller
             $image = $request->file('imagem');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('produtos/imagens/' . $filename);
-            Image::make($image)->resize(800, 400)->save($location);
+            Image::make($image)->resize(289, 300)->save($location);
             $produto->imagem = $filename;
         }
 
         $produto->save();
-        $request->session()->flash('success', 'produto adicionada com sucesso');
+        $request->session()->flash('success', 'Produto adicionada com sucesso');
         return redirect()->route('produto.index');
     }
 
@@ -132,7 +132,7 @@ class ProdutoController extends Controller
             $image = $request->file('imagem');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('produtos/imagens/' . $filename);
-            Image::make($image)->resize(800, 400)->save($location);
+            Image::make($image)->resize(289, 300)->save($location);
 
             if ($produto->imagem) {
                 $oldFilename = $produto->imagem;
@@ -142,7 +142,7 @@ class ProdutoController extends Controller
         }
 
         $produto->save();
-        $request->session()->flash('Sucesso', 'Produto alterado com sucesso');
+        $request->session()->flash('success', 'Produto alterado com sucesso');
         return redirect()->route('produto.index');
     }
 
@@ -157,6 +157,6 @@ class ProdutoController extends Controller
     {
         $produto = produto::find($id);
         $produto->delete();
-        return [response()->json("Sucesso"), redirect('admin/produto')];
+        return [response()->json("success"), redirect('admin/produto')];
     }
 }

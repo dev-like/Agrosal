@@ -49,7 +49,7 @@ class quemsomosController extends Controller
         $quemsomos = quemsomos::create($requestData);
 
         $request->session()->flash('success', 'Quem Somos adicionado com sucesso');
-        return redirect('admin/quemsomos')->with('flash_message', 'quemsomos added!');
+        return redirect('admin/quemsomos')->with('flash_message', 'Quem Somos adicionado!');
     }
 
     /**
@@ -107,6 +107,6 @@ class quemsomosController extends Controller
     {
         $quemsomos = quemsomos::find($id);
         $quemsomos->delete();
-        return [response()->json("Sucesso"), redirect('admin/quemsomos')];
+        return [response()->json("success"), redirect('admin/quemsomos')];
     }
 }

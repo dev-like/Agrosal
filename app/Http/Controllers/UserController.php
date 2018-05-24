@@ -10,15 +10,14 @@ use Hash;
 
 class UserController extends Controller
 {
-
     public function __construct()
     {
-      $this->middleware(function ($request, $next) {
-          if(Auth::User()->nivel == 1){
-            return $next($request);
-          }
-          return redirect()->route('admin.home');
-      });
+        $this->middleware(function ($request, $next) {
+            if (Auth::User()->nivel == 1) {
+                return $next($request);
+            }
+            return redirect()->route('admin.home');
+        });
     }
 
     /**UserController
@@ -69,7 +68,7 @@ class UserController extends Controller
 
         $user->save();
 
-        $request->session()->flash('success', "$user->nome adicionado com sucesso");
+        $request->session()->flash('Sucesso', "$user->nome adicionado com sucesso");
         return redirect()->route('usuario.index');
     }
 
@@ -121,7 +120,7 @@ class UserController extends Controller
 
         $user->save();
 
-        $request->session()->flash('success', "$user->nome editado com sucesso");
+        $request->session()->flash('Sucesso', "$user->nome editado com sucesso");
         return redirect()->route('usuario.index');
     }
 
@@ -140,16 +139,15 @@ class UserController extends Controller
           'password_confirmation' => 'required|min:3|',
           'password_user' => 'required|min:3|',
         ]);
-        if(Hash::check($request->password_user, Auth::User()->password, [])){
+        if (Hash::check($request->password_user, Auth::User()->password, [])) {
+            $user = User::find($id);
+            $user->password = bcrypt($request->password);
+            $user->save();
 
-          $user = User::find($id);
-          $user->password = bcrypt($request->password);
-          $user->save();
-
-          $request->session()->flash('success', "Senha de $user->nome alterada  com sucesso");
-          return redirect()->route('usuario.index');
+            $request->session()->flash('Sucesso', "Senha de $user->nome alterada  com sucesso");
+            return redirect()->route('usuario.index');
         } else {
-          return redirect()->back()->withErrors(['error_password_user' => 'Senha de usuário incorreta']);
+            return redirect()->back()->withErrors(['error_password_user' => 'Senha de usuário incorreta']);
         }
     }
 
@@ -161,14 +159,14 @@ class UserController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        if(Hash::check($request->senhaUsuarioLogado, Auth::User()->password, [])){
-          $user = User::find($request->idUsuario);
-          $nomeUsuario = $user->nome;
-          $user->delete();
-          $request->session()->flash('success', "$nomeUsuario Deletado com sucesso");
-          return redirect()->route('usuario.index');
+        if (Hash::check($request->senhaUsuarioLogado, Auth::User()->password, [])) {
+            $user = User::find($request->idUsuario);
+            $nomeUsuario = $user->nome;
+            $user->delete();
+            $request->session()->flash('Sucesso', "$nomeUsuario Deletado com sucesso");
+            return redirect()->route('usuario.index');
         } else {
-          return redirect()->route('usuario.index')->withErrors(['error_password_user' => 'Senha de usuário incorreta']);
+            return redirect()->route('usuario.index')->withErrors(['error_password_user' => 'Senha de usuário incorreta']);
         }
     }
 }

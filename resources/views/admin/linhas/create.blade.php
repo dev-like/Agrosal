@@ -48,7 +48,7 @@
 <script src="{{ asset('template/plugins/select2/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('template/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js') }}"></script>
 <script src="{{ asset('template/js/pages/form_elements.js') }}"></script>
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script src="{{ asset('template/plugins/tinymce/tinymce.min.js') }}"></script>
 
 <script>
 var editor_config = {

@@ -50,10 +50,11 @@ class LinhaController extends Controller
 
         $linha = new Linha;
         $linha->nome          = $request->nome;
+        $linha->descricao     = $request->descricao;
         $linha->slug            = $slug;
 
         $linha->save();
-        $request->session()->flash('Sucesso', 'Linha adicionada com sucesso');
+        $request->session()->flash('success', 'Linha adicionada com sucesso');
         return redirect()->route('linha.index');
     }
 
@@ -114,7 +115,7 @@ class LinhaController extends Controller
         $linha->slug          = $slug;
 
         $linha->save();
-        $request->session()->flash('Sucesso', 'Linha adicionada com sucesso');
+        $request->session()->flash('success', 'Linha adicionada com sucesso');
         return redirect()->route('linha.index');
     }
 
@@ -129,6 +130,6 @@ class LinhaController extends Controller
     {
         $linha = linha::find($id);
         $linha->delete();
-        return [response()->json("Sucesso"), redirect('admin/linha')];
+        return [response()->json("success"), redirect('admin/linha')];
     }
 }

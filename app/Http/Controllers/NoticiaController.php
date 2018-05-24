@@ -51,12 +51,8 @@ class NoticiaController extends Controller
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->titulo));
 
         $noticia = new Noticia;
-        $noticia->titulo          = $request->titulo;
-        $noticia->datapublicacao  = $request->datapublicacao;
-        $noticia->palavraschave   = $request->palavraschave;
-        $noticia->descricao       = $request->descricao;
-        $noticia->conteudo        = $request->conteudo;
-        $noticia->slug            = $slug;
+        $noticia->fill($request->all());
+        $noticia->slug          = $slug;
 
         if ($request->hasFile('capa')) {
             $image = $request->file('capa');
@@ -67,7 +63,7 @@ class NoticiaController extends Controller
         }
 
         $noticia->save();
-        $request->session()->flash('Sucesso', 'Notícia adicionada com sucesso');
+        $request->session()->flash('success', 'Notícia adicionada com sucesso');
         return redirect()->route('noticia.index');
     }
 
@@ -118,11 +114,8 @@ class NoticiaController extends Controller
         $noticia = Noticia::find($id);
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->título));
-        $noticia->titulo          = $request->título;
-        $noticia->descricao       = $request->descricao;
-        $noticia->palavraschave   = $request->palavraschave;
-        $noticia->conteudo        = $request->conteudo;
-        $noticia->slug            = $slug;
+        $noticia->fill($request->all());
+        $noticia->slug          = $slug;
 
         if ($request->hasFile('capa')) {
             $image = $request->file('capa');
@@ -156,6 +149,6 @@ class NoticiaController extends Controller
         }
         $noticia->delete();
 
-        return response()->json("Sucesso");
+        return response()->json("success");
     }
 }

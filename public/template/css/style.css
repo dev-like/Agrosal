@@ -121,6 +121,10 @@ File: Main Css File
   .navbar-custom .topbar-right-menu li {
     float: left; }
 
+.hidden{
+  display:none;
+}
+
 .logo {
   color: #ffffff;
   font-size: 20px;
