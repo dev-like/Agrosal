@@ -15,8 +15,8 @@ class CreateLinhasTable extends Migration
     {
         Schema::create('linhas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome', 255)->nullable();
-            $table->text('descricao');
+            $table->string('nome', 255);
+            $table->text('descricao')->nullable();
             $table->string('slug')->unique();
 
             $table->timestamps();

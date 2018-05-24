@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  modelo
+  Linhas
 @endsection
 
 @section('page-title')
-  Novo modelo
+  Cadastrar Linha
 @endsection
 
 @section('script-bottom')

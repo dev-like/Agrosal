@@ -1,7 +1,11 @@
 @extends('admin.main')
 
+@section('page-caminho')
+  Notícias
+@endsection
+
 @section('page-title')
-  NOTÍCIAS
+  Cadastrar Notícia
 @endsection
 
 @section('script-bottom')
@@ -67,7 +71,7 @@
 <script>
   var editor_config = {
     path_absolute : "/",
-    selector: "textarea",
+    selector: "textarea#conteudo",
     height:300,
     plugins: [
       "advlist autolink lists link image charmap print preview hr anchor pagebreak",

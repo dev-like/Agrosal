@@ -1,12 +1,16 @@
 @extends('admin.main')
 
-@section('styles')
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link href="{{ asset('template/plugins/sweet-alert/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+@section('page-caminho')
+  Notícias
 @endsection
 
 @section('page-title')
-  NOTÍCIAS
+  Listagem
+@endsection
+
+@section('styles')
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link href="{{ asset('template/plugins/sweet-alert/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')

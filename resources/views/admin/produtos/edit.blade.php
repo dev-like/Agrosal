@@ -1,7 +1,11 @@
 @extends('admin.main')
 
+@section('page-caminho')
+  Produto
+@endsection
+
 @section('page-title')
-  QUEM SOMOS
+  Editar Produto
 @endsection
 
 @section('script-bottom')

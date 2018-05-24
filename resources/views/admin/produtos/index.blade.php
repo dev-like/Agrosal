@@ -1,13 +1,17 @@
 @extends('admin.main')
 
+@section('page-caminho')
+  Produtos
+@endsection
+
+@section('page-title')
+  Listagem
+@endsection
+
 @section('styles')
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Sweet Alert css -->
   <link href="{{ asset('template/plugins/sweet-alert/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
-@endsection
-
-@section('page-title')
-  produtos
 @endsection
 
 @section('content')

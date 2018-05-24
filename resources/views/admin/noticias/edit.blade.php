@@ -1,7 +1,11 @@
 @extends('admin.main')
 
+@section('page-caminho')
+  Notícias
+@endsection
+
 @section('page-title')
-  NOTÍCIAS
+  Editar Notícia
 @endsection
 
 @section('script-bottom')
