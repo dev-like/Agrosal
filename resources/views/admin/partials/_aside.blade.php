@@ -12,18 +12,18 @@
                   </a>
                 </li>
                 <li>
-                  <a href="{{ route('noticia.index') }}">
-                    <i class="fa fa-newspaper-o"></i> <span> Notícias </span>
+                  <a href="{{ route('linha.index') }}">
+                    <i class="fa fa-tags"></i> <span> Linhas </span>
                   </a>
                 </li>
                 <li>
                   <a href="{{ route('produto.index') }}">
                     <i class="fa fa-shopping-basket"></i> <span> Produtos </span>
                   </a>
-                </li>
+                </li>                
                 <li>
-                  <a href="{{ route('linha.index') }}">
-                    <i class="fa fa-tags"></i> <span> Linhas </span>
+                  <a href="{{ route('noticia.index') }}">
+                    <i class="fa fa-newspaper-o"></i> <span> Notícias </span>
                   </a>
                 </li>
 
