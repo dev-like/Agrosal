@@ -50,7 +50,7 @@
       <div class="row">
         <div class="form-group col-md-3">
           {{ Form::label('email', 'E-mail') }}
-          {{ Form::email('email', null, array('class' => 'form-control','maxlength' => '255')) }}
+          {{ Form::email('email', null, array('class' => 'form-control','maxlength' => '255','required')) }}
         </div>
         <div class="form-group col-md-3">
           {{ Form::label('telefone', 'Telefone') }}
@@ -184,7 +184,7 @@
 jQuery(function($){
   $('.js-example-basic-single').select2();
   $("#cnpj").mask("99.999.999/9999-99");
-  $("#telefone").mask("(99) 99999-9999");
+  $("#telefone").mask("(99) 9999-9999");
   $("#fax").mask("(99) 99999-9999");
   $("#cep").mask("99.999-999");
 });

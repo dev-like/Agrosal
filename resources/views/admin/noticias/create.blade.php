@@ -66,6 +66,7 @@
 
 @section('scripts')
 <script src="{{ asset('template/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('template/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('template/plugins/tinymce/tinymce.min.js') }}"></script>
 
 <script>
