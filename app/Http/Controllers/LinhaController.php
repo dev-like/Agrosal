@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Linha;
 use Illuminate\Http\Request;
 use DB;
+use Image;
+use Storage;
 
 class LinhaController extends Controller
 {
@@ -44,6 +46,7 @@ class LinhaController extends Controller
     {
         $this->validate($request, array(
           'nome'          => 'required|max:225',
+          'capa'          => 'image|mimes:jpeg,png,jpg',
     ));
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->nome));
@@ -52,6 +55,14 @@ class LinhaController extends Controller
         $linha->nome          = $request->nome;
         $linha->descricao     = $request->descricao;
         $linha->slug            = $slug;
+
+        if ($request->hasFile('capa')) {
+            $image = $request->file('capa');
+            $filename = time() . '.' . $image->getClientOriginalName();
+            $location = public_path('linhas/imagens/' . $filename);
+            Image::make($image)->resize(289, 300)->save($location);
+            $linha->capa = $filename;
+        }
 
         $linha->save();
         $request->session()->flash('success', 'Linha adicionada com sucesso');
@@ -114,8 +125,21 @@ class LinhaController extends Controller
         $linha->descricao     = $request->descricao;
         $linha->slug          = $slug;
 
+        if ($request->hasFile('capa')) {
+            $image = $request->file('capa');
+            $filename = time() . '.' . $image->getClientOriginalName();
+            $location = public_path('linhas/imagens/' . $filename);
+            Image::make($image)->resize(800, 400)->save($location);
+
+            if ($linha->capa) {
+                $oldFilename = $linha->capa;
+                Storage::delete('noticias/imagens/'.$oldFilename);
+            }
+            $linha->capa = $filename;
+        }
+
         $linha->save();
-        $request->session()->flash('success', 'Linha adicionada com sucesso');
+        $request->session()->flash('success', 'Linha alterada com sucesso');
         return redirect()->route('linha.index');
     }
 

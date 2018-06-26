@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Cadastrar Linha
+Linhas
 @endsection
 
 @section('script-bottom')
@@ -16,11 +16,17 @@
 @section('content')
 <div class="col-12">
   <div class="card-box">
-        {{ Form::open(['route' => 'linha.store']) }}
+    <h4 class="m-t-0 header-title">Cadastro de Linhas</h4>
+
+        {{ Form::open(['route' => 'linha.store', 'files' => true]) }}
             <div class="row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                   {{ Form::label('nome', 'Nome') }}
                   {{ Form::text('nome', null, array('class' => 'nome form-control','maxlength' => '255','required')) }}
+              </div>
+              <div class="form-group col-md-6">
+                  {{ Form::label('capa', 'Capa') }}
+                  <input type="file" name="capa" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
               </div>
             </div>
             <div class="row">
@@ -47,6 +53,7 @@
 @section('scripts')
 <script src="{{ asset('template/plugins/select2/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('template/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js') }}"></script>
+<script src="{{ asset('template/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('template/js/pages/form_elements.js') }}"></script>
 <script src="{{ asset('template/plugins/tinymce/tinymce.min.js') }}"></script>
 

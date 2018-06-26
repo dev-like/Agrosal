@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Cadastrar Notícia
+Notícias
 @endsection
 
 @section('script-bottom')

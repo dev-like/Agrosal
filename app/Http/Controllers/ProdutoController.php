@@ -48,8 +48,8 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-          'nome'          => 'required|max:225',
-          'imagem'        => 'image',
+          'nome'          => 'required|max:225|unique:produtos,nome'.$request->id,
+          'imagem'        => 'image|mimes:jpeg,png,jpg',
           'linha_id'      => 'required|integer',
     ));
 
@@ -58,6 +58,7 @@ class ProdutoController extends Controller
         $produto = new Produto;
         $produto->fill($request->all());
         $produto->slug          = $slug;
+
 
         if ($request->hasFile('imagem')) {
             $image = $request->file('imagem');
@@ -155,7 +156,7 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        $produto = produto::find($id);
+        $produto = Produto::find($id);
         $produto->delete();
         return [response()->json("success"), redirect('admin/produto')];
     }

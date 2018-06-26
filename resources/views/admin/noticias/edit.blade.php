@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Editar Notícia
+Notícias
 @endsection
 
 @section('script-bottom')

@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Novo Produto
+Produtos
 @endsection
 
 @section('script-bottom')
@@ -17,6 +17,8 @@
 @section('content')
 <div class="col-12">
   <div class="card-box">
+    <h4 class="m-t-0 header-title"><b>Cadastro de Produto</b></h4>
+
     {{ Form::open(['route' => 'produto.store', 'files' => true]) }}
             <div class="row">
               <div class="form-group col-md-4">

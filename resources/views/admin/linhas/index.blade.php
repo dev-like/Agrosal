@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Listagem
+Linhas
 @endsection
 @section('styles')
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -19,14 +19,14 @@
 <div class="col-12">
   <div class="card-box">
     <a href="{{ route('linha.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
-      <h4 class="m-t-0 header-title">Cadastro de Linhas</h4>
+      <h4 class="m-t-0 header-title">Listagem de Linhas</h4>
 
     <table class="table table-striped">
         <thead>
         <tr>
-          <th>#</th>
+          <th width="5%">#</th>
           <th>Nome</th>
-          <th></th>
+          <th>Ações</th>
         </tr>
         </thead>
         <tbody>
@@ -36,7 +36,6 @@
                 <td>{{ $linha -> nome }}</td>
                 <td width="15%">
                     <span class="hint--top" aria-label="Editar Linha"><a href="{{ route('linha.edit', $linha->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
-                    <span class="hint--top" aria-label="Visualizar Linha"><a href="{{ route('linha.show', $linha->slug) }}" style="border-radius: 50%" class="btn btn-info waves-effect hint--bottom" aria-label="Thank you!" > <i class="fa fa-eye"></i></a></span>
                     <span class="hint--top" aria-label="Deletar Linha"><button type="button" onclick="goswet({{$linha->id}}, '{{$linha->nome}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
                 </td>
             </tr>

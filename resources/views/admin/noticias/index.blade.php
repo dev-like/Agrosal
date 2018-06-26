@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Listagem
+Notícias
 @endsection
 
 @section('styles')

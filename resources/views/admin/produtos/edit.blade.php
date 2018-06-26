@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Editar Produto
+Produtos
 @endsection
 
 @section('script-bottom')
@@ -18,7 +18,7 @@
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <h4 class="m-t-0 header-title"><b>Editar Linhas</b></h4>
+    <h4 class="m-t-0 header-title"><b>Edição de Produto</b></h4>
 
     {!! Form::model($produto, array('route' => ['produto.update', $produto->id], 'method' => 'PUT', 'files' => true)) !!}
         <div class="row">
@@ -38,7 +38,7 @@
           </div>
           <div class="form-group col-md-4">
             {!! Form::label('imagem', 'Enviar Imagem') !!}
-            <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light" required="required">
+            <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
           </div>
         </div>
         <div class="row">

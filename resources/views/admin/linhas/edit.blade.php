@@ -1,19 +1,28 @@
 @extends('admin.main')
 
-@section('page-title')
-  QUEM SOMOS
+@section('page-caminho')
+  Linhas
 @endsection
+
+@section('page-title')
+Linhas
+@endsection
+
 
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <h4 class="m-t-0 header-title"><b>Editar Linhas</b></h4>
+    <h4 class="m-t-0 header-title"><b>Edição de Linha</b></h4>
 
-        {{ Form::model($linha, ['route' => ['linha.update', $linha->id], 'method' => 'PUT']) }}
+        {{ Form::model($linha, ['route' => ['linha.update', $linha->id], 'method' => 'PUT', 'files' => true]) }}
         <div class="row">
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-6">
               {{ Form::label('nome', 'Nome') }}
               {{ Form::text('nome', null, array('class' => 'nome form-control','maxlength' => '255','required')) }}
+          </div>
+          <div class="form-group col-md-6">
+              {{ Form::label('capa', 'Capa') }}
+              <input type="file" name="capa" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
           </div>
         </div>
         <div class="row">
@@ -40,7 +49,8 @@
 @section('scripts')
 <script src="{{ asset('template/plugins/select2/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('template/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js') }}"></script>
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script src="{{ asset('template/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('template/plugins/tinymce/tinymce.min.js') }}"></script>
 
 <script>
 var editor_config = {

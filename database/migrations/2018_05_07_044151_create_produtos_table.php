@@ -20,7 +20,7 @@ class CreateProdutosTable extends Migration
             $table->integer('linha_id')->unsigned();
             $table->text('indicacoes', 500)->nullable();
             $table->text('mododeusar', 500)->nullable();
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->string('imagem', 1000);
             $table->decimal('calcio', 6, 4)->nullable();
             $table->decimal('fosforo', 6, 4)->nullable();

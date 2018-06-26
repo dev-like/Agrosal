@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Listagem
+Produtos
 @endsection
 
 @section('styles')
@@ -20,14 +20,15 @@
 
   <div class="card-box">
     <a href="{{ route('produto.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
-      <h4 class="m-t-0 header-title">Cadastro de produtos</h4>
+      <h4 class="m-t-0 header-title">Listagem de produtos</h4>
 
     <table class="table table-striped">
         <thead>
         <tr>
-          <th>#</th>
+          <th width="5%">#</th>
           <th>Nome</th>
           <th>Linha</th>
+          <th>Ações</th>
         </tr>
         </thead>
         <tbody>

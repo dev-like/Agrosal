@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Dashboard
+Quem Somos
 @endsection
 
 @section('page-title')
-  Quem Somos
+Quem Somos
 @endsection
 
 @section('script-bottom')
