@@ -10,7 +10,7 @@
             <div class="topbar">
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="index.html" class="logo">
+                    <a href="../admin" class="logo">
                       <span>
                         <img src="{{ asset('template/images/logo2.png') }}" alt="" height="50">
                       </span>
@@ -38,8 +38,8 @@
                                 <div class="page-title-box">
                                     <h4 class="page-title float-left">@yield('page-title')</h4>
                                     <ol class="breadcrumb float-right">
-                                        <li class="breadcrumb-item text-white">@yield('page-caminho')</li>
-                                        <li class="breadcrumb-item active">@yield('page-title')</li>
+                                        <li class="breadcrumb-item text-white">@yield('page-caminho')Dashboard</li>
+                                        <li class="breadcrumb-item active">@yield('page-title')Página Inicial</li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
