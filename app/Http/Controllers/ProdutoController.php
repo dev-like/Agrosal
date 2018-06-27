@@ -48,7 +48,7 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-          'nome'          => 'required|max:225|unique:produtos,nome'.$request->id,
+          'nome'          => 'required|max:225|unique:produtos,nome,NULL, deleted_at,deleted_at,NULL',
           'imagem'        => 'image|mimes:jpeg,png,jpg',
           'linha_id'      => 'required|integer',
     ));

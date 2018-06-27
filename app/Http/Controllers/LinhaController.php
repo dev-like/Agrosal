@@ -45,7 +45,7 @@ class LinhaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-          'nome'          => 'required|max:225',
+          'nome'          => 'required|max:225|unique:linhas,nome,NULL, deleted_at,deleted_at,NULL',
           'capa'          => 'image|mimes:jpeg,png,jpg',
     ));
 

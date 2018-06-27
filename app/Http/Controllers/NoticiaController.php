@@ -43,7 +43,7 @@ class NoticiaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-        'titulo'              => 'required|max:225',
+        'titulo'              => 'required|max:225|unique:noticias,titulo,NULL, deleted_at,deleted_at,NULL',
         'conteudo'            => 'required',
         'datapublicacao'      => 'required|date',
       ));
@@ -149,13 +149,14 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $noticia = Noticia::find($id);
         if ($noticia->capa) {
             Storage::delete('noticias/imagens/'.$noticia->capa);
         }
         $noticia->delete();
+
 
         return response()->json("success");
     }

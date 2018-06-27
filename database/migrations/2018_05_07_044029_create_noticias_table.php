@@ -18,7 +18,7 @@ class CreateNoticiasTable extends Migration
             $table->string('titulo', 255);
             $table->string('descricao', 500)->nullable();
             $table->text('conteudo');
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->string('palavraschave', 255)->nullable();
             $table->string('capa', 255)->nullable();
             $table->date("datapublicacao")->now('');
