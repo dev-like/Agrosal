@@ -26,7 +26,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
 
     Route::resource('produto', 'ProdutoController');
 
-
     Route::resource('cliente', 'ClienteController');
     Route::post('cliente/{id}', 'ClienteController@destroy')->name('cliente.destroy');
 

@@ -38,8 +38,8 @@
                                 <div class="page-title-box">
                                     <h4 class="page-title float-left">@yield('page-title')</h4>
                                     <ol class="breadcrumb float-right">
-                                        <li class="breadcrumb-item text-white">@yield('page-caminho')Dashboard</li>
-                                        <li class="breadcrumb-item active">@yield('page-title')Página Inicial</li>
+                                        <li class="breadcrumb-item text-white">@yield('page-caminho')</li>
+                                        <li class="breadcrumb-item active">@yield('page-title')</li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
