@@ -1,0 +1,215 @@
+section.sobre{
+    padding: 30px 0;
+}
+
+section.sobre img.embalagem-destaque{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+section.sobre p{
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+section.produtos .linhas div{
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    background-size: cover;
+    background-position: center center;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    transition: all .4s ease-out !important;
+}
+
+section.produtos .linhas:nth-child(1) div{ background-image: url('../images/linha-1.jpg'); }
+section.produtos .linhas:nth-child(2) div{ background-image: url('../images/linha-2.jpg'); }
+section.produtos .linhas:nth-child(3) div{ background-image: url('../images/linha-3.jpg'); }
+
+section.produtos .linhas div::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+section.produtos .linhas div .titulo{
+    color: #ffffff;
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+section.produtos .linhas div .btn{
+    z-index: 10;
+}
+
+
+section.noticias .item{
+    display: block;
+    padding: 10px;
+    padding-top: 160px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 8px 0px rgba(129, 125, 125, 0.18);
+}
+
+section.noticias .item .not-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background-color: #ebebeb;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+section.noticias .item time{
+    color: #b2b2b2;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+section.noticias .item a{
+    right: 30px;
+    bottom: 17px;
+    color: #bc0000;
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    text-decoration: none;
+}
+
+section.noticias .item a::after{
+    content: "→";
+    font-size: 22px;
+    height: 20px;
+    margin-left: 4px;
+    overflow: hidden;
+    display: inline-block;
+    transition: all .2s linear;
+}
+
+section.localizacao{
+    position: relative;
+}
+
+section.localizacao h2{
+    padding: 30px 0;
+}
+
+section.localizacao iframe{
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray;
+}
+
+@media (min-width: 768px) {
+    section.noticias .item{
+        height: 350px;
+        padding: 20px;
+        padding-left: 49%;
+    }
+
+    section.noticias .item .not-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: auto;
+        right: auto;
+        width: 45%;
+    }
+
+    section.noticias .item a{
+        font-size: 16px;
+    }
+
+    section.noticias .item a::after{
+        width: 0;
+        margin-left: 4px;
+        display: inline-block;
+    }
+
+    section.noticias .item a:hover::after{
+        width: 22px;
+    }
+}
+
+@media (min-width: 992px) {
+    section.sobre img.embalagem-destaque{
+        width: 100%;
+    }
+
+    section.produtos .linhas div{
+        height: 470px;
+        margin-bottom: 90px;
+        background-size: auto 100%;
+    }
+
+    section.produtos .linhas div:hover{
+        background-size: auto 110%;
+    }
+
+    section.produtos .linhas div .titulo{
+        font-size: 26px;
+        margin-top: 200px;
+    }
+
+    section.produtos .linhas div .btn{
+        opacity: 0;
+        position: relative;
+        transform: translateY(7px);
+        transition: all .4s ease-out !important;
+    }
+
+    section.produtos .linhas div:hover .btn{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    section.noticias .item{
+        padding-left: 44%;
+        margin-bottom: 90px;
+    }
+
+    section.noticias .item .not-img{
+        width: 40%;
+    }
+
+    section.localizacao h2{
+        left: 0;
+        right: 0;
+        position: absolute;
+        padding: 30px 0 0;
+        text-shadow: 0 3px 2px #bbb;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 1200px) {
+
+}

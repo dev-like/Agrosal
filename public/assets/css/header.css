@@ -1,0 +1,138 @@
+header{
+    min-height: 100%;
+}
+
+header .banner{
+    height: 700px;
+    background-color: rgba(255, 0, 0,.4);
+    background-image: url('../images/banner-01.jpg');
+    background-position: 60% top;
+    background-size: cover;
+}
+
+header .banner h1{
+    color: #bc0000;
+    font-size: 30px;
+    font-weight: 400;
+    position: absolute;
+    top: 30%;
+}
+
+header .banner h1 span{
+    display: inline-block;
+}
+
+header .banner h1 span::after{
+    content: "";
+    height: 1px;
+    width: 104px;
+    margin-left: 12px;
+    display: inline-block;
+    border-bottom: 3px solid #bc0000;
+}
+
+header .banner h1 strong{
+    display: block;
+    font-size: 64px;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    font-family: 'ZilSemiSlab', sans-serif;
+}
+
+header .banner h1 small{
+    width: 250px;
+    display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+header section.missao{
+    padding: 34px 0;
+}
+
+header section.missao img{
+    display: block;
+    margin: 0 auto;
+}
+
+header section.missao p{
+    color:  #555555;
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    header{
+        height: 100%;
+        min-height: 670px;
+        max-height: 820px;
+        position: relative;
+    }
+
+    header .banner{
+        height: 100%;
+    }
+
+    header .banner h1{
+        font-size: 54px;
+        top: 22%;
+    }
+
+    header .banner h1 strong{
+        font-size: 114px;
+    }
+
+    header .banner h1 small{
+        width: 400px;
+        font-size: 16px;
+    }
+
+    header section.missao{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 34px 0;
+    }
+
+    header section.missao .row div img.static{ display: block; }
+    header section.missao .row div img.gif{ display: none; }
+
+    header section.missao .row div:hover img.static{ display: none; }
+    header section.missao .row div:hover img.gif{ display: block; }
+
+    header section.missao p{
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    header{
+        max-height: 950px;
+    }
+
+    header .banner{
+        background-position: center top;
+    }
+
+    header .banner h1{
+        margin-left: 110px;
+    }
+
+    header section.missao p{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header{
+        max-height: 892px;
+    }
+
+    header .banner{
+        background-size: 100% auto;
+    }
+}

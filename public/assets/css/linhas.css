@@ -1,0 +1,111 @@
+section.linha-descricao{
+    padding-bottom: 40px;
+}
+
+section.linha-descricao p{
+    color: #bc0000;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+section.linha-descricao img{
+    display: block;
+    margin: 40px auto;
+    max-width: 100%;
+}
+
+section.linha-produtos{
+    padding: 40px 0 60px;
+}
+
+section.linha-produtos img{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+section.linha-produtos a{
+    color: inherit;
+    display: block;
+    text-align: inherit;
+    text-decoration: none;
+}
+
+section.linha-produtos ul li{
+    color: #464646;
+    list-style: none;
+    margin-top: 30px;
+    line-height: 1.3;
+    position: relative;
+    margin-left: 24px;
+    transition: all .1s ease-out;
+}
+
+section.linha-produtos ul li:hover{
+    color: #bc0000;
+    transform: translateX(14px) scale(1.05,1.05);
+}
+
+section.linha-produtos ul li::after{
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #464646;
+    position: absolute;
+    top: 2px;
+    left: -28px;
+    transition: all .1s linear;
+}
+
+section.linha-produtos ul li:hover::after{
+    background-color: #bc0000;
+}
+
+section.linha-produtos ul li a span{
+    font-size: 26px;
+    display: block;
+    font-family: "ZilSemiSlab";
+}
+
+section.linha-produtos ul li a small{
+    font-size: 13px;
+}
+
+@media (min-width: 768px) {
+    section.linha-produtos ul li{
+        margin-left: 14px;
+    }
+
+    section.linha-produtos ul li::after{
+        width: 26px;
+        height: 26px;
+        left: -42px;
+    }
+}
+
+@media (min-width: 992px) {
+    section.linha-produtos img{
+        width: 100%;
+    }
+
+    section.linha-produtos .esquerda ul li{
+        text-align: right;
+        margin-left: 0;
+        margin-right: 14px;
+    }
+
+    section.linha-produtos .esquerda ul li:hover{
+        transform: translateX(-14px) scale(1.05,1.05);
+    }
+
+    section.linha-produtos .esquerda ul li::after{
+        right: -42px;
+        left: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+
+}

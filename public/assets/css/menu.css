@@ -1,0 +1,155 @@
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    padding: 10px 0;
+    transition: all .2s linear;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(100, 100, 100, 0.5);
+}
+
+nav.flutuar{
+    padding: 10px 0;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(100, 100, 100, 0.5);
+}
+
+nav a{
+    display: block;
+    margin: 0 auto;
+}
+
+nav a img.pause{
+    display: none;
+}
+
+nav a img.flutuante{
+    /*height: 40px;*/
+    display: inline-block;
+}
+
+nav ul{
+    width: 96%;
+    display: none;
+    margin: 10px auto 0;
+    background-color: #fbfbfb;
+}
+
+nav ul li{
+    margin: 0;
+    padding: 8px;
+    color: #bc0000;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border-top: 1px solid #fff;
+}
+
+nav a{
+    color: inherit;
+    text-decoration: none;
+}
+
+nav .menu-toggle{
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    display: inline-block;
+}
+
+nav .menu-toggle div{
+    width: 38px;
+    height: 5px;
+    transition: 0.4s;
+    margin-bottom: 7px;
+    background-color: #bc0000;
+}
+
+nav .menu-toggle.toggle div.bar1{
+    -webkit-transform: rotate(-45deg) translate(-7px, 10px) ;
+       -moz-transform: rotate(-45deg) translate(-7px, 10px) ;
+            transform: rotate(-45deg) translate(-7px, 10px) ;
+}
+
+nav .menu-toggle.toggle div.bar2{
+    opacity: 0;
+}
+
+nav .menu-toggle.toggle div.bar3{
+    -webkit-transform: rotate(45deg) translate(-7px, -10px) ;
+       -moz-transform: rotate(45deg) translate(-7px, -10px) ;
+            transform: rotate(45deg) translate(-7px, -10px) ;
+}
+
+@media (min-width: 768px) {
+    nav{
+        position: absolute;
+        padding: 24px 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    nav.flutuar a img.pause,
+    nav a img.flutuante{
+        display: none;
+    }
+
+    nav a img.pause,
+    nav.flutuar a img.flutuante{
+        display: block;
+    }
+
+    nav a img{
+        float: left;
+        height: auto;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    nav{
+        text-align: left;
+    }
+
+    nav ul{
+        display: block !important;
+    }
+
+    nav ul li{
+        margin-left: 40px;
+    }
+
+    nav ul{
+        width: auto;
+        display: inline-block;
+        margin: auto;
+        background-color: transparent;
+    }
+
+    nav ul li{
+        padding: 0;
+        border-top: none;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 20px;
+        display: inline-block;
+    }
+
+    nav.flutuar li{
+        margin-top: 0;
+    }
+
+    nav .menu-toggle{
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    nav ul li{
+        margin-left: 54px;
+    }
+}

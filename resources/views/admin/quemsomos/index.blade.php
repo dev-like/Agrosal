@@ -210,7 +210,7 @@ jQuery(function($){
   var editor_config = {
     path_absolute : "/",
     selector: "textarea",
-    height:300,
+    height:350,
     plugins: [
       "advlist autolink lists link image charmap print preview hr anchor pagebreak",
       "searchreplace wordcount visualblocks visualchars code fullscreen",
