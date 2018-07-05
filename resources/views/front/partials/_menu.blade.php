@@ -11,14 +11,13 @@
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
-
             <ul>
-                <li><a href="#sobre">SOBRE</a></li>
-                <li><a href="#produtos">PRODUTOS</a></li>
-                <li><a href="#noticias">NOTÍCIAS</a></li>
-                <li><a href="#localizacao">LOCALIZAÇÃO</a></li>
-                <li><a href="#contatenos">CONTATE-NOS</a></li>
-                <li><a href="#parceiros">PARCEIROS</a></li>
+              <li><a href="/#sobre">SOBRE</a></li>
+              <li><a href="/#produtos">PRODUTOS</a></li>
+              <li><a href="/#noticias">NOTÍCIAS</a></li>
+              <li><a href="/#localizacao">LOCALIZAÇÃO</a></li>
+              <li><a href="/#contatenos">CONTATE-NOS</a></li>
+              <li><a href="/#parceiros">PARCEIROS</a></li>
             </ul>
         </div>
     </div>

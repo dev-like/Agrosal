@@ -1,0 +1,36 @@
+section.noticia-descricao{
+    padding: 36px 0 52px;
+}
+
+section.noticia-descricao time{
+    color: #b2b2b2;
+    display: block;
+    font-size: 13px;
+    margin-bottom: 26px;
+}
+
+section.noticia-descricao p{
+    color: #464646;
+    line-height: 1.8;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: justify;
+    padding-bottom: 28px;
+}
+
+section.noticia-descricao img{
+    max-width: 100%;
+}
+
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}

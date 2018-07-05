@@ -60,7 +60,7 @@ class LinhaController extends Controller
             $image = $request->file('capa');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('linhas/imagens/' . $filename);
-            Image::make($image)->resize(289, 300)->save($location);
+            Image::make($image)->resize(368, 470)->save($location);
             $linha->capa = $filename;
         }
 
@@ -84,7 +84,7 @@ class LinhaController extends Controller
 
     public function tirarAcentos($string)
     {
-        return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $string);
+        return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/","/(Ç)/","/(ç)/"), explode(" ", "a A e E i I o O u U n N C c"), $string);
     }
 
     public function getSingle($slug)
@@ -121,15 +121,14 @@ class LinhaController extends Controller
         $linha = Linha::find($id);
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->nome));
-        $linha->nome          = $request->nome;
-        $linha->descricao     = $request->descricao;
+
         $linha->slug          = $slug;
 
         if ($request->hasFile('capa')) {
             $image = $request->file('capa');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('linhas/imagens/' . $filename);
-            Image::make($image)->resize(800, 400)->save($location);
+            Image::make($image)->resize(358, 470)->save($location);
 
             if ($linha->capa) {
                 $oldFilename = $linha->capa;

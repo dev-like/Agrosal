@@ -26,6 +26,10 @@ $(".banner h1 span, .banner h1 strong, .banner h1 small").css({
 $(document).ready(function(){
     $(window).scroll(function()
     {
+        var yPos = -($(window).scrollTop() / 2);
+        var bgpos = '50% '+ yPos + 'px';
+        $("header .banner").css('background-position', bgpos);
+
         if($(this).scrollTop() > 0)
             $('nav').addClass('flutuar');
         else

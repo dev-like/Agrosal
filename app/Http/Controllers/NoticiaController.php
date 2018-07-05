@@ -62,7 +62,7 @@ class NoticiaController extends Controller
             $image = $request->file('capa');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('noticias/imagens/' . $filename);
-            Image::make($image)->resize(300, 180)->save($location);
+            Image::make($image)->resize(1191, 792)->save($location);
             $noticia->capa = $filename;
         }
 
@@ -85,7 +85,7 @@ class NoticiaController extends Controller
 
     public function tirarAcentos($string)
     {
-        return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $string);
+        return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/","/(Ç)/","/(ç)/"), explode(" ", "a A e E i I o O u U n N C c"), $string);
     }
 
     public function getSingle($slug)
@@ -118,18 +118,14 @@ class NoticiaController extends Controller
         $noticia = Noticia::find($id);
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->título));
-        $noticia->titulo          = $request->titulo;
-        $noticia->datapublicacao  = $request->datapublicacao;
-        $noticia->descricao       = $request->descricao;
-        $noticia->palavraschave   = $request->palavraschave;
-        $noticia->conteudo        = $request->conteudo;
+
         $noticia->slug            = $slug;
 
         if ($request->hasFile('capa')) {
             $image = $request->file('capa');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('noticias/imagens/' . $filename);
-            Image::make($image)->resize(800, 400)->save($location);
+            Image::make($image)->resize(1191, 792)->save($location);
 
             if ($noticia->capa) {
                 $oldFilename = $noticia->capa;

@@ -1,0 +1,86 @@
+section.produto-descricao{
+    padding: 150px 0 52px;
+}
+
+section.produto-descricao .way{
+    color: #bc0000;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+section.produto-descricao .way a{
+    color: inherit;
+}
+
+section.produto-descricao h2{
+    padding: 30px 0 46px;
+}
+
+section.produto-descricao p{
+    color: #464646;
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    padding-bottom: 28px;
+}
+
+section.produto-descricao p strong{
+    color: #bc0000;
+}
+
+section.produto-descricao img{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+section.produto-descricao .niveis{
+    color: #bc0000;
+    display: block;
+    font-size: 16px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    padding-top: 44px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section.produto-descricao .table{
+    width: 80%;
+    font-size: 14px;
+    margin: 18px auto;
+}
+
+section.produto-descricao .table .row{
+    padding: 5px 0;
+    border: 1px solid #b3b3b3;
+    border-bottom: none;
+}
+
+section.produto-descricao .table .row:last-child{
+    border-bottom: 1px solid #b3b3b3;
+}
+
+section.produto-descricao .table .row div:nth-child(2){
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+    section.produto-descricao img{
+        width: 90%;
+    }
+}
+
+@media (min-width: 992px) {
+    section.produto-descricao img{
+        width: 70%;
+    }
+}
+
+@media (min-width: 1200px) {
+    section.produto-descricao .table{
+        width: 70%;
+    }
+}

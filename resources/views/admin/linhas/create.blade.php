@@ -32,7 +32,7 @@ Linhas
             <div class="row">
               <div class="form-group col-md-12">
                   {{ Form::label('descricao', 'Descrição') }}
-                  {{ Form::textarea('descricao', null, array('class' => 'nome form-control')) }}
+                  {!! Form::textarea('descricao', null, array('class' => 'nome form-control')) !!}
               </div>
             </div>
 

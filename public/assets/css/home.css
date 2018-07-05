@@ -15,6 +15,46 @@ section.sobre p{
     margin-bottom: 40px;
 }
 
+section.produtos .carousel-linhas{
+    padding: 0 36px;
+    position: relative;
+}
+
+.prev-list{
+    width: 30px;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    height: 50px;
+    display: block;
+    cursor: pointer;
+    background: transparent url('../images/prev.png') no-repeat center;
+    z-index: 1001;
+}
+
+.owl-prev,
+.owl-next{
+    margin: 0 !important;
+    background-color: #adb !important;
+}
+
+.owl-nav{
+    display: block !important;
+}
+
+.next-list{
+    width: 30px;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    height: 50px;
+    display: block;
+    cursor: pointer;
+    border-radius: 50px;
+    background: transparent url('../images/next.png') no-repeat center;
+    z-index: 1001;
+}
+
 section.produtos .linhas div{
     height: 400px;
     overflow: hidden;
@@ -26,10 +66,6 @@ section.produtos .linhas div{
     border: 1px solid rgba(0, 0, 0, 0.6);
     transition: all .4s ease-out !important;
 }
-
-section.produtos .linhas:nth-child(1) div{ background-image: url('../images/linha-1.jpg'); }
-section.produtos .linhas:nth-child(2) div{ background-image: url('../images/linha-2.jpg'); }
-section.produtos .linhas:nth-child(3) div{ background-image: url('../images/linha-3.jpg'); }
 
 section.produtos .linhas div::after{
     content: "";
@@ -56,7 +92,6 @@ section.produtos .linhas div .titulo{
 section.produtos .linhas div .btn{
     z-index: 10;
 }
-
 
 section.noticias .item{
     display: block;

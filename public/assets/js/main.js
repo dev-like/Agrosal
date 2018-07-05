@@ -30,6 +30,10 @@ $(".banner h1 span, .banner h1 strong, .banner h1 small").css({
 $(document).ready(function(){
     $(window).scroll(function()
     {
+        var yPos = -($(window).scrollTop() / 2);
+        var bgpos = '50% '+ yPos + 'px';
+        $("header .banner").css('background-position', bgpos);
+
         if($(this).scrollTop() > 0)
             $('nav').addClass('flutuar');
         else
@@ -53,6 +57,22 @@ $(document).ready(function(){
 		$('html, body').animate({ scrollTop: deslocamento }, 700);
 	});
 
+    var maisde3 = $(".linhas").length > 3 ? true : false;
+
+    $('.carousel-linhas').owlCarousel({
+        margin: 20,
+        dots:false,
+        nav:true,
+        navText:[
+            '<span class="prev-list"></span>',
+            '<span class="next-list"></span>'
+        ],
+        responsiveClass:true,
+        responsive:{
+            0:{ items:1,loop:true,autoplay:true },
+            992:{ items:3,loop:maisde3,autoplay:maisde3 },
+        }
+    });
 
     setTimeout(function(){
         $(".missao .row div").addClass('hideFadeDown');

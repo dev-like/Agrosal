@@ -51,7 +51,7 @@ class ProdutoController extends Controller
           'nome'          => 'required|max:225|unique:produtos,nome,NULL, deleted_at,deleted_at,NULL',
           'imagem'        => 'image|mimes:jpeg,png,jpg',
           'linha_id'      => 'required|integer',
-    ));
+        ));
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->nome));
 
@@ -59,15 +59,14 @@ class ProdutoController extends Controller
         $produto->fill($request->all());
         $produto->slug          = $slug;
 
-
         if ($request->hasFile('imagem')) {
             $image = $request->file('imagem');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('produtos/imagens/' . $filename);
-            Image::make($image)->resize(289, 300)->save($location);
+            Image::make($image)->resize(427, 611)->save($location);
             $produto->imagem = $filename;
         }
-
+        
         $produto->save();
         $request->session()->flash('success', 'Produto adicionada com sucesso');
         return redirect()->route('produto.index');
@@ -88,7 +87,7 @@ class ProdutoController extends Controller
 
     public function tirarAcentos($string)
     {
-        return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $string);
+        return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/","/(Ç)/","/(ç)/"), explode(" ", "a A e E i I o O u U n N C c"), $string);
     }
 
     public function getSingle($slug)
@@ -133,7 +132,7 @@ class ProdutoController extends Controller
             $image = $request->file('imagem');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('produtos/imagens/' . $filename);
-            Image::make($image)->resize(289, 300)->save($location);
+            Image::make($image)->resize(427, 611)->save($location);
 
             if ($produto->imagem) {
                 $oldFilename = $produto->imagem;

@@ -6,8 +6,11 @@ header .banner{
     height: 700px;
     background-color: rgba(255, 0, 0,.4);
     background-image: url('../images/banner-01.jpg');
-    background-position: 60% top;
+    /*background-position: 60% top;*/
     background-size: cover;
+
+    background-position: 50% 0;
+    background-attachment: fixed;
 }
 
 header .banner h1{
@@ -78,7 +81,7 @@ header section.missao p{
 
     header .banner h1{
         font-size: 54px;
-        top: 22%;
+        top: 18%;
     }
 
     header .banner h1 strong{
@@ -95,7 +98,7 @@ header section.missao p{
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 34px 0;
+        padding: 28px 0;
     }
 
     header section.missao .row div img.static{ display: block; }
@@ -105,7 +108,7 @@ header section.missao p{
     header section.missao .row div:hover img.gif{ display: block; }
 
     header section.missao p{
-        margin-bottom: 20px;
+        /*margin-bottom: 10px;*/
     }
 }
 
