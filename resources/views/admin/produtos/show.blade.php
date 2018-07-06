@@ -13,10 +13,14 @@
           <img src="{{ asset('produtos/imagens/'. $produto->imagem) }}" style="width: 50%">
           <hr>
           @endif
+          @if($produto->informacoesnutricionais)
+          <img src="{{ asset('produtos/imagens/'. $produto->informacoesnutricionais) }}" style="width: 50%">
+          <hr>
+          @endif
             <h2>{{ $produto->nome }}</h2>
             <hr>
             <p>{!! $produto->descricao !!}</p>
-        
+
           </div>
       </div>
       <div class="row">

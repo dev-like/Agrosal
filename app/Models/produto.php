@@ -18,16 +18,7 @@ class Produto extends Model
     'indicacoes',
     'mododeusar',
     'imagem',
-    'calcio',
-    'fosforo',
-    'enxofre',
-    'magnesio',
-    'zinco',
-    'cobre',
-    'cobalto',
-    'iodo',
-    'selenio',
-    'manganes',
+    'informacoesnutricionais',
     'slug'
   ];
     protected $dates = ['deleted_at'];

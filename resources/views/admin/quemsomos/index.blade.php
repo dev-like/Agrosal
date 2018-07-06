@@ -132,23 +132,19 @@ Quem Somos
         </div>
       </div>
       <div class="row">
-        <div class="form-group col-md-12" style="margin-top: 20px">
+        <div class="form-group col-md-4" style="margin-top: 20px">
           {!! Form::label('missao', 'Missão') !!}
-          {!! Form::textarea('missao', null, array('class' => 'form-control','maxlength' => '2500')) !!}
+          {!! Form::textarea('missao', null, array('class' => 'form-control','maxlength' => '2500','rows'=>'8')) !!}
         </div>
-      </div>
-      <div class="row">
-        <div class="form-group col-md-12" style="margin-top: 20px">
+        <div class="form-group col-md-4" style="margin-top: 20px">
           {!! Form::label('visao', 'Visão') !!}
           {!! Form::textarea('visao', null, array('class' => 'form-control','maxlength' => '2500')) !!}
         </div>
-      </div>
-      <div class="row">
-        <div class="form-group col-md-12" style="margin-top: 20px">
+        <div class="form-group col-md-4" style="margin-top: 20px">
           {!! Form::label('valores', 'Valores') !!}
           {!! Form::textarea('valores', null, array('class' => 'form-control','maxlength' => '2500')) !!}
-        </div>
       </div>
+    </div>
       <div class="row">
         <div class="form-group col-md-12" style="margin-top: 20px">
           {!! Form::label('quemsomos', 'Quem Somos') !!}
@@ -209,7 +205,7 @@ jQuery(function($){
 <script>
   var editor_config = {
     path_absolute : "/",
-    selector: "textarea",
+    selector: "textarea#quemsomos",
     height:350,
     plugins: [
       "advlist autolink lists link image charmap print preview hr anchor pagebreak",

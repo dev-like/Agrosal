@@ -22,16 +22,7 @@ class CreateProdutosTable extends Migration
             $table->text('mododeusar', 500)->nullable();
             $table->string('slug');
             $table->string('imagem', 1000);
-            $table->decimal('calcio', 6, 4)->nullable();
-            $table->decimal('fosforo', 6, 4)->nullable();
-            $table->decimal('enxofre', 6, 4)->nullable();
-            $table->decimal('magnesio', 6, 4)->nullable();
-            $table->decimal('manganes', 6, 4)->nullable();
-            $table->decimal('zinco', 6, 4)->nullable();
-            $table->decimal('cobre', 6, 4)->nullable();
-            $table->decimal('cobalto', 6, 4)->nullable();
-            $table->decimal('iodo', 6, 4)->nullable();
-            $table->decimal('selenio', 6, 4)->nullable();
+            $table->string('informacoesnutricionais', 1000)->nullable();
 
             $table->timestamps();
             $table->softDeletes();

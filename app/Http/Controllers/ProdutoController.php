@@ -50,6 +50,7 @@ class ProdutoController extends Controller
         $this->validate($request, array(
           'nome'          => 'required|max:225|unique:produtos,nome,NULL, deleted_at,deleted_at,NULL',
           'imagem'        => 'image|mimes:jpeg,png,jpg',
+          'informacoesnutricionais'    => 'image|mimes:jpeg,png,jpg',
           'linha_id'      => 'required|integer',
         ));
 
@@ -66,7 +67,14 @@ class ProdutoController extends Controller
             Image::make($image)->resize(427, 611)->save($location);
             $produto->imagem = $filename;
         }
-        
+        if ($request->hasFile('informacoesnutricionais')) {
+            $image = $request->file('informacoesnutricionais');
+            $filename = time() . '.' . $image->getClientOriginalName();
+            $location = public_path('produtos/imagens/' . $filename);
+            Image::make($image)->resize(427, 611)->save($location);
+            $produto->informacoesnutricionais = $filename;
+        }
+
         $produto->save();
         $request->session()->flash('success', 'Produto adicionada com sucesso');
         return redirect()->route('produto.index');
@@ -139,6 +147,18 @@ class ProdutoController extends Controller
                 Storage::delete('produtos/imagens/'.$oldFilename);
             }
             $produto->imagem = $filename;
+        }
+        if ($request->hasFile('informacoesnutricionais')) {
+            $image = $request->file('informacoesnutricionais');
+            $filename = time() . '.' . $image->getClientOriginalName();
+            $location = public_path('produtos/imagens/' . $filename);
+            Image::make($image)->resize(427, 611)->save($location);
+
+            if ($produto->informacoesnutricionais) {
+                $oldFilename = $produto->informacoesnutricionais;
+                Storage::delete('produtos/imagens/'.$oldFilename);
+            }
+            $produto->informacoesnutricionais = $filename;
         }
 
         $produto->save();

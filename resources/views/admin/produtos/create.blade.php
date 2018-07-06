@@ -39,11 +39,16 @@ Produtos
                 {!! Form::label('imagem', 'Imagem') !!}
                 <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light" required="required">
               </div>
+
             </div>
             <div class="row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                   {{ Form::label('descricao', 'Descrição') }}
                   {{ Form::text('descricao', null, array('class' => 'form-control')) }}
+              </div>
+              <div class="form-group col-md-6" >
+                {!! Form::label('informacoesnutricionais', 'Informações Nutricionais') !!}
+                <input type="file" name="informacoesnutricionais" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
               </div>
             </div>
             <div class="row">
@@ -54,58 +59,6 @@ Produtos
               <div class="form-group col-md-6">
                   {{ Form::label('mododeusar', 'Modo de Usar') }}
                   {{ Form::textarea('mododeusar', null, array('class' => 'form-control')) }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-12">
-                  {{ Form::label('Informações Nutricionais') }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-3">
-                  {{ Form::label('calcio', 'Calcio') }}
-                  {{ Form::text('calcio', null, array('class' => 'form-control in')) }}
-              </div>
-              <div class="form-group col-md-3">
-                  {{ Form::label('fosfo', 'Fosforo') }}
-                  {{ Form::text('fosforo', null, array('class' => 'form-control in')) }}
-              </div>
-              <div class="form-group col-md-3">
-                  {{ Form::label('enxofre', 'Enxofre') }}
-                  {{ Form::text('enxofre', null, array('class' => 'form-control in')) }}
-              </div>
-              <div class="form-group col-md-3">
-                  {{ Form::label('magnesio', 'Magnesio') }}
-                  {{ Form::text('magnesio', null, array('class' => 'form-control in')) }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-3">
-                  {{ Form::label('zinco', 'Zinco') }}
-                  {{ Form::text('zinco', null, array('class' => 'form-control en')) }}
-              </div>
-              <div class="form-group col-md-3">
-                  {{ Form::label('manganes', 'Manganes') }}
-                  {{ Form::text('manganes', null, array('class' => 'form-control en')) }}
-              </div>
-
-              <div class="form-group col-md-3">
-                  {{ Form::label('cobre', 'Cobre') }}
-                  {{ Form::text('cobre', null, array('class' => 'form-control en')) }}
-              </div>
-              <div class="form-group col-md-3">
-                  {{ Form::label('cobalto', 'Cobalto') }}
-                  {{ Form::text('cobalto', null, array('class' => 'form-control en')) }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-3">
-                  {{ Form::label('iodo', 'Iodo') }}
-                  {{ Form::text('iodo', null, array('class' => 'form-control en')) }}
-              </div>
-              <div class="form-group col-md-3">
-                  {{ Form::label('selenio', 'Selenio') }}
-                  {{ Form::text('selenio', null, array('class' => 'form-control en')) }}
               </div>
             </div>
 

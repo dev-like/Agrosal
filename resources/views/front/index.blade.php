@@ -92,17 +92,8 @@
                 </div>
                 <div class="col-lg-6">
                     <h2>Tradição Agrosal</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit
-                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.
-                    </p>
-                    <a href="#" class="btn">Saiba Mais</a>
+                    {!!$quemsomos->quemsomos!!}
+                    <!-- <a href="#" class="btn">Saiba Mais</a> -->
                 </div>
             </div>
         </div>
@@ -110,9 +101,9 @@
     <section class="bg-tp1 produtos" id="produtos">
         <div class="container">
             <h2>Produtos</h2>
-            <div class="row">
+            <div class="carousel-linhas owl-carousel owl-theme">
               @foreach($linha as $li)
-                <div class="linhas col-lg-4">
+                <div class="linhas">
                     <div style="background-image: url({{ asset('linhas/imagens/'. $li->capa) }})">
                         <span class="titulo">
                             {{$li->nome}}
