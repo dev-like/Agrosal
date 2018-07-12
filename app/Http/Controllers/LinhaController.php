@@ -60,7 +60,7 @@ class LinhaController extends Controller
             $image = $request->file('capa');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('linhas/imagens/' . $filename);
-            Image::make($image)->resize(368, 470)->save($location);
+            Image::make($image)->resize(378, 476)->save($location);
             $linha->capa = $filename;
         }
 
@@ -122,13 +122,16 @@ class LinhaController extends Controller
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->nome));
 
+        $linha->fill($request->all());
         $linha->slug          = $slug;
+        $linha->descricao     = $request->descricao;
+
 
         if ($request->hasFile('capa')) {
             $image = $request->file('capa');
             $filename = time() . '.' . $image->getClientOriginalName();
             $location = public_path('linhas/imagens/' . $filename);
-            Image::make($image)->resize(358, 470)->save($location);
+            Image::make($image)->resize(378, 476)->save($location);
 
             if ($linha->capa) {
                 $oldFilename = $linha->capa;

@@ -57,7 +57,7 @@
                     <div class="col-md-4">
                         <img src="assets/images/missao-gif.gif" alt="Missão" class="gif">
                         <img src="assets/images/missao.png" alt="Missão" class="static">
-                        <h6>Missão</h6>
+                        <h6>Tradição</h6>
                         <p>
                           {!! $quemsomos-> missao !!}
                         </p>
@@ -65,7 +65,7 @@
                     <div class="col-md-4">
                         <img src="assets/images/visao-gif.gif" alt="Visão" class="gif">
                         <img src="assets/images/visao.png" alt="Visão" class="static">
-                        <h6>Visão</h6>
+                        <h6>Tecnologia</h6>
                         <p>
                           {!! $quemsomos-> visao !!}
                         </p>
@@ -73,9 +73,9 @@
                     <div class="col-md-4">
                         <img src="assets/images/valores-gif.gif" alt="Valores" class="gif">
                         <img src="assets/images/valores.png" alt="Valores" class="static">
-                        <h6>Valores</h6>
+                        <h6>Inovação</h6>
                         <p>
-                          {!! $quemsomos-> missao !!}
+                          {!! $quemsomos-> valores !!}
                         </p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                     <img src="assets/images/embalagem-destaque.png" alt="AgroSal Embalagens" class="embalagem-destaque">
                 </div>
                 <div class="col-lg-6">
-                    <h2>Tradição Agrosal</h2>
+                    <h2>Pesquisa</h2>
                     {!!$quemsomos->quemsomos!!}
                     <!-- <a href="#" class="btn">Saiba Mais</a> -->
                 </div>

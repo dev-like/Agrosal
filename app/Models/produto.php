@@ -28,4 +28,8 @@ class Produto extends Model
     {
         return $this->belongsTo('App\Models\Linha');
     }
+    public function informacaonutricional()
+    {
+        return $this->hasMany('App\Models\Informacaonutricional');
+    }
 }

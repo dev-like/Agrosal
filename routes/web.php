@@ -7,7 +7,7 @@ Route::get('noticia', 'WebSiteController@noticias')->name('noticias');
 Route::get('noticia/{slug}', ['as' => 'noticia.item', 'uses' => 'WebSiteController@getSingleNoticia'])->where('slug', '[\w\d\-\_]+');
 Route::get('produto', 'WebSiteController@produtos')->name('produtos');
 Route::get('produto/{slug}', ['as' => 'produto.item', 'uses' => 'WebSiteController@getSingleProduto'])->where('slug', '[\w\d\-\_]+');
-
+Route::get('pagenotfound', ['as' => 'notfound','uses' => 'WebSiteController@pagenotfound']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
     Route::get('/', 'HomeController@index')->name('admin.home');
@@ -19,6 +19,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
     Route::resource('noticia', 'NoticiaController');
 
     Route::resource('produto', 'ProdutoController');
+
+    Route::get('informacaonutricional/{produto}', 'InformacaonutricionalController@index')->name('informacaonutricional.index');
+    Route::get('informacaonutricional/novo/{produto}', 'InformacaonutricionalController@create')->name('informacaonutricional.create');
+    Route::get('informacaonutricional/edit/{informacaonutricional}', 'InformacaonutricionalController@edit')->name('informacaonutricional.edit');
+    Route::post('informacaonutricional', 'InformacaonutricionalController@store')->name('informacaonutricional.store');
+    Route::put('informacaonutricional/{informacaonutricional}', 'InformacaonutricionalController@update')->name('informacaonutricional.update');
+    Route::delete('informacaonutricional/{informacaonutricional}', 'InformacaonutricionalController@destroy');
 
     Route::resource('usuario', 'UserController');
     Route::get('usuario/{usuario}/editar_senha', 'UserController@editPassword')->name('usuario.editar_senha');

@@ -5,17 +5,25 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Linha;
 use App\Models\Noticia;
+use App\Models\Informacaonutricional;
 use App\Models\Produto;
 use App\Models\Quemsomos;
 use DB;
 
 class WebSiteController extends Controller
 {
+    public function pagenotfound()
+    {
+        $quemsomos = Quemsomos::find(1);
+        return view('errors.404', ['quemsomos' => $quemsomos]);
+    }
+
     public function home()
     {
         $linha = Linha::all();
         $noticia = Noticia::all();
         $quemsomos = Quemsomos::find(1);
+
         return view('front.index', [
         'quemsomos' => $quemsomos,
         'linha' => $linha,
@@ -84,11 +92,13 @@ class WebSiteController extends Controller
         $quemsomos = Quemsomos::find(1);
         $linha = Linha::all();
         $produto = Produto::all();
+        $informacaonutricionais  = informacaonutricional::where('produtos_id', '=', $produto->id);
 
         return view('front.produtos', [
         'linha' => $linha,
         'produto' =>  $produto,
         'quemsomos' => $quemsomos,
+        'informacaonutricional' => $informacaonutricionais,
       ]);
     }
     public function getSingleProduto($slug)
@@ -96,11 +106,14 @@ class WebSiteController extends Controller
         $produto = Produto::where('slug', '=', $slug)->first();
         $quemsomos = Quemsomos::find(1);
         $linha = Linha::all();
+        $informacaonutricionais  = informacaonutricional::where('produtos_id', '=', $produto->id)->get();
+
 
         return view('front.produtos', [
           'quemsomos' => $quemsomos,
           'produto' =>  $produto,
           'linha' => $linha,
+          'informacaonutricional' => $informacaonutricionais,
         ]);
     }
 }

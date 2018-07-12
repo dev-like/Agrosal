@@ -20,7 +20,7 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        $produto = Produto::paginate(15);
+        $produto = Produto::paginate(25);
         return view('admin.produtos.index', [
           'produto' => $produto
       ]);
@@ -70,8 +70,8 @@ class ProdutoController extends Controller
         if ($request->hasFile('informacoesnutricionais')) {
             $image = $request->file('informacoesnutricionais');
             $filename = time() . '.' . $image->getClientOriginalName();
-            $location = public_path('produtos/imagens/' . $filename);
-            Image::make($image)->resize(427, 611)->save($location);
+            $location = public_path('produtos/InformaçõesNutricionais/' . $filename);
+            Image::make($image)->resize(378, 172)->save($location);
             $produto->informacoesnutricionais = $filename;
         }
 
@@ -151,12 +151,12 @@ class ProdutoController extends Controller
         if ($request->hasFile('informacoesnutricionais')) {
             $image = $request->file('informacoesnutricionais');
             $filename = time() . '.' . $image->getClientOriginalName();
-            $location = public_path('produtos/imagens/' . $filename);
-            Image::make($image)->resize(427, 611)->save($location);
+            $location = public_path('produtos/InformaçõesNutricionais/' . $filename);
+            Image::make($image)->resize(378, 172)->save($location);
 
             if ($produto->informacoesnutricionais) {
                 $oldFilename = $produto->informacoesnutricionais;
-                Storage::delete('produtos/imagens/'.$oldFilename);
+                Storage::delete('produtos/InformaçõesNutricionais/'.$oldFilename);
             }
             $produto->informacoesnutricionais = $filename;
         }

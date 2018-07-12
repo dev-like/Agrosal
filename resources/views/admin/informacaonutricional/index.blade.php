@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Produtos
+  Informacaonutricionals
 @endsection
 
 @section('page-title')
-Produtos
+Informacaonutricionals
 @endsection
 
 @section('styles')
@@ -19,28 +19,26 @@ Produtos
 <div class="col-12">
 
   <div class="card-box">
-    <a href="{{ route('produto.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
-      <h4 class="m-t-0 header-title">Listagem de produtos</h4>
+    <a href="{{ route('informacaonutricional.create',$produto) }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
+      <h4 class="m-t-0 header-title">Listagem de Informacaonutricionals</h4>
 
     <table class="table table-striped">
         <thead>
         <tr>
           <th width="5%">#</th>
-          <th>Nome</th>
-          <th>Linha</th>
-          <th>Ações</th>
+          <th>Elemento</th>
+          <th>Valor</th>
         </tr>
         </thead>
         <tbody>
-          @forelse($produto as $produto)
+          @forelse($informacaonutricional as $informacaonutricional)
             <tr>
-                <td>{{ $produto -> id }}</td>
-                <td>{{ $produto -> nome }}</td>
-                <td>{{ $produto -> linha->nome }}</td>
-                <td width="15%">
-                    <span class="hint--top" aria-label="Informações Nutricionais"><a href="{{ route('informacaonutricional.index', $produto->id) }}" style="border-radius: 50%" class="btn btn-success waves-effect"> <i class="fa  fa-bar-chart-o"></i></a></span>
-                    <span class="hint--top" aria-label="Editar produto"><a href="{{ route('produto.edit', $produto->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
-                    <span class="hint--top" aria-label="Deletar produto"><button type="button" onclick="goswet({{$produto->id}}, '{{$produto->nome}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
+                <td>{{ $informacaonutricional -> id }}</td>
+                <td>{{ $informacaonutricional -> elemento }}</td>
+                <td>{{ $informacaonutricional -> valores }}</td>
+                <td width="10%">
+                    <span class="hint--top" aria-label="Editar Informacaonutricional"><a href="{{ route('informacaonutricional.edit', $informacaonutricional->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
+                    <span class="hint--top" aria-label="Deletar Informacaonutricional"><button type="button" onclick="goswet({{$informacaonutricional->id}}, '{{$informacaonutricional->nome}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
                 </td>
             </tr>
           @empty
@@ -75,11 +73,11 @@ Produtos
       function(){
         $.ajax({
           type: "DELETE",
-          url: "{{ url('admin/produto') }}/"+id,
+          url: "{{ url('admin/informacaonutricional') }}/"+id,
           data: {'id': id},
           success: function(data){
             swal({
-             title: "Produto deletado!",
+             title: "informacaonutricional deletado!",
              type: "success",
              timer: 2000,
              showConfirmButton: false
@@ -87,7 +85,7 @@ Produtos
              function () {
              },
              function(){
-               window.location = "{{ route('produto.index') }}";
+               window.location = "{{ route('informacaonutricional.index',$produto) }}";
              }
            );
           },

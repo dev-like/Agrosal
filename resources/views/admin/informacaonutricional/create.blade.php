@@ -19,44 +19,28 @@ Produtos
   <div class="card-box">
     <h4 class="m-t-0 header-title"><b>Cadastro de Produto</b></h4>
 
-    {{ Form::open(['route' => 'produto.store', 'files' => true]) }}
+    {{ Form::open(['route' => 'informacaonutricional.store', 'files' => true]) }}
             <div class="row">
               <div class="form-group col-md-4">
-                  {{ Form::label('nome', 'Nome') }}
-                  {{ Form::text('nome', null, array('class' => 'form-control','maxlength' => '255','required')) }}
+                  {{ Form::label('elemento', 'Elemento') }}
+                  {{ Form::text('elemento', null, array('class' => 'form-control','maxlength' => '255')) }}
+              </div>
+              <div class="form-group col-md-4">
+                  {{ Form::label('valores', 'Valor') }}
+                  {{ Form::text('valores', null, array('class' => 'form-control','maxlength' => '255')) }}
               </div>
               <div class="form-group col-md-4" >
-                {{ Form::label('linha', 'Linha') }}
-                <select class="js-example-basic-multiple" data-style="form-control" name="linha_id" id="linha" required="required">
-                  @forelse ($linhas as $linha)
-                    <option value="{{ $linha->id }}">{{ $linha->nome }}</option>
+                {{ Form::label('produto', 'Produto') }}
+                <select class="js-example-basic-multiple" data-style="form-control" name="produtos_id" id="produto">
+                  @forelse ($produtos as $produto)
+                    <option value="{{ $produto->id }}">{{ $produto->nome }}</option>
                   @empty
                     <option value="">Nenhum item cadastrado</option>
                   @endforelse
                 </select>
               </div>
-              <div class="form-group col-md-4" >
-                {!! Form::label('imagem', 'Imagem') !!}
-                <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light" required="required">
-              </div>
+            </div>
 
-            </div>
-            <div class="row">
-              <div class="form-group col-md-12">
-                  {{ Form::label('descricao', 'Descrição') }}
-                  {{ Form::text('descricao', null, array('class' => 'form-control')) }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-md-6">
-                  {{ Form::label('indicacoes', 'Indicações') }}
-                  {{ Form::textarea('indicacoes', null, array('class' => 'form-control')) }}
-              </div>
-              <div class="form-group col-md-6">
-                  {{ Form::label('mododeusar', 'Modo de Usar') }}
-                  {{ Form::textarea('mododeusar', null, array('class' => 'form-control')) }}
-              </div>
-            </div>
 
             <div class="row" style="margin-top: 20px">
               <div class="form-group col-12">

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AgroSal | {{$produto->nome}}</title>
+    <title>AgroSal | </title>
     <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
 
     <!-- Fonts e Animations -->
@@ -32,35 +32,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <span class="way">
-                        Produto da <a href="linhas.html">{{$produto->linha->nome}}</a>
-                    </span>
-                    <h2>{{$produto->nome}}</h2>
-                    <p>
-                        <strong>Indicações:</strong>
-                        {!!$produto->indicacoes!!}
-                    </p>
-                    <p>
-                        <strong>Modo de Usar:</strong>
-                      {!!$produto->mododeusar!!}
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="{{ asset('produtos/imagens/'.$produto->imagem) }}" alt="Embalagem"/>
-                        </div>
-                        <div class="col-md-6">
-                            <span class="niveis">NÍVEIS DE GARANTIA POR KG DO PRODUTO</span>
-                            <div class="table">
-                              @forelse($informacaonutricional as $in)
-                                <div class="row">
-                                    <div class="col-6">{{$in->elemento}}</div>
-                                    <div class="col-6">{{$in->valores}}</div>
-                                </div>
-                                @empty
-                                @endforelse
-                            </table>
-                        </div>
-                    </div>
+                  <img src="assets/images/error.png" alt="Error 404" class="embalagem-destaque" style="width:50%">
                 </div>
             </div>
         </div>
