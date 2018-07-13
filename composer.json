@@ -8,6 +8,7 @@
         "php": ">=7.0.0",
         "artesaos/cidadesbr": "^1.0",
         "fideloper/proxy": "~3.3",
+        "guzzlehttp/guzzle": "^6.3",
         "iatstuti/laravel-cascade-soft-deletes": "^1.4",
         "igorescobar/jquery-mask-plugin": "^1.14",
         "intervention/image": "^2.4",

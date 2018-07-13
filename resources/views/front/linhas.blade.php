@@ -77,7 +77,7 @@
                   @forelse($produtoDireita as $pro2)
                     <ul>
                         <li>
-                          <a href="{{ route('produto.item', $pro->slug) }}">
+                          <a href="{{ route('produto.item', $pro2->slug) }}">
                                 <span>{{$pro2->nome}}</span>
                                 <small>
                                   {{$pro2->descricao}}

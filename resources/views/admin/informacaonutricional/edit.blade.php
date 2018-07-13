@@ -20,98 +20,26 @@ Produtos
   <div class="card-box">
     <h4 class="m-t-0 header-title"><b>Edição de Produto</b></h4>
 
-    {!! Form::model($produto, array('route' => ['produto.update', $produto->id], 'method' => 'PUT', 'files' => true)) !!}
+    {!! Form::model($informacaonutricional, array('route' => ['informacaonutricional.update', $informacaonutricional->id], 'method' => 'PUT', 'files' => true)) !!}
         <div class="row">
           <div class="form-group col-md-4">
-              {{ Form::label('nome', 'Nome') }}
-              {{ Form::text('nome', null, array('class' => 'form-control', 'maxlength' => '255','required')) }}
+              {{ Form::label('elemento', 'Elemento') }}
+              {{ Form::text('elemento', null, array('class' => 'form-control','maxlength' => '255')) }}
+          </div>
+          <div class="form-group col-md-4">
+              {{ Form::label('valores', 'Valor') }}
+              {{ Form::text('valores', null, array('class' => 'form-control','maxlength' => '255')) }}
           </div>
           <div class="form-group col-md-4" >
-            {{ Form::label('linha', 'Linha') }}
-            <select class="js-example-basic-multiple" data-style="form-control" name="linha_id" id="linha" required="required">
-              @forelse ($linhas as $linha)
-                <option value="{{ $linha->id }}" {{ ($linha->id==$produto->linha_id)?'selected':'' }}>{{ $linha->nome }}</option>
+            {{ Form::label('produto', 'produto') }}
+            <select class="js-example-basic-multiple" data-style="form-control" name="produto_id" id="produto" required="required">
+              @forelse ($produtos as $produto)
+                <option value="{{ $produto->id }}" {{ ($produto->id==$produto->produto_id)?'selected':'' }}>{{ $produto->nome }}</option>
               @empty
                 <option value="">Nenhum item cadastrado</option>
               @endforelse
             </select>
           </div>
-          <div class="form-group col-md-4">
-            {!! Form::label('imagem', 'Enviar Imagem') !!}
-            <input type="file" name="imagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">
-            {!! Form::label('descricao', 'Descrição:') !!}
-            {!! Form::text('descricao', $produto->descricao, array('class' => 'form-control')) !!}
-          </div>
-          <div class="form-group col-md-6">
-            {!! Form::label('informacoesnutricionais', 'Informações Nutricionais') !!}
-            <input type="file" name="informacoesnutricionais" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">
-              {{ Form::label('indicacoes', 'Indicações') }}
-              {{ Form::textarea('indicacoes', $produto->indicacoes, array('class' => 'form-control')) }}
-          </div>
-          <div class="form-group col-md-6">
-              {{ Form::label('mododeusar', 'Modo de Usar') }}
-              {{ Form::textarea('mododeusar', $produto->mododeusar, array('class' => 'form-control')) }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-12">
-              {{ Form::label('Informações Nutricionais') }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-3">
-              {{ Form::label('calcio', 'Calcio') }}
-              {{ Form::text('calcio', $produto->calcio, array('class' => 'form-control in')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('fosfo', 'Fosforo') }}
-              {{ Form::text('fosforo', $produto->fosforo, array('class' => 'form-control in')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('enxofre', 'Enxofre') }}
-              {{ Form::text('enxofre', $produto->enxofre, array('class' => 'form-control in')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('magnesio', 'Magnesio') }}
-              {{ Form::text('magnesio', $produto->magnesio, array('class' => 'form-control in')) }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-3">
-              {{ Form::label('manganes', 'Manganes') }}
-              {{ Form::text('manganes', $produto->manganes, array('class' => 'form-control en')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('zinco', 'Zinco') }}
-              {{ Form::text('zinco', $produto->zinco, array('class' => 'form-control en')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('cobre', 'Cobre') }}
-              {{ Form::text('cobre', $produto->cobre, array('class' => 'form-control en')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('cobalto', 'Cobalto') }}
-              {{ Form::text('cobalto', $produto->cobalto, array('class' => 'form-control en')) }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-3">
-              {{ Form::label('iodo', 'Iodo') }}
-              {{ Form::text('iodo', $produto->iodo, array('class' => 'form-control en')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('selenio', 'Selenio') }}
-              {{ Form::text('selenio', $produto->Selenio, array('class' => 'form-control en')) }}
-          </div>
-        </div>
 
         <div class="row" style="margin-top: 20px">
           <div class="form-group col-12">

@@ -60,58 +60,7 @@ Produtos
               {{ Form::label('mododeusar', 'Modo de Usar') }}
               {{ Form::textarea('mododeusar', $produto->mododeusar, array('class' => 'form-control')) }}
           </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-12">
-              {{ Form::label('Informações Nutricionais') }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-3">
-              {{ Form::label('calcio', 'Calcio') }}
-              {{ Form::text('calcio', $produto->calcio, array('class' => 'form-control in')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('fosfo', 'Fosforo') }}
-              {{ Form::text('fosforo', $produto->fosforo, array('class' => 'form-control in')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('enxofre', 'Enxofre') }}
-              {{ Form::text('enxofre', $produto->enxofre, array('class' => 'form-control in')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('magnesio', 'Magnesio') }}
-              {{ Form::text('magnesio', $produto->magnesio, array('class' => 'form-control in')) }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-3">
-              {{ Form::label('manganes', 'Manganes') }}
-              {{ Form::text('manganes', $produto->manganes, array('class' => 'form-control en')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('zinco', 'Zinco') }}
-              {{ Form::text('zinco', $produto->zinco, array('class' => 'form-control en')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('cobre', 'Cobre') }}
-              {{ Form::text('cobre', $produto->cobre, array('class' => 'form-control en')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('cobalto', 'Cobalto') }}
-              {{ Form::text('cobalto', $produto->cobalto, array('class' => 'form-control en')) }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-3">
-              {{ Form::label('iodo', 'Iodo') }}
-              {{ Form::text('iodo', $produto->iodo, array('class' => 'form-control en')) }}
-          </div>
-          <div class="form-group col-md-3">
-              {{ Form::label('selenio', 'Selenio') }}
-              {{ Form::text('selenio', $produto->Selenio, array('class' => 'form-control en')) }}
-          </div>
-        </div>
+        </div>      
 
         <div class="row" style="margin-top: 20px">
           <div class="form-group col-12">

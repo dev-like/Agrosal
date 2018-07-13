@@ -25,7 +25,6 @@ Informacaonutricionals
     <table class="table table-striped">
         <thead>
         <tr>
-          <th width="5%">#</th>
           <th>Elemento</th>
           <th>Valor</th>
         </tr>
@@ -33,7 +32,6 @@ Informacaonutricionals
         <tbody>
           @forelse($informacaonutricional as $informacaonutricional)
             <tr>
-                <td>{{ $informacaonutricional -> id }}</td>
                 <td>{{ $informacaonutricional -> elemento }}</td>
                 <td>{{ $informacaonutricional -> valores }}</td>
                 <td width="10%">

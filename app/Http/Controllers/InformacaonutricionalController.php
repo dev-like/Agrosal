@@ -79,7 +79,9 @@ class InformacaonutricionalController extends Controller
     public function edit($id)
     {
         $informacaonutricional = informacaonutricional::find($id);
-        return view('admin.informacaonutricionals.edit', [
+        $produtos = Produto::all();
+
+        return view('admin.informacaonutricional.edit', [
           'informacaonutricional' => $informacaonutricional
       ]);
     }
