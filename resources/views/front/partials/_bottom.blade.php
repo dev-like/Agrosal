@@ -35,12 +35,13 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <form action="." method="post">
+                <form action="/postMail" method="post">
+                  {{ csrf_field() }}
                     <h4>Contate-nos</h4>
                     <input type="text"  name="nome" placeholder="Nome">
                     <input type="email" name="email" placeholder="E-mail">
                     <input type="text"  name="mensagem" placeholder="Mensagem">
-                    <button type="button" name="button">Enviar</button>
+                    <button type="submit" name="button">Enviar</button>
                 </form>
             </div>
         </div>

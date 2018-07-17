@@ -8,6 +8,8 @@ use App\Models\Noticia;
 use App\Models\Informacaonutricional;
 use App\Models\Produto;
 use App\Models\Quemsomos;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMailable;
 use DB;
 
 class WebSiteController extends Controller

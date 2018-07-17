@@ -36,7 +36,7 @@
     <!-- Cabeçalho -->
     <header>
         <!-- Banners -->
-        <div class="banner">
+        <div class="banner" id="inicio">
             <div class="container">
                 <h1>
                     <span>Linha</span>

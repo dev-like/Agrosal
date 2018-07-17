@@ -9,6 +9,12 @@ Route::get('produto', 'WebSiteController@produtos')->name('produtos');
 Route::get('produto/{slug}', ['as' => 'produto.item', 'uses' => 'WebSiteController@getSingleProduto'])->where('slug', '[\w\d\-\_]+');
 Route::get('pagenotfound', ['as' => 'notfound','uses' => 'WebSiteController@pagenotfound']);
 
+route::get('mail', 'mailController@index');
+route::post('postMail', 'mailController@post');
+Route::get('csrf', function () {
+    return Session::token();
+});
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
     Route::get('/', 'HomeController@index')->name('admin.home');
 
