@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Painel Admnistrativo AgroSal</title>
+        <title>Painel Administrativo AgroSal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('template/images/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('template/images/logo.ico') }}">
 
         <!-- App css -->
         <link href="{{ asset('template/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -22,7 +22,7 @@
     </head>
 
 
-    <body class="bg-accpunt-pages">
+    <body class="bg-accpunt-pages" style="background: url('{{ asset('template/images/bg-login.png') }}') no-repeat center center;background-size: cover;">
 
         <!-- HOME -->
         <section>
@@ -37,7 +37,7 @@
                       <div class="account-logo-box">
                         <h2 class="text-uppercase text-center">
                           <a href="index.html" class="text-success">
-                            <span><img src="{{ asset('template/images/logo_dark.png') }}" alt="" height="125"></span>
+                            <span><img src="{{ asset('template/images/logo2.png') }}" alt=""></span>
                           </a>
                         </h2>
                       </div>

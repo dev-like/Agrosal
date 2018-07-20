@@ -10,7 +10,7 @@
             <div class="topbar">
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="../admin" class="logo">
+                    <a href="/admin" class="logo">
                       <span>
                         <img src="{{ asset('template/images/logo2.png') }}" alt="" height="50">
                       </span>
