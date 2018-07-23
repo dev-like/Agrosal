@@ -17,7 +17,7 @@ class CreateProdutosTable extends Migration
             $table->increments('id');
             $table->string('nome', 255);
             $table->text('descricao')->nullable();
-            $table->integer('linha_id')->unsigned();
+            $table->integer('linha_id')->nullable();
             $table->text('indicacoes', 500)->nullable();
             $table->text('mododeusar', 500)->nullable();
             $table->string('slug');
@@ -27,7 +27,7 @@ class CreateProdutosTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('linha_id')->references('id')->on('linhas');
+            $table->foreign('linha_id')->references('id')->on('linhas')->onDelete('SET NULL');
         });
     }
 

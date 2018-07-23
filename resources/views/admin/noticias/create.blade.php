@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-Notícias
+Cadastro
 @endsection
 
 @section('script-bottom')

@@ -56,7 +56,7 @@ class Handler extends ExceptionHandler
           break;
 
           //internal error
-          case '500':
+          case 500:
             return redirect()->route('notfound');
           break;
 
@@ -65,7 +65,7 @@ class Handler extends ExceptionHandler
           break;
         }
         } else {
-            return parent::render($request, $exception);
+            return redirect()->route('notfound2');
         }
     }
 }

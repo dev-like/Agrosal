@@ -3,9 +3,8 @@
 @section('page-caminho')
   Produtos
 @endsection
-
 @section('page-title')
-Produtos
+Listagem
 @endsection
 
 @section('styles')
@@ -36,7 +35,7 @@ Produtos
             <tr>
                 <td>{{ $produto -> id }}</td>
                 <td>{{ $produto -> nome }}</td>
-                <td>{{ $produto -> linha->nome }}</td>
+                <td>{{ isset($produto -> linha) ? $produto -> linha->nome : 'Linha não cadastrada' }}</td>
                 <td width="15%">
                     <span class="hint--top" aria-label="Informações Nutricionais"><a href="{{ route('informacaonutricional.index', $produto->id) }}" style="border-radius: 50%" class="btn btn-success waves-effect"> <i class="fa  fa-bar-chart-o"></i></a></span>
                     <span class="hint--top" aria-label="Editar produto"><a href="{{ route('produto.edit', $produto->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>

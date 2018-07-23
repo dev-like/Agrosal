@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-Linhas
+Listagem
 @endsection
 @section('styles')
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -76,7 +76,7 @@ Linhas
           data: {'id': id},
           success: function(data){
             swal({
-             title: "Cliente deletado!",
+             title: "Linha deletada!",
              type: "success",
              timer: 2000,
              showConfirmButton: false

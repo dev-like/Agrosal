@@ -8,6 +8,7 @@ Route::get('noticia/{slug}', ['as' => 'noticia.item', 'uses' => 'WebSiteControll
 Route::get('produto', 'WebSiteController@produtos')->name('produtos');
 Route::get('produto/{slug}', ['as' => 'produto.item', 'uses' => 'WebSiteController@getSingleProduto'])->where('slug', '[\w\d\-\_]+');
 Route::get('pagenotfound', ['as' => 'notfound','uses' => 'WebSiteController@pagenotfound']);
+Route::get('../admin', ['as' => 'notfound2','uses' => 'WebSiteController@pagenotfound2']);
 
 route::get('mail', 'mailController@index');
 route::post('postMail', 'mailController@post');
@@ -17,6 +18,8 @@ Route::get('csrf', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
     Route::get('/', 'HomeController@index')->name('admin.home');
+
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
     Route::resource('quemsomos', 'QuemsomosController');
 

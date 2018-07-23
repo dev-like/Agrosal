@@ -23,7 +23,6 @@ class Produto extends Model
   ];
     protected $dates = ['deleted_at'];
 
-
     public function linha()
     {
         return $this->belongsTo('App\Models\Linha');

@@ -40,18 +40,17 @@ Produtos
               @endforelse
             </select>
           </div>
-
+        </div>
         <div class="row" style="margin-top: 20px">
           <div class="form-group col-12">
             <div class="text-center">
               <button class="btn btn-success" type="submit" value="Salvar"><i class="fa fa-save m-r-5"></i> Salvar</button>
-              <a href="{{ route('produto.index') }}" class="btn btn-danger"><i class="fa fa-window-close m-r-5"></i> Cancelar</a>
+              <a href="{{ route('informacaonutricional.index') }}" class="btn btn-danger"><i class="fa fa-window-close m-r-5"></i> Cancelar</a>
             </div>
           </div>
         </div>
     {{ Form::close() }}
 
-</div>
 </div>
 @endsection
 

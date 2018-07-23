@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Linhas
+Linhas
 @endsection
 
 @section('page-title')
-Linhas
+Cadastro
 @endsection
 
 @section('script-bottom')
@@ -20,13 +20,19 @@ Linhas
 
         {{ Form::open(['route' => 'linha.store', 'files' => true]) }}
             <div class="row">
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-12">
                   {{ Form::label('nome', 'Nome') }}
                   {{ Form::text('nome', null, array('class' => 'nome form-control','maxlength' => '255','required')) }}
               </div>
+            </div>
+            <div class="row">
               <div class="form-group col-md-6">
-                  {{ Form::label('capa', 'Capa') }}
-                  <input type="file" name="capa" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
+                {{ Form::label('capa', 'Capa') }}
+                <input type="file" name="capa" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
+              </div>
+              <div class="form-group col-md-6">
+                {{ Form::label('embalagem', 'Embalagem') }}
+                <input type="file" name="embalagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
               </div>
             </div>
             <div class="row">

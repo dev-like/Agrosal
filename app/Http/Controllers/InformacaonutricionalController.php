@@ -82,7 +82,8 @@ class InformacaonutricionalController extends Controller
         $produtos = Produto::all();
 
         return view('admin.informacaonutricional.edit', [
-          'informacaonutricional' => $informacaonutricional
+          'informacaonutricional' => $informacaonutricional,
+          'produtos' => $produtos
       ]);
     }
 
@@ -97,7 +98,7 @@ class InformacaonutricionalController extends Controller
     public function update(Request $request, $id)
     {
         $informacaonutricional = informacaonutricional::find($id);
-
+        $produtos = Produto::all();
 
         $informacaonutricional->save();
         $request->session()->flash('success', 'informacaonutricional alterada com sucesso');

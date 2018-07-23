@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Produtos
+Informações Nutricionais
 @endsection
 
 @section('page-title')
-Produtos
+Adicionar
 @endsection
 
 @section('script-bottom')
@@ -17,7 +17,7 @@ Produtos
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <h4 class="m-t-0 header-title"><b>Cadastro de Produto</b></h4>
+    <h4 class="m-t-0 header-title"><b>Cadastrar Informações Nutricionais</b></h4>
 
     {{ Form::open(['route' => 'informacaonutricional.store', 'files' => true]) }}
             <div class="row">

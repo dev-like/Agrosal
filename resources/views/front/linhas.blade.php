@@ -71,7 +71,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-4">
-                    <img src="{{ asset('linhas/imagens/'.$linha->capa) }}" alt="Embalagem">
+                    <img src="{{ asset('linhas/imagens/'.$linha->embalagem) }}" alt="Embalagem">
                 </div>
                 <div class="col-lg-4 direita">
                   @forelse($produtoDireita as $pro2)

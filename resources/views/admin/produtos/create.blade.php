@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Produtos
+Produtos
 @endsection
 
 @section('page-title')
-Produtos
+Cadastro
 @endsection
 
 @section('script-bottom')

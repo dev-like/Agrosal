@@ -11,7 +11,7 @@
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <h4 class="m-t-0 header-title"><b>Cadastro de usuários</b></h4>
+    <h4 class="m-t-0 header-title"><b>Edição de usuários</b></h4>
 
         {{ Form::model($usuario, ['route' => ['usuario.update', $usuario->id], 'method' => 'PUT']) }}
             <div class="row">

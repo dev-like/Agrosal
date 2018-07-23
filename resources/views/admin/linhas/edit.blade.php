@@ -3,9 +3,8 @@
 @section('page-caminho')
   Linhas
 @endsection
-
 @section('page-title')
-Linhas
+Edição
 @endsection
 
 
@@ -16,19 +15,43 @@ Linhas
 
         {{ Form::model($linha, ['route' => ['linha.update', $linha->id], 'method' => 'PUT', 'files' => true]) }}
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
               {{ Form::label('nome', 'Nome') }}
               {{ Form::text('nome', null, array('class' => 'nome form-control','maxlength' => '255','required')) }}
           </div>
+        </div>
+        <div class="row">
           <div class="form-group col-md-6">
-              {{ Form::label('capa', 'Capa') }}
-              <input type="file" name="capa" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
+            {{ Form::label('capa', 'Capa') }}
+            <input type="file" name="capa" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
+          </div>
+          <div class="form-group col-md-6">
+            {{ Form::label('embalagem', 'Embalagem') }}
+            <input type="file" name="embalagem" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
           </div>
         </div>
         <div class="row">
           <div class="form-group col-md-12">
               {{ Form::label('descricao', 'Descrição') }}
               {{ Form::textarea('descricao', null, array('class' => 'nome form-control')) }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-3">
+            <hr>
+            @if($linha->capa)
+            <h6>Imagem Capa</h6>
+            <img src="{{ asset('linhas/imagens/'. $linha->capa) }}" style="height: 220px">
+            <hr>
+            @endif
+          </div>
+          <div class="form-group col-md-3">
+            <hr>
+            @if($linha->capa)
+            <h6>Imagem Embalagem</h6>
+            <img src="{{ asset('linhas/imagens/'. $linha->embalagem) }}" style="height: 220px">
+            <hr>
+            @endif
           </div>
         </div>
 

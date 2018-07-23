@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-Notícias
+Edição
 @endsection
 
 @section('script-bottom')
@@ -16,17 +16,10 @@ Notícias
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <span class="card-title">Editar notícias</span><br>
+    <h4 class="m-t-0 header-title"><b>Editar Notícia</b></h4>
+    <hr>
 
     {!! Form::model($noticia, array('route' => ['noticia.update', $noticia->id], 'method' => 'PUT', 'files' => true)) !!}
-    <div class="row">
-      <div class="form-group col-md-12">
-        @if($noticia->capa)
-        <img src="{{ asset('noticias/imagens/'. $noticia->capa) }}" style="width: 70%">
-        <hr>
-        @endif
-      </div>
-    </div>
 
     <div class="row">
       <div class="form-group col-md-8">
@@ -58,6 +51,16 @@ Notícias
       <div class="col-12" style="margin-top: 20px">
         {!! Form::label('conteudo', 'Conteudo:') !!}
         {{ Form::textarea('conteudo', $noticia->conteudo, array('class' => 'form-control standard-top-spacing','maxlength' => '500', 'style' => 'height:400px','required')) }}
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="form-group col-md-12">
+        @if($noticia->capa)
+        <h6>Imagem Capa</h6>
+        <img src="{{ asset('noticias/imagens/'. $noticia->capa) }}" style="width: 30%">
+        <hr>
+        @endif
       </div>
     </div>
 

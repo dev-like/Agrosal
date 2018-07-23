@@ -18,10 +18,12 @@ class CreateLinhasTable extends Migration
             $table->string('nome', 255);
             $table->text('descricao')->nullable();
             $table->string('capa', 1000)->nullable();
+            $table->string('embalagem', 1000)->nullable();
             $table->string('slug');
 
             $table->timestamps();
             $table->softDeletes();
+
         });
     }
 
