@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -140,6 +138,4 @@
     </section>
     @include('front.partials._bottom')
     <script src="{{ asset('assets/js/main.js') }}"></script>
-
-    </body>
-    </html>
+  </body>

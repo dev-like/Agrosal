@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="keywords" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AgroSal</title>
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AgroSal | {{$linha->nome}}</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
 
     <!-- Fonts e Animations -->
@@ -31,11 +29,11 @@
     <!-- Cabeçalho -->
     <header>
         <!-- Banners -->
-        <div class="banner">
+        <div class="banner" style="background-image: url({{ asset('linhas/imagens/'. $linha->capa) }})">
             <div class="container">
                 <h1>
-                    <span>Linha</span>
-                    <strong>Nutrimais</strong>
+                  <br>
+                    <strong>{{$linha->nome}}</strong>
                 </h1>
             </div>
         </div>
@@ -46,7 +44,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>{{$linha->nome}}</h2>
                     <p>{!!$linha->descricao!!}</p>
                 </div>
             </div>
@@ -97,4 +94,3 @@
 
     <script src="{{ asset('assets/js/pages.js') }}"></script>
 </body>
-</html>
