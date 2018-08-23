@@ -14,7 +14,7 @@ class CreateLinhasTable extends Migration
     public function up()
     {
         Schema::create('linhas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('nome', 255);
             $table->text('descricao')->nullable();
             $table->string('capa', 1000)->nullable();

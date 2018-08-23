@@ -28,9 +28,9 @@ class AddForeignKeysToBannersTable extends Migration
     public function down()
     {
         Schema::table('banners', function (Blueprint $table) {
-            $table->dropForeign('fk_banners_noticias');
-            $table->dropForeign('fk_banners_produtos');
-            $table->dropForeign('fk_banners_linhas');
+            $table->dropIfExists('fk_banners_noticias');
+            $table->dropIfExists('fk_banners_produtos');
+            $table->dropIfExists('fk_banners_linhas');
         });
     }
 }
