@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\noticia;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 use Image;
 use Storage;

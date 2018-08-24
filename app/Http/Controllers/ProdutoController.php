@@ -89,7 +89,7 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        $produto = produto::where('slug', '=', $id)->first();
+        $produto = Produto::where('slug', '=', $id)->first();
         return view('admin.produtos.show')->with('produto', $produto);
     }
 
@@ -100,7 +100,7 @@ class ProdutoController extends Controller
 
     public function getSingle($slug)
     {
-        $produto = produto::where('slug', '=', $slug)->first();
+        $produto = Produto::where('slug', '=', $slug)->first();
         return view('admin.produtos.show')->with('produto', $produto);
     }
 
