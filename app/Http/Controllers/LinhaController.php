@@ -20,9 +20,9 @@ class LinhaController extends Controller
      */
     public function index(Request $request)
     {
-        $linha = Linha::paginate(15);
+        $linhas = Linha::paginate(5);
         return view('admin.linhas.index', [
-          'linha' => $linha
+          'linhas' => $linhas
       ]);
     }
 

@@ -20,9 +20,9 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        $produto = Produto::paginate(25);
+        $produtos = Produto::paginate(25);
         return view('admin.produtos.index', [
-          'produto' => $produto
+          'produtos' => $produtos
       ]);
     }
 

@@ -21,7 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
 
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-    Route::resource('quemsomos', 'QuemsomosController');
+    Route::resource('quemsomos', 'QuemSomosController');
 
     Route::resource('linha', 'LinhaController');
 

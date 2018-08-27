@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-Listagem
+Linhas Cadastradas
 @endsection
 @section('styles')
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -19,22 +19,19 @@ Listagem
 <div class="col-12">
   <div class="card-box">
     <a href="{{ route('linha.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
-      <h4 class="m-t-0 header-title">Listagem de Linhas</h4>
 
     <table class="table table-striped">
         <thead>
         <tr>
-          <th width="5%">#</th>
           <th>Nome</th>
           <th>Ações</th>
         </tr>
         </thead>
         <tbody>
-          @forelse($linha as $linha)
+          @forelse($linhas as $linha)
             <tr>
-                <td>{{ $linha -> id }}</td>
                 <td>{{ $linha -> nome }}</td>
-                <td width="15%">
+                <td width="10%">
                     <span class="hint--top" aria-label="Editar Linha"><a href="{{ route('linha.edit', $linha->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
                     <span class="hint--top" aria-label="Deletar Linha"><button type="button" onclick="goswet({{$linha->id}}, '{{$linha->nome}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
                 </td>
@@ -46,6 +43,27 @@ Listagem
           @endforelse
         </tbody>
     </table>
+    @if ($linhas->lastPage() > 1)
+          <ul class="pagination ml-auto">
+              <li class="{{ ($linhas->currentPage() == 1) ? ' disabled' : '' }} page-item">
+                  <a class=" page-link " href="{{ $linhas->url(1) }}" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                  </a>
+              </li>
+              @for ($i = 1; $i <= $linhas->lastPage(); $i++)
+                  <li class="{{ ($linhas->currentPage() == $i) ? ' active' : '' }} page-item">
+                      <a class=" page-link " href="{{ $linhas->url($i) }}">{{ $i }}</a>
+                  </li>
+              @endfor
+              <li class="{{ ($linhas->currentPage() == $linhas->lastPage()) ? ' disabled' : '' }} page-item">
+                  <a href="{{ $linhas->url($linhas->currentPage()+1) }}" class="page-link" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                  </a>
+              </li>
+          </ul>
+      @endif
   </div>
 </div>
 @endsection

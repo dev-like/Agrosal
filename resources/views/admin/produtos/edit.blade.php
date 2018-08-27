@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Edição
+Produtos
 @endsection
 
 @section('page-title')
-Produtos
+Editar Produtos
 @endsection
 
 @section('script-bottom')
@@ -18,7 +18,6 @@ Produtos
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <h4 class="m-t-0 header-title"><b>Edição de Produto</b></h4>
 
     {!! Form::model($produto, array('route' => ['produto.update', $produto->id], 'method' => 'PUT', 'files' => true)) !!}
         <div class="row">

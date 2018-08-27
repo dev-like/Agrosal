@@ -21,7 +21,6 @@ Informações Nutricionais
   <div class="card-box">
     <a href="{{ route('informacaonutricional.create',$produto) }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
       <h4 class="m-t-0 header-title">Listagem de Informações Nutricionais</h4>
-      <!-- <h5>{{$produto->nome}}</h5> -->
 
     <table class="table table-striped">
         <thead>
@@ -47,6 +46,7 @@ Informações Nutricionais
           @endforelse
         </tbody>
     </table>
+
 
 @endsection
 
@@ -76,7 +76,7 @@ Informações Nutricionais
           data: {'id': id},
           success: function(data){
             swal({
-             title: "informacaonutricional deletado!",
+             title: "Elemento deletado!",
              type: "success",
              timer: 2000,
              showConfirmButton: false

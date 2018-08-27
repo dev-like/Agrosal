@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-Edição
+Editar Notícia
 @endsection
 
 @section('script-bottom')
@@ -16,9 +16,6 @@ Edição
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <h4 class="m-t-0 header-title"><b>Editar Notícia</b></h4>
-    <hr>
-
     {!! Form::model($noticia, array('route' => ['noticia.update', $noticia->id], 'method' => 'PUT', 'files' => true)) !!}
 
     <div class="row">

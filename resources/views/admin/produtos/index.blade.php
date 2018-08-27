@@ -4,7 +4,7 @@
   Produtos
 @endsection
 @section('page-title')
-Listagem
+Produtos Cadastrados
 @endsection
 
 @section('styles')
@@ -19,21 +19,18 @@ Listagem
 
   <div class="card-box">
     <a href="{{ route('produto.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
-      <h4 class="m-t-0 header-title">Listagem de produtos</h4>
 
     <table class="table table-striped">
         <thead>
         <tr>
-          <th width="5%">#</th>
           <th>Nome</th>
           <th>Linha</th>
           <th>Ações</th>
         </tr>
         </thead>
         <tbody>
-          @forelse($produto as $produto)
+          @forelse($produtos as $produto)
             <tr>
-                <td>{{ $produto -> id }}</td>
                 <td>{{ $produto -> nome }}</td>
                 <td>{{ isset($produto -> linha) ? $produto -> linha->nome : 'Linha não cadastrada' }}</td>
                 <td width="15%">
@@ -49,6 +46,28 @@ Listagem
           @endforelse
         </tbody>
     </table>
+
+    @if ($produtos->lastPage() > 1)
+          <ul class="pagination ml-auto">
+              <li class="{{ ($produtos->currentPage() == 1) ? ' disabled' : '' }} page-item">
+                  <a class=" page-link " href="{{ $produtos->url(1) }}" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                  </a>
+              </li>
+              @for ($i = 1; $i <= $produtos->lastPage(); $i++)
+                  <li class="{{ ($produtos->currentPage() == $i) ? ' active' : '' }} page-item">
+                      <a class=" page-link " href="{{ $produtos->url($i) }}">{{ $i }}</a>
+                  </li>
+              @endfor
+              <li class="{{ ($produtos->currentPage() == $produtos->lastPage()) ? ' disabled' : '' }} page-item">
+                  <a href="{{ $produtos->url($produtos->currentPage()+1) }}" class="page-link" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                  </a>
+              </li>
+          </ul>
+      @endif
 
 @endsection
 

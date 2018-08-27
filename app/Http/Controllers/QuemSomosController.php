@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Quemsomos;
 use Illuminate\Http\Request;
 
-class quemsomosController extends Controller
+class QuemsomosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class quemsomosController extends Controller
      */
     public function index()
     {
-        $quemsomos = QuemSomos::get();
+        $quemsomos = Quemsomos::get();
         $quemsomos = count($quemsomos) ? $quemsomos[0] : new QuemSomos();
         return view('admin.quemsomos.index', [
         'quemsomos' => $quemsomos

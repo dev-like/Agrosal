@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-Listagem
+Notícias Cadastradas
 @endsection
 
 @section('styles')
@@ -17,12 +17,10 @@ Listagem
 <div class="col-12">
   <div class="card-box">
     <a href="{{ route('noticia.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
-    <h4 class="m-t-0 header-title">Listagem de notícias</h4>
 
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>#</th>
             <th>Título</th>
             <th>Data de Publicação</th>
             <th>Ações</th>
@@ -31,10 +29,9 @@ Listagem
         <tbody>
           @forelse($noticias as $noticia)
             <tr>
-                <td>{{ $noticia->id }}</td>
                 <td>{{ substr(strip_tags($noticia->titulo), 0, 35) }}{{ (strlen(strip_tags($noticia->titulo)) > 25 ? "..." : "") }}</td>
                 <td>{{ date('d/m/y g:ia', strtotime($noticia->datapublicacao)) }}</td>
-                <td width="18%">
+                <td width="15%">
                     <span class="hint--top" aria-label="Editar notícia"><a href="{{ route('noticia.edit', $noticia->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
                     <span class="hint--top" aria-label="Visualizar notícia"><a href="{{ route('noticia.show', $noticia->slug) }}" style="border-radius: 50%" class="btn btn-info waves-effect hint--bottom" aria-label="Thank you!" > <i class="fa fa-eye"></i></a></span>
                     <span class="hint--top" aria-label="Deletar noticia"><button type="button" onclick="goswet({{$noticia->id}}, '{{$noticia->titulo}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>

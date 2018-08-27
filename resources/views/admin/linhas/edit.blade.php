@@ -1,17 +1,16 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Linhas
+Linhas
 @endsection
 @section('page-title')
-Edição
+Editar Linha
 @endsection
 
 
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <h4 class="m-t-0 header-title"><b>Edição de Linha</b></h4>
 
         {{ Form::model($linha, ['route' => ['linha.update', $linha->id], 'method' => 'PUT', 'files' => true]) }}
         <div class="row">
