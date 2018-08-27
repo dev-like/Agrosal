@@ -11,18 +11,19 @@
                 </div>
                 <div class="info">
                     <img src="{{ asset('assets/images/telefone.png') }}" alt="">
-                    {{$quemsomos->telefone}}
+                    <a href="tel:{{$quemsomos->telefone}}">{{$quemsomos->telefone}}</a>
+
                 </div>
                 <div class="info">
                     <img src="{{ asset('assets/images/email.png') }}" alt="">
-                    {{$quemsomos->email}}
+                    <a href="mailto:{{$quemsomos->email}}">{{$quemsomos->email}}</a>
                 </div>
                 <div class="info">
-                    <a href="#">
+                    <a href="https://m.me/nutrientesagrosal">
                         <img src="{{ asset('assets/images/messenger.png') }}" alt="">
                         @agrosaloficial
                     </a>
-                    <a href="#" class="whats">
+                    <a href="https://api.whatsapp.com/send?phone=99991554321&text=Ol%C3%A1!%20Tudo%20bem" class="whats">
                         <img src="{{ asset('assets/images/whatsapp.png') }}" alt="">
                         (99) 9 9155-4321
                     </a>
@@ -38,9 +39,9 @@
                 <form action="/postMail" method="post">
                   {{ csrf_field() }}
                     <h4>Contate-nos</h4>
-                    <input type="text"  name="nome" placeholder="Nome">
-                    <input type="email" name="email" placeholder="E-mail">
-                    <input type="text"  name="mensagem" placeholder="Mensagem">
+                    <input type="text"  name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="text"  name="mensagem" placeholder="Mensagem" required>
                     <button type="submit" name="button">Enviar</button>
                 </form>
             </div>
@@ -56,3 +57,19 @@
         </a>
     </span>
 </div>
+
+<script src="{{ asset('template/plugins/sweet-alert/sweetalert2.min.js') }}" type="text/javascript"></script>
+
+    <script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if (exist){
+    swal(
+            {
+                title: 'Pedido enviado com Sucesso!',
+                type: 'success',
+                confirmButtonColor: '#4fa7f3'
+            }
+        )
+    }
+    </script>

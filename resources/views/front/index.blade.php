@@ -123,7 +123,7 @@
                         <div style="background-image: url({{ asset('noticias/imagens/'. $noti->capa) }})" class="not-img"></div>
                         <div class="content">
                             <h3>{{$noti->titulo}}</h3>
-                            <time>{{$noti->datapublicacao}}</time>
+                            <time datetime="{{ date('d/m/y g:ia', strtotime($noti->datapublicacao)) }}">{{ date('d/m/y g:ia', strtotime($noti->datapublicacao)) }}</time>
                             <a href="{{ route('noticia.item', $noti->slug) }}">continue lendo</a>
                         </div>
                     </div>
