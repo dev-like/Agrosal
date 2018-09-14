@@ -22,10 +22,6 @@ $(".missao .row div").css({
     'opacity':'0',
     'transform':'translateY(20px)',
 });
-$(".banner h1 span, .banner h1 strong, .banner h1 small").css({
-    'opacity':'0',
-    'transform':'translatex(20px)',
-});
 
 $(document).ready(function(){
     $(window).scroll(function()
@@ -58,7 +54,6 @@ $(document).ready(function(){
 	});
 
     var maisde3 = $(".linhas").length > 3 ? true : false;
-
     $('.carousel-linhas').owlCarousel({
         margin: 20,
         dots:false,
@@ -77,23 +72,35 @@ $(document).ready(function(){
     setTimeout(function(){
         $(".missao .row div").addClass('hideFadeDown');
         $(".missao .row div").removeAttr('style');
-    },1200);
+    },800);
 
+    // showFadeUp('.sobre .embalagem-destaque');
+    // showFadeUp('.produtos .linhas');
+    // showFadeUp('.noticias .item');
 
-    setTimeout(function(){
-        $(".banner h1 span").addClass('hideFadeDown');
-        $(".banner h1 span").removeAttr('style');
-    },600);
-    setTimeout(function(){
-        $(".banner h1 strong").addClass('hideFadeDown');
-        $(".banner h1 strong").removeAttr('style');
-    },900);
-    setTimeout(function(){
-        $(".banner h1 small").addClass('hideFadeDown');
-        $(".banner h1 small").removeAttr('style');
-    },1000);
+    //altenancia de banners
+    function mostrarBanner(){
+		clearInterval(executar);
 
-    showFadeUp('.sobre .embalagem-destaque');
-    showFadeUp('.produtos .linhas');
-    showFadeUp('.noticias .item');
+        if (banner == $('.banner .dots .item-dot').length)
+            banner = 0;
+
+        $('.banner .dots .item-dot').removeClass('active');
+        $('.banner .dots .item-dot').eq(banner).addClass('active');
+
+        var img = $('.banner .dots .item-dot').eq(banner).children('img').attr('src');
+
+        $('.banner').css('background-image','url('+img+')');
+        executar = setInterval(function(){ ++banner; mostrarBanner(); }, 5000);
+	}
+
+    var banner = 0;
+    mostrarBanner();
+    var executar = setInterval(function(){ ++banner; mostrarBanner(); }, 5000);
+
+    $('.banner .dots .item-dot').click(function(){
+        clearInterval(executar);
+        banner = $(this).attr('data-indice');
+        mostrarBanner();
+    });
 });

@@ -35,16 +35,16 @@
     <header>
         <!-- Banners -->
         <div class="banner" id="inicio">
-            <div class="container">
-                <h1>
-                    <span>Linha</span>
-                    <strong>Nutrimais</strong>
-                    <small>
-                        O Nutrimais é indicado para suprir as deficiências
-                        nutricionais de bovino de corte em geral mantidos a
-                        pasto, exclusivamente durante o período da seca.
-                    </small>
-                </h1>
+            <div class="dots">
+                <div class="item-dot" data-indice='0'>
+                    <img src="assets/images/nova-linha.jpg" alt="Nova Linha">
+                </div>
+                <div class="item-dot" data-indice='1'>
+                    <img src="assets/images/nova-parceria.jpg" alt="Nova Parceria">
+                </div>
+                <div class="item-dot" data-indice='2'>
+                    <img src="assets/images/taurotec.jpg" alt="Taurotec">
+                </div>
             </div>
         </div>
 

@@ -3,8 +3,7 @@
     <div class="container">
         <div class="row">
             <a href="/">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="AgroSal" class="pause">
-                <img src="{{ asset('assets/images/logo-flutuante.png') }}" alt="AgroSal" class="flutuante">
+                <img src="{{ asset('assets/images/logo.png') }}" alt="AgroSal">
             </a>
             <div class="menu-toggle">
                 <div class="bar1"></div>
