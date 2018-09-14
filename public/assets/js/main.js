@@ -74,6 +74,25 @@ $(document).ready(function(){
         $(".missao .row div").removeAttr('style');
     },800);
 
+    $('.carousel-parceiros').owlCarousel({
+       loop: true,
+       autoplay: true,
+       margin: 100,
+       dots:false,
+       nav:true,
+       navText:[
+           '<span class="prev-list"></span>',
+           '<span class="next-list"></span>'
+       ],
+       responsiveClass:true,
+       responsive:{
+           0:{ items:1},
+           576:{ items:2},
+           768:{ items: 3},
+           992:{ items:4},
+       }
+   });
+
     // showFadeUp('.sobre .embalagem-destaque');
     // showFadeUp('.produtos .linhas');
     // showFadeUp('.noticias .item');

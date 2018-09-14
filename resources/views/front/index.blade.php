@@ -129,6 +129,18 @@
             </div>
         </div>
     </section>
+    <section class="bg-tp1 parceiros" id="parceiros">
+        <div class="container">
+            <h2>Parceiros</h2>
+            <div class="carousel-parceiros owl-carousel owl-theme">
+                <img src="/assets/images/parceiros/BIOBOI.png" alt="BIOBOI">
+                <img src="/assets/images/parceiros/COPEBRAS.png" alt="COPEBRAS">
+                <img src="/assets/images/parceiros/NGA.png" alt="NGA">
+                <img src="/assets/images/parceiros/TORTUGA.png" alt="TORTUGA">
+                <img src="/assets/images/parceiros/ZOETIS.png" alt="ZOETIS">
+            </div>
+        </div>
+    </section>
     <section class="bg-tp2 localizacao" id="localizacao">
         <h2>Localização</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.533870762572!2d-47.47271788503682!3d-5.487417596020775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c56019004f60a1%3A0x1dffc1f82b98d0f9!2sAgroSal+-+Nutri%C3%A7%C3%A3o+Animal!5e0!3m2!1spt-BR!2sbr!4v1529077278206" width="100%" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>

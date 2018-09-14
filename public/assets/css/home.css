@@ -145,6 +145,15 @@ section.noticias .item a::after{
     transition: all .2s linear;
 }
 
+section.parceiros{
+    padding-bottom: 60px;
+}
+
+section.parceiros .carousel-parceiros{
+    padding: 0 52px;
+    position: relative;
+}
+
 section.localizacao{
     position: relative;
 }
