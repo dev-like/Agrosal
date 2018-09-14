@@ -2,7 +2,7 @@
 <nav>
     <div class="container">
         <div class="row">
-            <a href="index.html">
+            <a href="/">
                 <img src="{{ asset('assets/images/logo.png') }}" alt="AgroSal">
             </a>
             <div class="menu-toggle">
