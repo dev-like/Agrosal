@@ -55,24 +55,21 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="assets/images/missao-gif.gif" alt="Missão" class="gif">
-                        <img src="assets/images/missao.png" alt="Missão" class="static">
+                        <img src="assets/images/missao.png" alt="Missão">
                         <h6>Tradição</h6>
                         <p>
                           {!! $quemsomos-> missao !!}
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <img src="assets/images/visao-gif.gif" alt="Visão" class="gif">
-                        <img src="assets/images/visao.png" alt="Visão" class="static">
+                        <img src="assets/images/visao.png" alt="Visão">
                         <h6>Tecnologia</h6>
                         <p>
                           {!! $quemsomos-> visao !!}
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <img src="assets/images/valores-gif.gif" alt="Valores" class="gif">
-                        <img src="assets/images/valores.png" alt="Valores" class="static">
+                        <img src="assets/images/valores.png" alt="Valores">
                         <h6>Inovação</h6>
                         <p>
                           {!! $quemsomos-> valores !!}

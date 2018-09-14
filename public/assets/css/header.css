@@ -101,12 +101,6 @@ header section.missao p{
         padding: 28px 0;
     }
 
-    header section.missao .row div img.static{ display: block; }
-    header section.missao .row div img.gif{ display: none; }
-
-    header section.missao .row div:hover img.static{ display: none; }
-    header section.missao .row div:hover img.gif{ display: block; }
-
     header section.missao p{
         /*margin-bottom: 10px;*/
     }
