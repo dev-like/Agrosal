@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -122,7 +120,7 @@
                         <div style="background-image: url({{ asset('noticias/imagens/'. $noti->capa) }})" class="not-img"></div>
                         <div class="content">
                             <h3>{{$noti->titulo}}</h3>
-                            <time>{{$noti->datapublicacao}}</time>
+                            <time datetime="{{ date('d/m/y g:ia', strtotime($noti->datapublicacao)) }}">{{ date('d/m/y g:ia', strtotime($noti->datapublicacao)) }}</time>
                             <a href="{{ route('noticia.item', $noti->slug) }}">continue lendo</a>
                         </div>
                     </div>
@@ -137,6 +135,4 @@
     </section>
     @include('front.partials._bottom')
     <script src="{{ asset('assets/js/main.js') }}"></script>
-
-    </body>
-    </html>
+  </body>

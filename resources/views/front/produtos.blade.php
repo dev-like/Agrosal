@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,4 +69,3 @@
 
     <script src="{{ asset('assets/js/pages.js') }}"></script>
 </body>
-</html>

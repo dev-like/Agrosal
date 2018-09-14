@@ -18,6 +18,7 @@ class WebSiteController extends Controller
     {
         $quemsomos = Quemsomos::find(1);
         return view('errors.404', ['quemsomos' => $quemsomos]);
+        return view('admin.index');
     }
 
     public function home()
@@ -47,6 +48,11 @@ class WebSiteController extends Controller
     public function getSingleLinha($slug)
     {
         $linha = Linha::where('slug', '=', $slug)->first();
+        if (count($linha) == 0)
+        {
+          $this->pagenotfound();
+          return;
+        }
         $produto = DB::table('Produtos')->where('linha_id', $linha->id)->get();
         $quemsomos = Quemsomos::find(1);
 

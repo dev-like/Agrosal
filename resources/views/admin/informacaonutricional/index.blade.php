@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Informacaonutricionals
+Produtos
 @endsection
 
 @section('page-title')
-Informacaonutricionals
+Informações Nutricionais
 @endsection
 
 @section('styles')
@@ -20,7 +20,7 @@ Informacaonutricionals
 
   <div class="card-box">
     <a href="{{ route('informacaonutricional.create',$produto) }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
-      <h4 class="m-t-0 header-title">Listagem de Informacaonutricionals</h4>
+      <h4 class="m-t-0 header-title">Listagem de Informações Nutricionais</h4>
 
     <table class="table table-striped">
         <thead>
@@ -35,8 +35,8 @@ Informacaonutricionals
                 <td>{{ $informacaonutricional -> elemento }}</td>
                 <td>{{ $informacaonutricional -> valores }}</td>
                 <td width="10%">
-                    <span class="hint--top" aria-label="Editar Informacaonutricional"><a href="{{ route('informacaonutricional.edit', $informacaonutricional->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
-                    <span class="hint--top" aria-label="Deletar Informacaonutricional"><button type="button" onclick="goswet({{$informacaonutricional->id}}, '{{$informacaonutricional->nome}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
+                    <span class="hint--top" aria-label="Editar Infomação Nutricional"><a href="{{ route('informacaonutricional.edit', $informacaonutricional->id) }}" style="border-radius: 50%" class="btn btn-warning waves-effect"> <i class="fa fa-pencil m-r-5"></i></a></span>
+                    <span class="hint--top" aria-label="Deletar Informação Nutricional"><button type="button" onclick="goswet({{$informacaonutricional->id}}, '{{$informacaonutricional->nome}}')" style="border-radius: 50%" class="btn btn-danger waves-effect"> <i class="fa fa-trash m-r-5"></i></button></span>
                 </td>
             </tr>
           @empty
@@ -47,6 +47,7 @@ Informacaonutricionals
         </tbody>
     </table>
 
+
 @endsection
 
 @section('scripts')
@@ -56,12 +57,12 @@ Informacaonutricionals
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
   });
-  function goswet(id, nome){
+  function goswet(id, elemento){
     swal.setDefaults({
       reverseButtons: true
     })
     swal({
-        title: "Deseja excluir "+nome+"?",
+        title: "Deseja excluir "+elemento+"?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -75,7 +76,7 @@ Informacaonutricionals
           data: {'id': id},
           success: function(data){
             swal({
-             title: "informacaonutricional deletado!",
+             title: "Elemento deletado!",
              type: "success",
              timer: 2000,
              showConfirmButton: false

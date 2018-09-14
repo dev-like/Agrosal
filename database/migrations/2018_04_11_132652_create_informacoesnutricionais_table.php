@@ -21,7 +21,6 @@ class CreateInformacoesnutricionaisTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('produtos_id')->references('id')->on('produtos');
         });
     }
 

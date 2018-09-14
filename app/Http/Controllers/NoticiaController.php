@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\noticia;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 use Image;
 use Storage;
@@ -18,7 +18,7 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = Noticia::paginate(15);
+        $noticias = Noticia::paginate(10);
         return view('admin.noticias.index', [
             'noticias' => $noticias
         ]);

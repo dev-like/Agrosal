@@ -19,9 +19,9 @@ class CreateQuemsomosTable extends Migration
             $table->string('nomefantasia', 191);
             $table->string('cnpj', 18)->nullable();
             $table->string('ie', 45)->nullable();
-            $table->string('missao', 2500)->nullable();
-            $table->string('visao', 2500)->nullable();
-            $table->string('valores', 2500)->nullable();
+            $table->string('tradicao', 2500)->nullable();
+            $table->string('tecnologia', 2500)->nullable();
+            $table->string('inovacao', 2500)->nullable();
             $table->text('quemsomos')->nullable();
             $table->string('email', 255);
             $table->string('telefone', 20)->nullable();

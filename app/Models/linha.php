@@ -8,8 +8,6 @@ use Iatstuti\Database\Support\CascadeSoftDeletes;
 
 class Linha extends Model
 {
-    use SoftDeletes,CascadeSoftDeletes ;
-
     protected $table = 'linhas';
     protected $fillable = ['nome','descricao','slug'];
     protected $dates = ['deleted_at'];
@@ -18,4 +16,5 @@ class Linha extends Model
     {
         return $this->hasMany('App\Models\Produto');
     }
+    use SoftDeletes,CascadeSoftDeletes ;
 }

@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,7 +45,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <time datetime="{{$noticia->datapublicacao}}">{{$noticia->datapublicacao}}</time>
+                    <time datetime="{{ date('d/m/y g:ia', strtotime($noticia->datapublicacao)) }}">{{ date('d/m/y g:ia', strtotime($noticia->datapublicacao)) }}</time>
                     <p>{!!$noticia->conteudo!!}</p>
                 </div>
             </div>
@@ -59,4 +57,3 @@
 
     <script src="{{ asset('assets/js/pages.js') }}"></script>
 </body>
-</html>

@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-  Listagem
+  Usuários Cadastrados
 @endsection
 
 @section('styles')
@@ -44,12 +44,10 @@
 <div class="col-12">
   <div class="card-box">
     <a href="{{ route('usuario.create') }}" style="margin-bottom: 15px" class="btn btn-info waves-effect waves-light pull-right"><i class="fa fa-plus m-r-5"></i> Adicionar</a>
-    <h4 class="m-t-0 header-title">Listagem de usuários</h4>
 
     <table class="table table-striped">
         <thead>
         <tr>
-          <th>#</th>
           <th>Nome</th>
           <th>Email</th>
           <th>Ações</th>
@@ -58,7 +56,6 @@
         <tbody>
           @forelse($usuarios as $usuario)
             <tr>
-                <td>{{ $usuario->id }}</td>
                 <td>{{ $usuario->nome }}</td>
                 <td>{{ $usuario->email }}</td>
                 <td width="15%">

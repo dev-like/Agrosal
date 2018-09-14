@@ -94,3 +94,19 @@ h6{
         padding: 80px 0 50px;
     }
 }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #fff;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #fff;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #fff;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #fff;
+}

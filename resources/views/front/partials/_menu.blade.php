@@ -2,7 +2,7 @@
 <nav>
     <div class="container">
         <div class="row">
-            <a href="index.html">
+            <a href="/">
                 <img src="{{ asset('assets/images/logo.png') }}" alt="AgroSal" class="pause">
                 <img src="{{ asset('assets/images/logo-flutuante.png') }}" alt="AgroSal" class="flutuante">
             </a>

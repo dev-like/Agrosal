@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Linha;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 use DB;
 use Image;
@@ -19,9 +20,9 @@ class LinhaController extends Controller
      */
     public function index(Request $request)
     {
-        $linha = Linha::paginate(15);
+        $linhas = Linha::paginate(5);
         return view('admin.linhas.index', [
-          'linha' => $linha
+          'linhas' => $linhas
       ]);
     }
 
@@ -47,6 +48,7 @@ class LinhaController extends Controller
         $this->validate($request, array(
           'nome'          => 'required|max:225|unique:linhas,nome,NULL, deleted_at,deleted_at,NULL',
           'capa'          => 'image|mimes:jpeg,png,jpg',
+          'embalagem'     => 'image|mimes:jpeg,png,jpg',
     ));
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->nome));
@@ -63,6 +65,13 @@ class LinhaController extends Controller
             Image::make($image)->resize(378, 476)->save($location);
             $linha->capa = $filename;
         }
+        if ($request->hasFile('embalagem')) {
+            $image = $request->file('embalagem');
+            $filename = time() . '.' . $image->getClientOriginalName();
+            $location = public_path('linhas/imagens/' . $filename);
+            Image::make($image)->resize(378, 476)->save($location);
+            $linha->embalagem = $filename;
+        }
 
         $linha->save();
         $request->session()->flash('success', 'Linha adicionada com sucesso');
@@ -78,8 +87,8 @@ class LinhaController extends Controller
      */
     public function show($id)
     {
-        $linha = linha::where('slug', '=', $id)->first();
-        return view('admin.linhas.show')->with('linha', $linha);
+        $linha = Linha::find($id);
+        return view('admin.linhas.index')->with('linha', $linha);
     }
 
     public function tirarAcentos($string)
@@ -139,6 +148,18 @@ class LinhaController extends Controller
             }
             $linha->capa = $filename;
         }
+        if ($request->hasFile('embalagem')) {
+            $image = $request->file('embalagem');
+            $filename = time() . '.' . $image->getClientOriginalName();
+            $location = public_path('linhas/imagens/' . $filename);
+            Image::make($image)->resize(378, 476)->save($location);
+
+            if ($linha->embalagem) {
+                $oldFilename = $linha->embalagem;
+                Storage::delete('noticias/imagens/'.$oldFilename);
+            }
+            $linha->embalagem = $filename;
+        }
 
         $linha->save();
         $request->session()->flash('success', 'Linha alterada com sucesso');
@@ -155,7 +176,9 @@ class LinhaController extends Controller
     public function destroy($id)
     {
         $linha = linha::find($id);
+        $produto = Produto::where('linha_id',$id)->Update(['linha_id'=>null]);
         $linha->delete();
+
         return [response()->json("success"), redirect('admin/linha')];
     }
 }

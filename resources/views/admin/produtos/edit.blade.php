@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-caminho')
-  Produto
+Produtos
 @endsection
 
 @section('page-title')
-Produtos
+Editar Produtos
 @endsection
 
 @section('script-bottom')
@@ -18,7 +18,6 @@ Produtos
 @section('content')
 <div class="col-12">
   <div class="card-box">
-    <h4 class="m-t-0 header-title"><b>Edição de Produto</b></h4>
 
     {!! Form::model($produto, array('route' => ['produto.update', $produto->id], 'method' => 'PUT', 'files' => true)) !!}
         <div class="row">
@@ -42,13 +41,9 @@ Produtos
           </div>
         </div>
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             {!! Form::label('descricao', 'Descrição:') !!}
             {!! Form::text('descricao', $produto->descricao, array('class' => 'form-control')) !!}
-          </div>
-          <div class="form-group col-md-6">
-            {!! Form::label('informacoesnutricionais', 'Informações Nutricionais') !!}
-            <input type="file" name="informacoesnutricionais" class="filestyle" data-placeholder="Enviar imagem" data-btnClass="btn-light">
           </div>
         </div>
         <div class="row">
@@ -60,7 +55,7 @@ Produtos
               {{ Form::label('mododeusar', 'Modo de Usar') }}
               {{ Form::textarea('mododeusar', $produto->mododeusar, array('class' => 'form-control')) }}
           </div>
-        </div>      
+        </div>
 
         <div class="row" style="margin-top: 20px">
           <div class="form-group col-12">

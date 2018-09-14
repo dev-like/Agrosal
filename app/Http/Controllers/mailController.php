@@ -27,10 +27,10 @@ class mailController extends Controller
 
         Mail::send('mail.mail', $data, function ($mensagem) use ($data) {
             $mensagem->from($data['email']);
-            $mensagem->to('bc15c2@gmail.com', 'Teste');
-            $mensagem->subject('Mensagem site.');
+            $mensagem->to('agrosal@nutrientesagrosal.com.br', 'Teste');
+            $mensagem->subject('Solicitação de contato do site');
         });
 
-        return redirect()->back();
+        return redirect()->back()->with('alert', 'E-mail enviado com sucesso !');
     }
 }

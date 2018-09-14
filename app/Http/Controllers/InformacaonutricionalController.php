@@ -20,7 +20,7 @@ class InformacaonutricionalController extends Controller
      */
     public function index($produto)
     {
-        $informacaonutricionais = informacaonutricional::paginate(500)->where('produtos_id', $produto);
+        $informacaonutricionais = Informacaonutricional::paginate(500)->where('produtos_id', $produto);
         return view('admin.informacaonutricional.index', [
           'informacaonutricional' => $informacaonutricionais,
           'produto' => $produto
@@ -34,7 +34,7 @@ class InformacaonutricionalController extends Controller
      */
     public function create()
     {
-        $informacaonutricionais  = informacaonutricional::all();
+        $informacaonutricionais  = Informacaonutricional::all();
         $produtos = Produto::all();
 
         return view('admin.informacaonutricional.create', ['informacaonutricional' => $informacaonutricionais], ['produtos' => $produtos]);
@@ -50,7 +50,7 @@ class InformacaonutricionalController extends Controller
     public function store(Request $request)
     {
         $requestData = $request->all();
-        $informacaonutricionais = informacaonutricional::create($requestData);
+        $informacaonutricionais = Informacaonutricional::create($requestData);
 
         return redirect('admin/informacaonutricional/'.$informacaonutricionais->produtos_id)->with('flash_message', 'informacaonutricional added!');
     }
@@ -62,12 +62,6 @@ class InformacaonutricionalController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($id)
-    {
-        $informacaonutricionais = informacaonutricional::find($id);
-
-        return view('admin.informacaonutricional.show')->with('informacaonutricional', $informacaonutricionais);
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -78,11 +72,12 @@ class InformacaonutricionalController extends Controller
      */
     public function edit($id)
     {
-        $informacaonutricional = informacaonutricional::find($id);
+        $informacaonutricional = Informacaonutricional::find($id);
         $produtos = Produto::all();
 
         return view('admin.informacaonutricional.edit', [
-          'informacaonutricional' => $informacaonutricional
+          'informacaonutricional' => $informacaonutricional,
+          'produtos' => $produtos
       ]);
     }
 
@@ -96,8 +91,8 @@ class InformacaonutricionalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $informacaonutricional = informacaonutricional::find($id);
-
+        $informacaonutricional = Informacaonutricional::find($id);
+        $produtos = Produto::all();
 
         $informacaonutricional->save();
         $request->session()->flash('success', 'informacaonutricional alterada com sucesso');
@@ -113,7 +108,7 @@ class InformacaonutricionalController extends Controller
      */
     public function destroy($id)
     {
-        $informacaonutricional = informacaonutricional::find($id);
+        $informacaonutricional = Informacaonutricional::find($id);
         $informacaonutricional->delete();
         return [response()->json("success"), redirect('admin/informacaonutricional')];
     }

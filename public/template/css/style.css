@@ -42,6 +42,13 @@ File: Main Css File
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Karla:700|Nunito+Sans:600,700");
 @import url("https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Roboto:400,500,700");
 
+a.btn.btn-success {
+    background-color: #1492D0 !important;
+}
+a.btn.btn-success.waves-effect {
+    background-color: #117db2 !important;
+}
+
 .obs{
   min-height: 100px !important
 }

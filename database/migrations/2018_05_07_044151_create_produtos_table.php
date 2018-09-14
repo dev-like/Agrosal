@@ -27,7 +27,6 @@ class CreateProdutosTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('linha_id')->references('id')->on('linhas');
         });
     }
 

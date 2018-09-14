@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\quemsomos;
+use App\Models\Quemsomos;
 use Illuminate\Http\Request;
 
-class quemsomosController extends Controller
+class QuemsomosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class quemsomosController extends Controller
      */
     public function index()
     {
-        $quemsomos = QuemSomos::get();
+        $quemsomos = Quemsomos::get();
         $quemsomos = count($quemsomos) ? $quemsomos[0] : new QuemSomos();
         return view('admin.quemsomos.index', [
         'quemsomos' => $quemsomos
@@ -46,7 +46,7 @@ class quemsomosController extends Controller
         'email'               => 'required|max:225',
       ));
         $requestData = $request->all();
-        $quemsomos = quemsomos::create($requestData);
+        $quemsomos = Quemsomos::create($requestData);
 
         $request->session()->flash('success', 'Quem Somos adicionado com sucesso');
         return redirect('admin/quemsomos')->with('flash_message', 'Quem Somos adicionado!');
@@ -61,7 +61,7 @@ class quemsomosController extends Controller
      */
     public function show($id)
     {
-        $quemsomos = quemsomos::find($id);
+        $quemsomos = Quemsomos::find($id);
         return view('admin.quemsomos.show', compact('quemsomos'));
     }
 
@@ -74,7 +74,7 @@ class quemsomosController extends Controller
      */
     public function edit($id)
     {
-        $quemsomos = quemsomos::findOrFail($id);
+        $quemsomos = Quemsomos::findOrFail($id);
         return view('admin.quemsomos.edit', compact('quemsomos'));
     }
 
@@ -89,7 +89,7 @@ class quemsomosController extends Controller
     public function update(Request $request, $id)
     {
         $requestData = $request->all();
-        $quemsomos = quemsomos::findOrFail($id);
+        $quemsomos = Quemsomos::findOrFail($id);
         $quemsomos->update($requestData);
 
         $request->session()->flash('success', 'O texto foi modificado com sucesso');
@@ -105,7 +105,7 @@ class quemsomosController extends Controller
      */
     public function destroy($id)
     {
-        $quemsomos = quemsomos::find($id);
+        $quemsomos = Quemsomos::find($id);
         $quemsomos->delete();
         return [response()->json("success"), redirect('admin/quemsomos')];
     }

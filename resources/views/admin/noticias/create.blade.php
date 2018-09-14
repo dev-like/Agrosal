@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-Notícias
+Cadastro
 @endsection
 
 @section('script-bottom')
@@ -48,7 +48,7 @@ Notícias
         <div class="row">
           <div class="form-group col-md-12" style="margin-top: 20px">
             {!! Form::label('conteudo', 'Conteudo') !!}
-            {!! Form::textarea('conteudo', null, array('class' => 'form-control')) !!}
+            {!! Form::textarea('conteudo', null, array('class' => 'form-control','required')) !!}
           </div>
         </div>
         <div class="row" style="margin-top: 20px">
@@ -68,6 +68,8 @@ Notícias
 <script src="{{ asset('template/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('template/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('template/plugins/tinymce/tinymce.min.js') }}"></script>
+
+<script>$('#date').datepicker({ dateFormat: 'dd-mm-yyYY' }).val();</script>
 
 <script>
   var editor_config = {
