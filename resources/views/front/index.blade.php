@@ -25,6 +25,7 @@
     <!-- Librarys JavaScrip -->
     <script src="{{ asset('assets/js/lib/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/lib/owl.carousel.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/readmore.min.js') }}"></script>
 
 </head>
 <body>
@@ -53,24 +54,24 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="assets/images/missao.png" alt="Missão">
+                        <img src="assets/images/tradicao.png" alt="Tradição">
                         <h6>Tradição</h6>
-                        <p>
-                          {!! $quemsomos-> missao !!}
+                        <p class="tradicao">
+                          {!! $quemsomos->tradicao !!}
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <img src="assets/images/visao.png" alt="Visão">
+                        <img src="assets/images/tecnologia.png" alt="Tecnologia">
                         <h6>Tecnologia</h6>
-                        <p>
-                          {!! $quemsomos-> visao !!}
+                        <p class="tecnologia">
+                          {!! $quemsomos->tecnologia !!}
                         </p>
                     </div>
                     <div class="col-md-4">
-                        <img src="assets/images/valores.png" alt="Valores">
+                        <img src="assets/images/inovacao.png" alt="Inovação">
                         <h6>Inovação</h6>
-                        <p>
-                          {!! $quemsomos-> valores !!}
+                        <p class="inovacao">
+                          {!! $quemsomos->inovacao !!}
                         </p>
                     </div>
                 </div>
@@ -86,7 +87,7 @@
                     <img src="assets/images/embalagem-destaque.png" alt="AgroSal Embalagens" class="embalagem-destaque">
                 </div>
                 <div class="col-lg-6">
-                    <h2>Pesquisa</h2>
+                    <h2>Sobre</h2>
                     {!!$quemsomos->quemsomos!!}
                     <!-- <a href="#" class="btn">Saiba Mais</a> -->
                 </div>

@@ -134,20 +134,20 @@
       </div>
       <div class="row">
         <div class="col-md-12" style="margin-top: 20px">
-          {!! Form::label('missao', 'Missão') !!}
-          {!! Form::textarea('missao', null, array('class' => 'form-control')) !!}
+          {!! Form::label('tradicao', 'Tradição') !!}
+          {!! Form::textarea('tradicao', null, array('class' => 'form-control')) !!}
         </div>
       </div>
       <div class="row">
         <div class="col-md-12" style="margin-top: 20px">
-          {!! Form::label('visao', 'Visão') !!}
-          {!! Form::textarea('visao', null, array('class' => 'form-control')) !!}
+          {!! Form::label('tecnologia', 'Tecnologia') !!}
+          {!! Form::textarea('tecnologia', null, array('class' => 'form-control')) !!}
         </div>
       </div>
       <div class="row">
         <div class="col-md-12" style="margin-top: 20px">
-          {!! Form::label('valores', 'Valores') !!}
-          {!! Form::textarea('valores', null, array('class' => 'form-control')) !!}
+          {!! Form::label('inovacao', 'Inovação') !!}
+          {!! Form::textarea('inovacao', null, array('class' => 'form-control')) !!}
         </div>
       </div>
       <div class="row">

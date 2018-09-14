@@ -18,7 +18,7 @@ header .banner .dots{
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 230px;
+    bottom: 130px;
     word-spacing: 16px;
     text-align: center;
     z-index: 2;
@@ -41,6 +41,17 @@ header .banner .dots .item-dot.active{
 
 header section.missao{
     padding: 34px 0;
+    z-index: 2;
+}
+
+header section.missao .read{
+    color: #bc0000;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
 }
 
 header section.missao img{
@@ -49,11 +60,13 @@ header section.missao img{
 }
 
 header section.missao p{
-    color:  #555555;
-    font-size: 13px;
+    color: #555555;
+    font-size: 14px;
     line-height: 1.2;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all .2s linear;
 }
 
 @media (min-width: 768px) {
@@ -68,16 +81,16 @@ header section.missao p{
         height: 100%;
     }
 
+    header .banner .dots{
+        bottom: 230px;
+    }
+
     header section.missao{
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 28px 0;
-    }
-
-    header section.missao p{
-        /*margin-bottom: 10px;*/
+        padding: 18px 0 10px;
     }
 }
 
@@ -88,10 +101,6 @@ header section.missao p{
 
     header .banner{
         background-position: center top;
-    }
-
-    header section.missao p{
-        font-size: 14px;
     }
 }
 

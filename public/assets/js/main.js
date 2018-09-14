@@ -93,6 +93,25 @@ $(document).ready(function(){
        }
    });
 
+   $('.missao p.tradicao').readmore({
+        heightMargin: 0,
+        collapsedHeight: 48,
+        moreLink: '<a class="read" href="#">Leia mais</a>',
+        lessLink: '<a class="read" href="#">Fechar</a>'
+    });
+   $('.missao p.tecnologia').readmore({
+        heightMargin: 0,
+        collapsedHeight: 48,
+        moreLink: '<a class="read" href="#">Leia mais</a>',
+        lessLink: '<a class="read" href="#">Fechar</a>'
+    });
+   $('.missao p.inovacao').readmore({
+        heightMargin: 0,
+        collapsedHeight: 48,
+        moreLink: '<a class="read" href="#">Leia mais</a>',
+        lessLink: '<a class="read" href="#">Fechar</a>'
+    });
+
     // showFadeUp('.sobre .embalagem-destaque');
     // showFadeUp('.produtos .linhas');
     // showFadeUp('.noticias .item');

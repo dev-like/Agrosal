@@ -88,6 +88,7 @@ class QuemsomosController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $requestData = $request->all();
         $quemsomos = Quemsomos::findOrFail($id);
         $quemsomos->update($requestData);
