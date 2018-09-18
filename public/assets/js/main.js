@@ -128,6 +128,9 @@ $(document).ready(function(){
 
         var img = $('.banner .dots .item-dot').eq(banner).children('img').attr('src');
 
+        if($(window).width() < 768)
+            img = '/mobile'+img;
+
         $('.banner').css('background-image','url('+img+')');
         executar = setInterval(function(){ ++banner; mostrarBanner(); }, 5000);
 	}
