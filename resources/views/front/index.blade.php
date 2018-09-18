@@ -38,13 +38,13 @@
         <div class="banner" id="inicio">
             <div class="dots">
                 <div class="item-dot" data-indice='0'>
-                    <img src="assets/images/nova-linha.jpg" alt="Nova Linha">
+                    <img src="/assets/images/nova-linha.jpg" alt="Nova Linha">
                 </div>
                 <div class="item-dot" data-indice='1'>
-                    <img src="assets/images/nova-parceria.jpg" alt="Nova Parceria">
+                    <img src="/assets/images/nova-parceria.jpg" alt="Nova Parceria">
                 </div>
                 <div class="item-dot" data-indice='2'>
-                    <img src="assets/images/taurotec.jpg" alt="Taurotec">
+                    <img src="/assets/images/taurotec.jpg" alt="Taurotec">
                 </div>
             </div>
         </div>
