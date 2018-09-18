@@ -53,7 +53,7 @@ class WebSiteController extends Controller
           $this->pagenotfound();
           return;
         }
-        $produto = DB::table('Produtos')->where('linha_id', $linha->id)->get();
+        $produto = DB::table('produtos')->where('linha_id', $linha->id)->get();
         $quemsomos = Quemsomos::find(1);
 
         $produtoEsquerda = [];
