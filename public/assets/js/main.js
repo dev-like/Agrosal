@@ -112,9 +112,9 @@ $(document).ready(function(){
         lessLink: '<a class="read" href="#">Fechar</a>'
     });
 
-    // showFadeUp('.sobre .embalagem-destaque');
-    // showFadeUp('.produtos .linhas');
-    // showFadeUp('.noticias .item');
+    showFadeUp('.sobre .embalagem-destaque');
+    showFadeUp('.produtos .linhas');
+    showFadeUp('.noticias .item');
 
     //altenancia de banners
     function mostrarBanner(){
