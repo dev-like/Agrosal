@@ -48,13 +48,13 @@ class Handler extends ExceptionHandler
      */
      public function render($request, Exception $exception)
      {
-         // if($this->isHttpException($exception)){
-         //     switch ($exception->getStatusCode()) {
-         //         case 404:
-         //             return redirect()->route('notfound');
-         //             break;
-         //    }
-         // }
+       if($this->isHttpException($exception)){
+            switch ($exception->getStatusCode()) {
+                case 404:
+                    return redirect()->route('notfound');
+                    break;
+           }
+        }
          return parent::render($request, $exception);
      }
 }
