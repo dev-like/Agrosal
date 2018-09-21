@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-12">
                     <span class="way">
-                        Produto da <a href="linhas.html">{{$produto->linha->nome}}</a>
+                        Produto da <a href="javascript:history.back()">{{$produto->linha->nome}}</a>
                     </span>
                     <h2>{{$produto->nome}}</h2>
                     <p>
