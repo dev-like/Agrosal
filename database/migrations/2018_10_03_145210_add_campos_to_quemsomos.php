@@ -14,9 +14,9 @@ class AddCamposToQuemsomos extends Migration
     public function up()
     {
       Schema::table('quemsomos', function (Blueprint $table) {
-        $table->string('tradicao', 2500)->nullable();
-        $table->string('tecnologia', 2500)->nullable();
-        $table->string('inovacao', 2500)->nullable();
+        $table->string('tradicao', 500)->nullable();
+        $table->string('tecnologia', 500)->nullable();
+        $table->string('inovacao', 500)->nullable();
       });
     }
 
