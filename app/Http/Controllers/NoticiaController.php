@@ -116,6 +116,7 @@ class NoticiaController extends Controller
     public function update(Request $request, $id)
     {
         $noticia = Noticia::find($id);
+        $noticia->fill($request->all());
 
         $slug = Self::tirarAcentos(str_replace(" ", "-", $request->título));
 

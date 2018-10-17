@@ -21,11 +21,11 @@ Editar Notícia
     <div class="row">
       <div class="form-group col-md-8">
         {!! Form::label('titulo', 'Titulo:') !!}
-        {!! Form::text('título', $noticia->titulo, array('class' => 'form-control','maxlength' => '255','required')) !!}
+        {!! Form::text('titulo', $noticia->titulo, array('class' => 'form-control','maxlength' => '255','required')) !!}
       </div>
       <div class="form-group col-md-4">
         {!! Form::label('datapublicacao', 'Data de publicação:') !!}
-        {!! Form::date('datapublicação', $noticia->datapublicacao, array('class' => 'form-control','required')) !!}
+        {!! Form::date('datapublicacao', $noticia->datapublicacao, array('class' => 'form-control','required')) !!}
       </div>
     </div>
     <div class="row">
