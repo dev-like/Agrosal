@@ -95,8 +95,9 @@ class InformacaonutricionalController extends Controller
         $produtos = Produto::all();
 
         $informacaonutricional->save();
-        $request->session()->flash('success', 'informacaonutricional alterada com sucesso');
-        return redirect()->route('informacaonutricional.index');
+
+        $request->session()->flash('success', 'Informação Nutricional alterada com sucesso');
+        return redirect('admin/informacaonutricional/'.$informacaonutricional->produtos_id);
     }
 
     /**
