@@ -48,32 +48,38 @@ class WebSiteController extends Controller
     public function getSingleLinha($slug)
     {
         $linha = Linha::where('slug', '=', $slug)->first();
-        if (count($linha) == 0)
-        {
-          $this->pagenotfound();
-          return;
-        }
-        $produto = DB::table('produtos')->where('linha_id', $linha->id)->get();
-        $quemsomos = Quemsomos::find(1);
 
-        $produtoEsquerda = [];
-        $produtoDireita = [];
+        if($linha == NULL){
+          return redirect()->route('notfound');
+        }else{
 
-        for ($i=0; $i < count($produto); $i++) {
-            if ($i % 2 != 0) {
-                $produtoDireita[] = $produto[$i];
-            } else {
-                $produtoEsquerda[] = $produto[$i];
+            if (count($linha) == 0)
+            {
+              $this->pagenotfound();
+              return;
             }
-        }
+            $produto = DB::table('produtos')->where('linha_id', $linha->id)->get();
+            $quemsomos = Quemsomos::find(1);
 
-        return view('front.linhas', [
-          'produto' =>  $produto,
-          'produtoEsquerda' => $produtoEsquerda,
-          'produtoDireita' => $produtoDireita,
-          'linha' => $linha,
-          'quemsomos' => $quemsomos,
-        ]);
+            $produtoEsquerda = [];
+            $produtoDireita = [];
+
+            for ($i=0; $i < count($produto); $i++) {
+                if ($i % 2 != 0) {
+                    $produtoDireita[] = $produto[$i];
+                } else {
+                    $produtoEsquerda[] = $produto[$i];
+                }
+            }
+
+            return view('front.linhas', [
+              'produto' =>  $produto,
+              'produtoEsquerda' => $produtoEsquerda,
+              'produtoDireita' => $produtoDireita,
+              'linha' => $linha,
+              'quemsomos' => $quemsomos,
+            ]);
+      }
     }
     public function noticias()
     {
@@ -90,10 +96,15 @@ class WebSiteController extends Controller
         $noticia = Noticia::where('slug', '=', $slug)->first();
         $quemsomos = Quemsomos::find(1);
 
+        if($noticia == NULL){
+          return redirect()->route('notfound');
+        }else{
+
         return view('front.noticias', [
           'noticia' => $noticia,
           'quemsomos' => $quemsomos,
         ]);
+      }
     }
     public function produtos()
     {

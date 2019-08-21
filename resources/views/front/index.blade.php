@@ -37,6 +37,7 @@
         <!-- Banners -->
         <div class="banner" id="inicio">
             <div class="dots">
+
                 <div class="item-dot" data-indice='0'>
                     <img src="/assets/images/nova-linha.jpg" alt="Nova Linha">
                 </div>
@@ -46,6 +47,7 @@
                 <div class="item-dot" data-indice='2'>
                     <img src="/assets/images/taurotec.jpg" alt="Taurotec">
                 </div>
+                
             </div>
         </div>
 
