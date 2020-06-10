@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
 
+
     <!-- Librarys JavaScrip -->
     <script src="{{ asset('assets/js/lib/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/lib/owl.carousel.js') }}"></script>
@@ -148,6 +149,7 @@
         <h2>Localização</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.533870762572!2d-47.47271788503682!3d-5.487417596020775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c56019004f60a1%3A0x1dffc1f82b98d0f9!2sAgroSal+-+Nutri%C3%A7%C3%A3o+Animal!5e0!3m2!1spt-BR!2sbr!4v1529077278206" width="100%" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
     </section>
+  </body>
+  
     @include('front.partials._bottom')
     <script src="{{ asset('assets/js/main.js') }}"></script>
-  </body>

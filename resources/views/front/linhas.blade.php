@@ -53,37 +53,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 esquerda">
-                  @forelse($produtoEsquerda as $pro)
-                    <ul>
-                        <li>
-                            <a href="{{ route('produto.item', $pro->slug) }}">
-                                <span>{{$pro->nome}}</span>
-                                <small>
-                                  {{$pro->descricao}}
-                                </small>
-                            </a>
-                        </li>
-                        @empty
-                        @endforelse
-                    </ul>
+                    @forelse($produtoEsquerda as $pro)
+                        <ul>
+                            <li>
+                                <a href="{{ route('produto.item', $pro->slug) }}">
+                                    <span>{{$pro->nome}}</span>
+                                    <small>
+                                      {{$pro->descricao}}
+                                    </small>
+                                </a>
+                            </li>
+                        </ul>
+                    
+                    @empty
+                    @endforelse
                 </div>
+                
                 <div class="col-lg-4">
-                    <img src="{{ asset('linhas/imagens/'.$linha->embalagem) }}" alt="Embalagem">
+                    <img src="{{ asset('produtos/imagens/'.$pro->imagem) }}" alt="Embalagem">
                 </div>
+                
                 <div class="col-lg-4 direita">
-                  @forelse($produtoDireita as $pro2)
-                    <ul>
-                        <li>
-                          <a href="{{ route('produto.item', $pro2->slug) }}">
-                                <span>{{$pro2->nome}}</span>
-                                <small>
-                                  {{$pro2->descricao}}
-                                </small>
-                            </a>
-                        </li>
-                      </ul>
-                      @empty
-                      @endforelse
+                    @forelse($produtoDireita as $pro2)
+                        <ul>
+                            <li>
+                                <a href="{{ route('produto.item', $pro2->slug) }}">
+                                    <span>{{$pro2->nome}}</span>
+                                    <small>
+                                      {{$pro2->descricao}}
+                                    </small>
+                                </a>
+                            </li>
+                        </ul>
+                    @empty
+                    @endforelse
                 </div>
             </div>
         </div>

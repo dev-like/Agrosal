@@ -18,10 +18,10 @@ function showFadeUp(element) {
     }
 }
 
-$(".missao .row div").css({
-    'opacity':'0',
-    'transform':'translateY(20px)',
-});
+    $(".missao .row div").css({
+        'opacity':'0',
+        'transform':'translateY(20px)',
+    });
 
 $(document).ready(function(){
     $(window).scroll(function()
@@ -112,17 +112,14 @@ $(document).ready(function(){
         lessLink: '<a class="read" href="#">Fechar</a>'
     });
 
-    showFadeUp('.sobre .embalagem-destaque');
-    showFadeUp('.produtos .linhas');
-    showFadeUp('.noticias .item');
-
-    //altenancia de banners
-    function mostrarBanner(){
+function mostrarBanner(){
 		clearInterval(executar);
 
         if (banner == $('.banner .dots .item-dot').length)
-            banner = 0;
+            console.log("test"+banner)
 
+            banner = 0;
+            
         $('.banner .dots .item-dot').removeClass('active');
         $('.banner .dots .item-dot').eq(banner).addClass('active');
 
@@ -144,4 +141,11 @@ $(document).ready(function(){
         banner = $(this).attr('data-indice');
         mostrarBanner();
     });
+    
+    showFadeUp('.sobre .embalagem-destaque');
+    showFadeUp('.produtos .linhas');
+    showFadeUp('.noticias .item');
+
+    //altenancia de banners
+    
 });

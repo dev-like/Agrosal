@@ -1,11 +1,5 @@
 /node_modules
-/public/hot
-/public/storage
-/public/linhas
-/public/noticias
-/public/produtos
 /storage/*.key
-/vendor
 /.idea
 /.vagrant
 Homestead.json
@@ -13,4 +7,3 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .DS_Store
-.env

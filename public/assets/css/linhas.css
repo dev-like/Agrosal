@@ -87,7 +87,7 @@ section.linha-produtos ul li a small{
 
 @media (min-width: 992px) {
     section.linha-produtos img{
-        width: 100%;
+        width: 70%;
     }
 
     section.linha-produtos .esquerda ul li{

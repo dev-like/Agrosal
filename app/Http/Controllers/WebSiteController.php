@@ -53,7 +53,7 @@ class WebSiteController extends Controller
           return redirect()->route('notfound');
         }else{
 
-            if (count($linha) == 0)
+            if (!empty($linha) == 0)
             {
               $this->pagenotfound();
               return;
